@@ -1,0 +1,40 @@
+{
+  "customize": {
+    "extra_dir": "build\\install", 
+    "version": "2.4.11", 
+    "version_int": 20411,
+    "lib_extension": "2411d",
+    "path_extension":"vc12"
+  }, 
+  "deps": {
+    "cmake": {
+      "local": "yes", 
+      "tags": "tool,cmake",
+      "skip_from_bat":"yes"
+    },
+    "compiler": {
+      "local": "yes", 
+      "tags": "compiler,lang-c,mcl",
+      "skip_from_bat":"yes"
+    },
+    "opencl": {
+      "local": "yes", 
+      "tags": "lib,opencl",
+      "skip_from_bat":"yes"
+    },
+    "tbb": {
+      "local": "yes", 
+      "tags": "lib,tbb"
+    }
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "18eb79fe079438fb", 
+  "suggested_path": "lib-opencv", 
+  "tags": [
+    "lib", 
+    "opencv", 
+    "v2.4.11", 
+    "v2.4",
+    "v2"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "dataset_uid": "bf5d476534f04885", 
+  "dataset_uoa": "image-jpeg-carp-M104-ngc4594-sombrero-galaxy-hi-res", 
+  "features": {
+    "compression": "", 
+    "format": "JPEG", 
+    "height": 1607, 
+    "mode": "RGB", 
+    "raw_info": {
+      "dpi": [
+        100, 
+        100
+      ], 
+      "jfif": 257, 
+      "jfif_density": [
+        100, 
+        100
+      ], 
+      "jfif_unit": 1, 
+      "jfif_version": [
+        1, 
+        1
+      ], 
+      "progression": 1, 
+      "progressive": 1
+    }, 
+    "total_size": 2949921, 
+    "width": 2880, 
+    "xdpi": 100, 
+    "ydpi": 100
+  }, 
+  "tags": [
+    "dataset", 
+    "carp-project", 
+    "image", 
+    "jpeg", 
+    "jpg"
+  ]
+}

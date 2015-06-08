@@ -1,0 +1,21 @@
+{
+  "dataset_uid": "3fe364dc4d218734", 
+  "dataset_uoa": "image-jpeg-carp-eso1113a", 
+  "features": {
+    "compression": "", 
+    "format": "JPEG", 
+    "height": 2082, 
+    "mode": "RGB", 
+    "total_size": 2268420, 
+    "width": 2103, 
+    "xdpi": 100, 
+    "ydpi": 100
+  }, 
+  "tags": [
+    "dataset", 
+    "carp-project", 
+    "image", 
+    "jpeg", 
+    "jpg"
+  ]
+}

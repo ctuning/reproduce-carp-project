@@ -1,0 +1,21 @@
+{
+  "dataset_uid": "51694ca9764d88b7", 
+  "dataset_uoa": "image-jpeg-carp-8455950567-c3a0bba489-o", 
+  "features": {
+    "compression": "", 
+    "format": "JPEG", 
+    "height": 820, 
+    "mode": "RGB", 
+    "total_size": 891951, 
+    "width": 1232, 
+    "xdpi": 240, 
+    "ydpi": 240
+  }, 
+  "tags": [
+    "dataset", 
+    "carp-project", 
+    "image", 
+    "jpeg", 
+    "jpg"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dataset_uid": "b41491866f4f4ce8", 
+  "dataset_uoa": "image-jpeg-carp-Super-Moon-Panorma", 
+  "features": {
+    "compression": "", 
+    "format": "JPEG", 
+    "height": 2066, 
+    "mode": "RGB", 
+    "total_size": 500927, 
+    "width": 2422, 
+    "xdpi": 72, 
+    "ydpi": 72
+  }, 
+  "tags": [
+    "dataset", 
+    "carp-project", 
+    "image", 
+    "jpeg", 
+    "jpg"
+  ]
+}

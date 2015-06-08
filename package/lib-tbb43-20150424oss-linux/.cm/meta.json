@@ -1,0 +1,18 @@
+{
+  "customize": {
+    "extra_dir": "tbb43_20150424oss", 
+    "version": "4.3", 
+    "version_int": 403
+  }, 
+  "deps": {}, 
+  "process_script": "process", 
+  "soft_uoa": "fe71b1243e6bb329", 
+  "suggested_path": "lib-tbb", 
+  "tags": [
+    "lib", 
+    "tbb", 
+    "intel", 
+    "v4.3", 
+    "v4"
+  ]
+}

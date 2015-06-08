@@ -1,0 +1,31 @@
+{
+  "dataset_uid": "44ca5ab7a268cf4d", 
+  "dataset_uoa": "image-jpeg-carp-heic0619e-ngc6357", 
+  "features": {
+    "compression": "", 
+    "format": "JPEG", 
+    "height": 2184, 
+    "mode": "RGB", 
+    "raw_info": {
+      "jfif": 257, 
+      "jfif_density": [
+        3599, 
+        3599
+      ], 
+      "jfif_unit": 2, 
+      "jfif_version": [
+        1, 
+        1
+      ]
+    }, 
+    "total_size": 2207895, 
+    "width": 2521
+  }, 
+  "tags": [
+    "dataset", 
+    "carp-project", 
+    "image", 
+    "jpeg", 
+    "jpg"
+  ]
+}

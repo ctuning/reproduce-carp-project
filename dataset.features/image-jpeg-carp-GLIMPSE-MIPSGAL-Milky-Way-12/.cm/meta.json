@@ -1,0 +1,21 @@
+{
+  "dataset_uid": "1a169bc4b8baaddc", 
+  "dataset_uoa": "image-jpeg-carp-GLIMPSE-MIPSGAL-Milky-Way-12", 
+  "features": {
+    "compression": "", 
+    "format": "JPEG", 
+    "height": 1639, 
+    "mode": "RGB", 
+    "total_size": 1158118, 
+    "width": 3000, 
+    "xdpi": 72, 
+    "ydpi": 72
+  }, 
+  "tags": [
+    "dataset", 
+    "carp-project", 
+    "image", 
+    "jpeg", 
+    "jpg"
+  ]
+}

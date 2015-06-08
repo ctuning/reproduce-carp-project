@@ -1,0 +1,21 @@
+{
+  "dataset_uid": "ce947b2b6233bdfa", 
+  "dataset_uoa": "image-jpeg-carp-final-owl-web", 
+  "features": {
+    "compression": "", 
+    "format": "JPEG", 
+    "height": 2400, 
+    "mode": "RGB", 
+    "total_size": 962546, 
+    "width": 2400, 
+    "xdpi": 240, 
+    "ydpi": 240
+  }, 
+  "tags": [
+    "dataset", 
+    "carp-project", 
+    "image", 
+    "jpeg", 
+    "jpg"
+  ]
+}

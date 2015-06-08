@@ -1,0 +1,21 @@
+{
+  "dataset_uid": "4e64ecddc481c8dd", 
+  "dataset_uoa": "image-jpeg-carp-Kings-Cross-Western-Concourse-central-position-2012-05-02-75", 
+  "features": {
+    "compression": "", 
+    "format": "JPEG", 
+    "height": 1686, 
+    "mode": "RGB", 
+    "total_size": 3641001, 
+    "width": 3710, 
+    "xdpi": 240, 
+    "ydpi": 240
+  }, 
+  "tags": [
+    "dataset", 
+    "carp-project", 
+    "image", 
+    "jpeg", 
+    "jpg"
+  ]
+}
