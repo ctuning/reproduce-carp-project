@@ -342,7 +342,7 @@ nel::HOGDescriptorOCL::HOGDescriptorOCL(int numberOfCells_, int numberOfBins_, b
         build_opts << " -D DISABLE_LOCAL";
 
 #ifdef XOPENME
-    xopenme_add_var_s(2, (char*) "  \"kernel_build_params\":\"%s\"", (void*) build_opts.str().c_str());
+    xopenme_add_var_s(2, (char*) "  \"kernel_build_options\":\"%s\"", (void*) build_opts.str().c_str());
 #endif
 
     try {
