@@ -1,0 +1,23 @@
+{
+ "remove_compiler_vars":["HOG1X1","HOG2X2","HOG4X4"],
+ "compiler_vars":{
+  "HOG2X2":""
+ },
+ "speed":"yes",
+
+ "cpu_freq":"max",
+ "gpu_freq":"max",
+
+ "cmd_key":"default",
+ "dataset_uoa":"3fe364dc4d218734",
+
+ "record":"yes",
+ "record_uoa":"demo-compile-run-hog-1",
+ "record_repo":"remote-ck",
+
+ "meta":{
+  "platform":"samsung crhomebook 2"
+ },
+
+ "tags":["my_experiment", "hog", "demo"]
+}
