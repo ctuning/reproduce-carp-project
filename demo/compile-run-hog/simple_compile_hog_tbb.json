@@ -1,0 +1,6 @@
+{
+ "remove_compiler_vars":["HOG1X1","HOG2X2","HOG4X4"],
+ "compiler_vars":{
+  "HOG2X2":""
+ }
+}
