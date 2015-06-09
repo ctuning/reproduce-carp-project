@@ -14,7 +14,7 @@ import json
 
 d={}
 
-print ('  (converting fine-grain timers from slambench to CK format ...)')
+print ('  (converting fine-grain timers from HOG to CK format ...)')
 
 # Preload tmp-ck-timer.json from OpenME if there
 exists=True
