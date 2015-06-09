@@ -1,14 +1,1 @@
-{
-  "build_compiler_vars": {
-    "BLOCK_SIZE": "64", 
-    "HOG1X1": "", 
-    "HOG_OPENCL_CL": "\\\"../hog.opencl.cl\\\"", 
-    "NO_PENCIL": "", 
-    "NUMBER_OF_LOCATIONS": "50", 
-    "RUN_ONLY_ONE_EXPERIMENT": "", 
-    "SELECT_CL_DEVICE_TYPE": "CL_DEVICE_TYPE_GPU", 
-    "WITH_TBB": "", 
-    "XOPENME": "1", 
-    "XOPENME_DUMP_IMAGES": ""
-  } 
-}
+{}
