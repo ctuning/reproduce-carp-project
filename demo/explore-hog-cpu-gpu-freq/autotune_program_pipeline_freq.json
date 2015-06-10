@@ -9,16 +9,16 @@
   ],
 
   "choices_selection": [
-    {"type":"loop", "start":200000, "stop":2000000, "step":200000},
-    {"type":"loop", "choice":[177,266,350,420,480,543,600], "default":177}
+    {"type":"random", "start":300000, "stop":1900000, "step":100000, "default":1900000},
+    {"type":"random", "choice":[100000000,177000000,266000000,350000000,420000000,480000000,543000000,600000000], "default":600000000}
   ],
 
   "seed":12345,
   "iterations":1000,
-  "repetitions":1,
+  "repetitions":3,
 
   "record":"yes",
-  "record_uoa":"autotune-demo-hog-cpu-gpu-freq-all",
+  "record_uoa":"autotune-demo-hog-cpu-gpu-freq-random",
 
   "features_keys_to_process":["##choices#*"],
 

@@ -1,12 +1,12 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-demo-hog-cpu-gpu-freq-all"],
+  "data_uoa_list":["demo-compile-run-hog-2-explore-freq"],
 
   "flat_keys_list":[
     "##choices#cpu_freq#min",
     "##choices#gpu_freq#min",
-    "##characteristics#run#execution_time_kernel_0#min"
+    "##characteristics#run#derived_cpu_time_div_by_gpu_with_mem_time#min"
   ],
 
   "plot_type":"mpl_3d_scatter",
@@ -18,9 +18,6 @@
   "axis_x_desc":"CPU frequency",
   "axis_y_desc":"GPU frequency",
   "axis_z_desc":"CPU execution time",
-
-  "xmin":0,
-  "xmax":2200000,
 
   "plot_grid":"no",
 

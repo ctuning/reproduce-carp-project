@@ -1,12 +1,12 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-demo-hog-cpu-gpu-all"],
+  "data_uoa_list":["autotune-demo-hog-cpu-gpu-freq-all"],
 
   "flat_keys_list":[
     "##choices#cpu_freq#min",
     "##choices#gpu_freq#min",
-    "##characteristics#run#dim_cpu#min"
+    "##characteristics#run#derived_cpu_time_div_by_gpu_with_mem_time#min"
   ],
 
   "ignore_point_if_empty_string":"yes",
