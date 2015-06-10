@@ -1,7 +1,7 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["demo-compile-run-hog-2-explore-freq"],
+  "data_uoa_list":["demo-compile-run-hog-tbb-2-explore-freq"],
 
   "flat_keys_list":[
     "##choices#cpu_freq#min",
