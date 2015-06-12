@@ -1,1 +1,1 @@
-ck plot experiment.graph: @plot_heat_map.json
+ck plot graph: @plot_heat_map.json

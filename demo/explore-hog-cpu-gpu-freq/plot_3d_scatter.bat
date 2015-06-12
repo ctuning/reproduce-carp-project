@@ -1,1 +1,1 @@
-ck plot experiment.graph: @plot_3d_scatter.json
+ck plot graph: @plot_3d_scatter.json
