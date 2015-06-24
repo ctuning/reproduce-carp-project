@@ -513,7 +513,8 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
 
                 const char* item_path=(item.path()).c_str();
 
-                std::cout << "image path: " << item_path << std::endl;
+//                std::cout << "image path: " << item_path << std::endl;
+                std::cout << "image path: " << item.path() << std::endl;
 
                 cv::Mat cpu_gray, orig;
 
