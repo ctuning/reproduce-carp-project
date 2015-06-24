@@ -1,12 +1,12 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-demo-hog-lws-random"],
+  "data_uoa_list":["autotune-demo-hog-1x1-block-size-loop"],
 
   "flat_keys_list":[
     "##choices#compiler_vars#BLOCK_SIZE#min",
-    "##characteristics#run#dim_gpu_only#center",
-    "##characteristics#run#dim_gpu_only#halfrange"
+    "##characteristics#run#dim_gpu_with_mem#center",
+    "##characteristics#run#dim_gpu_with_mem#halfrange"
   ],
 
   "ignore_point_if_empty_string":"yes",
@@ -17,8 +17,8 @@
 
   "title":"Powered by Collective Knowledge",
 
-  "axis_x_desc":"Binary size",
-  "axis_y_desc":"Execution time",
+  "axis_x_desc":"Block size",
+  "axis_y_desc":"gpu only execution time",
 
   "plot_grid":"yes",
 

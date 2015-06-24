@@ -2,15 +2,18 @@
   "characteristics": {}, 
   "choices": {
     "cmd_key": "default", 
-    "compile_only_once": "yes", 
     "compile_type": "dynamic", 
+    "compiler_vars": {
+      "HOG1X1": ""
+    }, 
+    "cpu_freq": "max", 
     "data_uoa": "realeyes-hog-opencl-tbb", 
     "dataset_uoa": "image-jpeg-carp-eso1113a", 
     "device_id": "", 
     "energy": "no", 
+    "gpu_freq": "max", 
     "host_os": "linux-32", 
     "module_uoa": "b0ac08fe1d3c2615", 
-    "no_state_check": "yes", 
     "target_os": "linux-32", 
     "target_os_bits": "32"
   }, 
@@ -2618,6 +2621,27 @@
     "##dataset_uoa": {
       "choices": [
         {
+          "data_uid": "1aaaa23c44e588f9", 
+          "data_uoa": "image-jpeg-0001", 
+          "ignore_case": "", 
+          "ignore_update": "", 
+          "module_uid": "8a7141c59cd335f5", 
+          "module_uoa": "dataset", 
+          "out": "", 
+          "path": "/home/fursin/fggwork/ck-repos/ctuning-datasets-min/dataset/image-jpeg-0001", 
+          "repo_uid": "4ffcc1307484d840", 
+          "repo_uoa": "ctuning-datasets-min", 
+          "search_by_name": "", 
+          "search_dict": {
+            "tags": [
+              "dataset", 
+              "image", 
+              "jpeg"
+            ]
+          }, 
+          "search_string": ""
+        }, 
+        {
           "data_uid": "44ca5ab7a268cf4d", 
           "data_uoa": "image-jpeg-carp-heic0619e-ngc6357", 
           "ignore_case": "", 
@@ -2880,27 +2904,6 @@
           "path": "/home/fursin/fggwork/ck-repos/reproduce-carp-project/dataset/image-jpeg-carp-7048000969-3190d06555-o", 
           "repo_uid": "7d60433aa9fd29fe", 
           "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "1aaaa23c44e588f9", 
-          "data_uoa": "image-jpeg-0001", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "/home/fursin/fggwork/ck-repos/ctuning-datasets-min/dataset/image-jpeg-0001", 
-          "repo_uid": "4ffcc1307484d840", 
-          "repo_uoa": "ctuning-datasets-min", 
           "search_by_name": "", 
           "search_dict": {
             "tags": [
@@ -4041,7 +4044,7 @@
   "ready": "yes", 
   "speed": "yes", 
   "state": {
-    "cur_dir": "/home/fursin/fggwork/ck-repos/reproduce-carp-project/demo/explore-hog-cpu-gpu-freq", 
+    "cur_dir": "/home/fursin/fggwork/ck-repos/reproduce-carp-project/demo/explore-hog-block-size", 
     "tmp_dir": "tmp"
   }
 }

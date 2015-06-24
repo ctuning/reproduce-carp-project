@@ -4,10 +4,12 @@
   "data_uoa_list":["autotune-demo-hog-lws-random"],
 
   "flat_keys_list":[
-    "##choices#compiler_vars#BLOCK_SIZE#min",
-    "##characteristics#run#dim_gpu_only#center",
-    "##characteristics#run#dim_gpu_only#halfrange"
+    "##characteristics#run#dim_cpu#center",
+    "##characteristics#run#dim_cpu#halfrange"
   ],
+
+  "add_x_loop":"yes",
+  "sort_index":0,
 
   "ignore_point_if_empty_string":"yes",
 

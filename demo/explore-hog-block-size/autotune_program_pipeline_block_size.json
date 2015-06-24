@@ -1,0 +1,26 @@
+{
+  "choices_order":[
+    [
+     "##compiler_vars#BLOCK_SIZE"
+    ]
+  ],
+
+  "choices_selection": [
+    {"type":"loop", "choice":[1,4,8,16,32,48,64,80,96,112,128], "default":1}
+  ],
+
+
+  "seed":12345,
+  "iterations":1000,
+  "repetitions":3,
+
+  "record":"yes",
+  "record_uoa":"autotune-demo-hog-1x1-block-size-loop",
+
+  "features_keys_to_process":["##choices#*"],
+
+  "record_params": {
+    "search_point_by_features":"yes"
+  }
+
+}
