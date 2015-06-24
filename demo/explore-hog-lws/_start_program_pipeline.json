@@ -1,0 +1,6 @@
+{
+ "pipeline_update":{
+  "cpu_freq":"max",
+  "gpu_freq":"max"
+ }
+}
