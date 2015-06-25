@@ -1,11 +1,11 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-demo-hog-lws-loop2"],
+  "data_uoa_list":["autotune-demo-hog-lws-random"],
 
   "flat_keys_list":[
-    "##characteristics#run#dim_gpu_with_mem#center",
-    "##characteristics#run#dim_gpu_with_mem#halfrange"
+    "##characteristics#run#dim_cpu#center",
+    "##characteristics#run#dim_cpu#halfrange"
   ],
 
   "add_x_loop":"yes",

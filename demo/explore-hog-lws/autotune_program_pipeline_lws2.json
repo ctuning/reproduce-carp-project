@@ -4,17 +4,13 @@
      "##compiler_vars#LWS_X"
     ],
     [
-     "##compiler_vars#LWS_Y"
-    ],
-    [
      "##compiler_vars#LWS_Z"
     ]
   ],
 
   "choices_selection": [
-    {"type":"loop", "choice":[4,8,12,16], "default":4},
-    {"type":"loop", "choice":[4,8,12,16], "default":4},
-    {"type":"loop", "choice":[4,8,12,16], "default":4}
+    {"type":"loop", "choice":[1,2,4,6,8,10,12,14,16], "default":1},
+    {"type":"loop", "choice":[64], "default":64}
   ],
 
 
@@ -23,7 +19,7 @@
   "repetitions":3,
 
   "record":"yes",
-  "record_uoa":"autotune-demo-hog-lws-loop",
+  "record_uoa":"autotune-demo-hog-lws-loop2",
 
   "features_keys_to_process":["##choices#*"],
 

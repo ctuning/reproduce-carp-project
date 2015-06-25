@@ -1,15 +1,13 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-demo-hog-lws-loop2"],
+  "data_uoa_list":["autotune-demo-hog-lws-random"],
 
   "flat_keys_list":[
-    "##characteristics#run#dim_gpu_with_mem#center",
-    "##characteristics#run#dim_gpu_with_mem#halfrange"
+    "##choices#compiler_vars#BLOCK_SIZE#min",
+    "##characteristics#run#dim_gpu_only#center",
+    "##characteristics#run#dim_gpu_only#halfrange"
   ],
-
-  "add_x_loop":"yes",
-  "sort_index":0,
 
   "ignore_point_if_empty_string":"yes",
 

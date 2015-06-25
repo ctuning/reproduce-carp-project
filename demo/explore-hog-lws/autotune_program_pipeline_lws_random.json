@@ -12,9 +12,9 @@
   ],
 
   "choices_selection": [
-    {"type":"loop", "choice":[4,8,12,16], "default":4},
-    {"type":"loop", "choice":[4,8,12,16], "default":4},
-    {"type":"loop", "choice":[4,8,12,16], "default":4}
+    {"type":"random-with-next", "choice":[4,8,12,16], "default":4},
+    {"type":"random-with-next", "choice":[4,8,12,16], "default":1},
+    {"type":"random-with-next", "choice":[4,8,16,24,32,48,64,96,128], "default":64},
   ],
 
 
@@ -23,7 +23,7 @@
   "repetitions":3,
 
   "record":"yes",
-  "record_uoa":"autotune-demo-hog-lws-loop",
+  "record_uoa":"autotune-demo-hog-lws-random",
 
   "features_keys_to_process":["##choices#*"],
 
