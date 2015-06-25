@@ -685,8 +685,12 @@ int main(int argc, char* argv[])
 
 	auto pool = carp::get_pool(argc, argv);
 
+        long ct_repeat_max=1;
+        if (getenv("CT_REPEAT_MAIN")!=NULL) ct_repeat_max=atol(getenv("CT_REPEAT_MAIN"));
+
+
 #ifdef RUN_ONLY_ONE_EXPERIMENT
-        time_hog( pool, {BLOCK_SIZE}, NUMBER_OF_LOCATIONS, 1 );
+        time_hog( pool, {BLOCK_SIZE}, NUMBER_OF_LOCATIONS, ct_repeat_max );
 #else
         time_hog( pool, {16, 32, 64, 128, 192}, NUMBER_OF_LOCATIONS, 6 );
 #endif
