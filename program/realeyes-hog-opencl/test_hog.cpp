@@ -441,9 +441,22 @@ cv::Mat_<float> nel::HOGDescriptorOCL::compute( const cv::Mat_<uint8_t> &image
 
 
 #ifdef XOPENME
-    xopenme_add_var_i(3, (char*) "  \"default_lws_x\":%u", DEFAULT_LWS_X);
-    xopenme_add_var_i(4, (char*) "  \"default_lws_y\":%u", DEFAULT_LWS_Y);
-    xopenme_add_var_i(5, (char*) "  \"default_lws_z\":%u", DEFAULT_LWS_Z);
+    xopenme_add_var_i( 3, (char*) "  \"default_lws_x\":%u", DEFAULT_LWS_X);
+    xopenme_add_var_i( 4, (char*) "  \"default_lws_y\":%u", DEFAULT_LWS_Y);
+    xopenme_add_var_i( 5, (char*) "  \"default_lws_z\":%u", DEFAULT_LWS_Z);
+
+    xopenme_add_var_i( 6, (char*) "  \"lws_x\":%u", LWS_X);
+    xopenme_add_var_i( 7, (char*) "  \"lws_y\":%u", LWS_Y);
+    xopenme_add_var_i( 8, (char*) "  \"lws_z\":%u", LWS_Z);
+
+    xopenme_add_var_i( 9, (char*) "  \"number_of_cells\":%u", NUMBER_OF_CELLS);
+    xopenme_add_var_i(10, (char*) "  \"number_of_bins\":%u", NUMBER_OF_BINS);
+    xopenme_add_var_i(11, (char*) "  \"gaussian_weights\":%u", GAUSSIAN_WEIGHTS);
+    xopenme_add_var_i(12, (char*) "  \"spartial_weights\":%u", SPARTIAL_WEIGHTS);
+    xopenme_add_var_i(13, (char*) "  \"signed_hog\":%u", SIGNED_HOG);
+
+    xopenme_add_var_i(14, (char*) "  \"block_size\":%u", BLOCK_SIZE);
+    xopenme_add_var_i(15, (char*) "  \"number_of_locations\":%u", NUMBER_OF_LOCATIONS);
 #endif
 
     {
@@ -672,7 +685,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
 int main(int argc, char* argv[])
 {
 #ifdef XOPENME
-        xopenme_init(1,8);
+        xopenme_init(1,16);
         xopenme_clock_start(0);
 #endif
 
