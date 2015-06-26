@@ -12,18 +12,27 @@
   ],
 
   "choices_selection": [
-    {"type":"loop", "choice":[4,8,12,16], "default":4},
-    {"type":"loop", "choice":[4,8,12,16], "default":4},
-    {"type":"loop", "choice":[4,8,12,16], "default":4}
+    {"type":"loop", "choice":[2,4,8,16,24,32,48,64], "default":2},
+    {"type":"loop", "choice":[1,2,4,8], "default":1},
+    {"type":"loop", "choice":[2,4,8,16,32,48,64], "default":4}
   ],
 
+ "pipeline_update":{
+  "cpu_freq":"max",
+  "gpu_freq":"max",
+  "compiler_vars": {
+    "HOG1X1":"",
+    "BLOCK_SIZE":16
+  },
+  "skip_calibration":"yes"
+ },
 
   "seed":12345,
   "iterations":1000,
   "repetitions":3,
 
   "record":"yes",
-  "record_uoa":"autotune-demo-hog-lws-loop",
+  "record_uoa":"autotune-demo-hog-lws-1x1-bs16-llvm-loop",
 
   "features_keys_to_process":["##choices#*"],
 

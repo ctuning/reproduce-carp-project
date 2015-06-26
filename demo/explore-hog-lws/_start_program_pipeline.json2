@@ -1,0 +1,11 @@
+{
+ "pipeline_update":{
+  "cpu_freq":"max",
+  "gpu_freq":"max",
+  "compiler_vars":{
+    "LWS_X":8,
+    "LWS_Y":1,
+    "LWS_Z":32
+  }
+ }
+}

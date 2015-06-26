@@ -9,6 +9,7 @@
   ],
 
   "add_x_loop":"yes",
+  "sort_index":0,
 
   "ignore_point_if_empty_string":"yes",
 

@@ -2,10 +2,13 @@
  "pipeline_update":{
   "cpu_freq":"max",
   "gpu_freq":"max",
-  "compiler_vars":{
-    "LWS_X":8,
+  "compiler_vars": {
+    "HOG2X2":"",
+    "BLOCK_SIZE":16,
+    "LWS_X":4,
     "LWS_Y":1,
-    "LWS_Z":32
-  }
+    "LWS_Z":4
+ },
+  "skip_calibration":"yes"
  }
 }
