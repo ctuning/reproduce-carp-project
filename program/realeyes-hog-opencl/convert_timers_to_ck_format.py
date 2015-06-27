@@ -77,11 +77,24 @@ d['dim_cpu']=cpu
 d['dim_gpu_only']=gpu_only
 d['dim_gpu_with_mem']=gpu_with_mem
 
+
 if gpu_only!=0.0:
    d['derived_cpu_time_div_by_gpu_only_time']=cpu/gpu_only
    d['derived_gpu_with_mem_time_div_by_gpu_only_time']=gpu_with_mem/gpu_only
 if gpu_with_mem!=0.0:
    d['derived_cpu_time_div_by_gpu_with_mem_time']=cpu/gpu_with_mem
+
+
+if ((gpu_with_mem!=0.0) and ((cpu/gpu_with_mem)>1.07)):
+   d['derived_gpu_copy_is_much_better_cpu']=True
+else:
+   d['derived_gpu_copy_is_much_better_cpu']=False
+
+if ((gpu_only!=0.0) and ((cpu/gpu_only)>1.07)):
+   d['derived_gpu_only_is_much_better_cpu']=True
+else:
+   d['derived_gpu_only_is_much_better_cpu']=False
+
 
 # Write CK json
 f=open('tmp-ck-timer.json','wt')
