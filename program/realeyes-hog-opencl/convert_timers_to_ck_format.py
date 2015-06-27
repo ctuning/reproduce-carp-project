@@ -86,9 +86,9 @@ if gpu_with_mem!=0.0:
 
 
 if ((gpu_with_mem!=0.0) and ((cpu/gpu_with_mem)>1.07)):
-   d['derived_gpu_copy_is_much_better_cpu']=True
+   d['derived_gpu_with_mem_is_much_better_cpu']=True
 else:
-   d['derived_gpu_copy_is_much_better_cpu']=False
+   d['derived_gpu_with_mem_is_much_better_cpu']=False
 
 if ((gpu_only!=0.0) and ((cpu/gpu_only)>1.07)):
    d['derived_gpu_only_is_much_better_cpu']=True
