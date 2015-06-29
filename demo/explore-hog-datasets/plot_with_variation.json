@@ -1,23 +1,24 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-demo-hog-cpu-gpu-all-performance"],
+  "data_uoa_list":["explore-hog-4x4-datasets"],
 
   "flat_keys_list":[
-    "##choices#cpu_freq#min",
-    "##characteristics#run#dim_cpu#min"
+    "##features#dataset#total_size#min",
+    "##characteristics#run#dim_gpu_with_mem#center",
+    "##characteristics#run#dim_gpu_with_mem#halfrange"
   ],
 
   "ignore_point_if_empty_string":"yes",
 
   "plot_type":"mpl_2d_scatter",
   "display_x_error_bar":"no",
-  "display_y_error_bar":"no",
+  "display_y_error_bar":"yes",
 
   "title":"Powered by Collective Knowledge",
 
-  "axis_x_desc":"Binary size",
-  "axis_y_desc":"Execution time",
+  "axis_x_desc":"Total image size",
+  "axis_y_desc":"GPU with mem execution time",
 
   "plot_grid":"yes",
 

@@ -32,7 +32,7 @@
   "repetitions":3,
 
   "record":"yes",
-  "record_uoa":"autotune-demo-hog-lws-2x2-bs64-icc-loop",
+  "record_uoa":"autotune-demo-hog-lws-4x4-bs64-gcc-loop",
 
   "features_keys_to_process":["##choices#*"],
 

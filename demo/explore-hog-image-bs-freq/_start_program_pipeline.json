@@ -1,9 +1,10 @@
 {
  "pipeline_update":{
-  "cpu_freq":"max",
-  "gpu_freq":"max",
-  "compiler_vars":{
-    "BLOCK_SIZE":8
-  }
+   "cpu_freq":"max",
+   "gpu_freq":"max",
+   "compiler_vars":{
+     "BLOCK_SIZE":8
+   },
+  "skip_calibration":"yes"
  }
 }

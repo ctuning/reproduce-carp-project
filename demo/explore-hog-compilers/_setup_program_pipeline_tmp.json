@@ -12,34 +12,86 @@
     "device_id": "", 
     "energy": "no", 
     "gpu_freq": "max", 
-    "host_os": "windows-64", 
+    "host_os": "linux-32", 
     "module_uoa": "b0ac08fe1d3c2615", 
-    "target_os": "windows-64", 
-    "target_os_bits": "64"
+    "target_os": "linux-32", 
+    "target_os_bits": "32"
   }, 
   "choices_desc": {
     "##compiler_env_uoa": {
       "choices": [
-        "289842d618a4e54a", 
-        "924e05b4e11f9dcc", 
-        "94e0f4653b0fe9fa", 
-        "ac64c238d32a89b3", 
-        "b90ce949dca060c0", 
-        "ba51adfd437ab8de", 
-        "d1cad28a354152b3"
+        "a1b99414d88b48b4", 
+        "b660ede86248c8bc"
       ], 
       "has_choice": "yes", 
       "sort": 2000, 
       "type": "uoa"
     }, 
+    "##compiler_flags#aa_eval": {
+      "can_omit": "yes", 
+      "choice": [
+        "-aa-eval", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -aa-eval", 
+      "sort": 10060, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#adce": {
+      "can_omit": "yes", 
+      "choice": [
+        "-adce", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -adce", 
+      "sort": 10070, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#always_inline": {
+      "can_omit": "yes", 
+      "choice": [
+        "-always-inline", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -always-inline", 
+      "sort": 10080, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#argpromotion": {
+      "can_omit": "yes", 
+      "choice": [
+        "-argpromotion", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -argpromotion", 
+      "sort": 10090, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
     "##compiler_flags#base_opt": {
       "choice": [
         "-O3", 
-        "-fast", 
-        "-O0", 
         "-O1", 
-        "-O2", 
-        "-Os"
+        "-O2"
       ], 
       "default": "", 
       "desc": "base compiler flag", 
@@ -51,74 +103,1373 @@
       ], 
       "type": "text"
     }, 
-    "##compiler_flags#global_loop_unrolling": {
+    "##compiler_flags#basicaa": {
       "can_omit": "yes", 
+      "choice": [
+        "-basicaa", 
+        ""
+      ], 
       "default": "", 
-      "desc": "compiler flag: -Qunroll", 
-      "explore_prefix": "-Qunroll", 
-      "explore_start": 1, 
-      "explore_step": 1, 
-      "explore_stop": 32, 
-      "sort": 10100, 
+      "desc": "compiler flag: -basicaa", 
+      "sort": 10110, 
       "tags": [
         "basic", 
         "optimization"
       ], 
-      "type": "integer"
+      "type": "text"
     }, 
-    "##compiler_flags#openmp": {
+    "##compiler_flags#basiccg": {
       "can_omit": "yes", 
       "choice": [
-        "-openmp", 
+        "-basiccg", 
         ""
       ], 
       "default": "", 
-      "desc": "compiler flag: openmp", 
-      "sort": 10001, 
+      "desc": "compiler flag: -basiccg", 
+      "sort": 10120, 
       "tags": [
         "basic", 
-        "openmp", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#bb_vectorize": {
+      "can_omit": "yes", 
+      "choice": [
+        "-bb-vectorize", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -bb-vectorize", 
+      "sort": 10130, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#block_freq": {
+      "can_omit": "yes", 
+      "choice": [
+        "-block-freq", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -block-freq", 
+      "sort": 10140, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#block_placement": {
+      "can_omit": "yes", 
+      "choice": [
+        "-block-placement", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -block-placement", 
+      "sort": 10150, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#branch_prob": {
+      "can_omit": "yes", 
+      "choice": [
+        "-branch-prob", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -branch-prob", 
+      "sort": 10160, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#break_crit_edges": {
+      "can_omit": "yes", 
+      "choice": [
+        "-break-crit-edges", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -break-crit-edges", 
+      "sort": 10170, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#codegenprepare": {
+      "can_omit": "yes", 
+      "choice": [
+        "-codegenprepare", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -codegenprepare", 
+      "sort": 10180, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#constmerge": {
+      "can_omit": "yes", 
+      "choice": [
+        "-constmerge", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -constmerge", 
+      "sort": 10190, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#constprop": {
+      "can_omit": "yes", 
+      "choice": [
+        "-constprop", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -constprop", 
+      "sort": 10200, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#correlated_propagation": {
+      "can_omit": "yes", 
+      "choice": [
+        "-correlated-propagation", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -correlated-propagation", 
+      "sort": 10210, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#count_aa": {
+      "can_omit": "yes", 
+      "choice": [
+        "-count-aa", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -count-aa", 
+      "sort": 10220, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#dce": {
+      "can_omit": "yes", 
+      "choice": [
+        "-dce", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -dce", 
+      "sort": 10230, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#deadargelim": {
+      "can_omit": "yes", 
+      "choice": [
+        "-deadargelim", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -deadargelim", 
+      "sort": 10240, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#die": {
+      "can_omit": "yes", 
+      "choice": [
+        "-die", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -die", 
+      "sort": 10250, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#disable_inlining": {
+      "can_omit": "yes", 
+      "choice": [
+        "-disable-inlining", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -disable-inlining", 
+      "sort": 10010, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#disable_simplify_libcalls": {
+      "can_omit": "yes", 
+      "choice": [
+        "-disable-simplify-libcalls", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -disable-simplify-libcalls", 
+      "sort": 10020, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#domfrontier": {
+      "can_omit": "yes", 
+      "choice": [
+        "-domfrontier", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -domfrontier", 
+      "sort": 10260, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#domtree": {
+      "can_omit": "yes", 
+      "choice": [
+        "-domtree", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -domtree", 
+      "sort": 10270, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#dse": {
+      "can_omit": "yes", 
+      "choice": [
+        "-dse", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -dse", 
+      "sort": 10280, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#early_cse": {
+      "can_omit": "yes", 
+      "choice": [
+        "-early-cse", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -early-cse", 
+      "sort": 10290, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#functionattrs": {
+      "can_omit": "yes", 
+      "choice": [
+        "-functionattrs", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -functionattrs", 
+      "sort": 10300, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#funit_at_a_time": {
+      "can_omit": "yes", 
+      "choice": [
+        "-funit-at-a-time", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -funit-at-a-time", 
+      "sort": 10030, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#globaldce": {
+      "can_omit": "yes", 
+      "choice": [
+        "-globaldce", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -globaldce", 
+      "sort": 10310, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#globalopt": {
+      "can_omit": "yes", 
+      "choice": [
+        "-globalopt", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -globalopt", 
+      "sort": 10320, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#globalsmodref_aa": {
+      "can_omit": "yes", 
+      "choice": [
+        "-globalsmodref-aa", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -globalsmodref-aa", 
+      "sort": 10330, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#gvn": {
+      "can_omit": "yes", 
+      "choice": [
+        "-gvn", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -gvn", 
+      "sort": 10340, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#indvars": {
+      "can_omit": "yes", 
+      "choice": [
+        "-indvars", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -indvars", 
+      "sort": 10350, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#inline": {
+      "can_omit": "yes", 
+      "choice": [
+        "-inline", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -inline", 
+      "sort": 10360, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#instcombine": {
+      "can_omit": "yes", 
+      "choice": [
+        "-instcombine", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -instcombine", 
+      "sort": 10370, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#instcount": {
+      "can_omit": "yes", 
+      "choice": [
+        "-instcount", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -instcount", 
+      "sort": 10380, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#instnamer": {
+      "can_omit": "yes", 
+      "choice": [
+        "-instnamer", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -instnamer", 
+      "sort": 10390, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#instsimplify": {
+      "can_omit": "yes", 
+      "choice": [
+        "-instsimplify", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -instsimplify", 
+      "sort": 10400, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#internalize": {
+      "can_omit": "yes", 
+      "choice": [
+        "-internalize", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -internalize", 
+      "sort": 10410, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#intervals": {
+      "can_omit": "yes", 
+      "choice": [
+        "-intervals", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -intervals", 
+      "sort": 10420, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#ipconstprop": {
+      "can_omit": "yes", 
+      "choice": [
+        "-ipconstprop", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -ipconstprop", 
+      "sort": 10430, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#ipsccp": {
+      "can_omit": "yes", 
+      "choice": [
+        "-ipsccp", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -ipsccp", 
+      "sort": 10440, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#iv_users": {
+      "can_omit": "yes", 
+      "choice": [
+        "-iv-users", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -iv-users", 
+      "sort": 10450, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#lazy_value_info": {
+      "can_omit": "yes", 
+      "choice": [
+        "-lazy-value-info", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -lazy-value-info", 
+      "sort": 10460, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#lcssa": {
+      "can_omit": "yes", 
+      "choice": [
+        "-lcssa", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -lcssa", 
+      "sort": 10470, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#lda": {
+      "can_omit": "yes", 
+      "choice": [
+        "-lda", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -lda", 
+      "sort": 10480, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#libcall_aa": {
+      "can_omit": "yes", 
+      "choice": [
+        "-libcall-aa", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -libcall-aa", 
+      "sort": 10490, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#licm": {
+      "can_omit": "yes", 
+      "choice": [
+        "-licm", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -licm", 
+      "sort": 10500, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#lint": {
+      "can_omit": "yes", 
+      "choice": [
+        "-lint", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -lint", 
+      "sort": 10510, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_deletion": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-deletion", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-deletion", 
+      "sort": 10520, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_extract": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-extract", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-extract", 
+      "sort": 10530, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_extract_single": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-extract-single", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-extract-single", 
+      "sort": 10540, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_idiom": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-idiom", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-idiom", 
+      "sort": 10550, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_instsimplify": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-instsimplify", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-instsimplify", 
+      "sort": 10560, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_reduce": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-reduce", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-reduce", 
+      "sort": 10570, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_rotate": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-rotate", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-rotate", 
+      "sort": 10580, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_simplify": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-simplify", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-simplify", 
+      "sort": 10590, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_unroll": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-unroll", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-unroll", 
+      "sort": 10600, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loop_unswitch": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loop-unswitch", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loop-unswitch", 
+      "sort": 10610, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#lower_expect": {
+      "can_omit": "yes", 
+      "choice": [
+        "-lower-expect", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -lower-expect", 
+      "sort": 10620, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#loweratomic": {
+      "can_omit": "yes", 
+      "choice": [
+        "-loweratomic", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -loweratomic", 
+      "sort": 10630, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#lowerinvoke": {
+      "can_omit": "yes", 
+      "choice": [
+        "-lowerinvoke", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -lowerinvoke", 
+      "sort": 10640, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#lowerswitch": {
+      "can_omit": "yes", 
+      "choice": [
+        "-lowerswitch", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -lowerswitch", 
+      "sort": 10650, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#mem2reg": {
+      "can_omit": "yes", 
+      "choice": [
+        "-mem2reg", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -mem2reg", 
+      "sort": 10660, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#memcpyopt": {
+      "can_omit": "yes", 
+      "choice": [
+        "-memcpyopt", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -memcpyopt", 
+      "sort": 10670, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#memdep": {
+      "can_omit": "yes", 
+      "choice": [
+        "-memdep", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -memdep", 
+      "sort": 10680, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#mergefunc": {
+      "can_omit": "yes", 
+      "choice": [
+        "-mergefunc", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -mergefunc", 
+      "sort": 10690, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#mergereturn": {
+      "can_omit": "yes", 
+      "choice": [
+        "-mergereturn", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -mergereturn", 
+      "sort": 10700, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#module_debuginfo": {
+      "can_omit": "yes", 
+      "choice": [
+        "-module-debuginfo", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -module-debuginfo", 
+      "sort": 10710, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#partial_inliner": {
+      "can_omit": "yes", 
+      "choice": [
+        "-partial-inliner", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -partial-inliner", 
+      "sort": 10720, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#postdomtree": {
+      "can_omit": "yes", 
+      "choice": [
+        "-postdomtree", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -postdomtree", 
+      "sort": 10730, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#preverify": {
+      "can_omit": "yes", 
+      "choice": [
+        "-preverify", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -preverify", 
+      "sort": 10740, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#prune_eh": {
+      "can_omit": "yes", 
+      "choice": [
+        "-prune-eh", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -prune-eh", 
+      "sort": 10750, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#reassociate": {
+      "can_omit": "yes", 
+      "choice": [
+        "-reassociate", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -reassociate", 
+      "sort": 10760, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#reg2mem": {
+      "can_omit": "yes", 
+      "choice": [
+        "-reg2mem", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -reg2mem", 
+      "sort": 10770, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#regions": {
+      "can_omit": "yes", 
+      "choice": [
+        "-regions", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -regions", 
+      "sort": 10780, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#scalar_evolution": {
+      "can_omit": "yes", 
+      "choice": [
+        "-scalar-evolution", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -scalar-evolution", 
+      "sort": 10790, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#scalarrepl": {
+      "can_omit": "yes", 
+      "choice": [
+        "-scalarrepl", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -scalarrepl", 
+      "sort": 10800, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#scalarrepl_ssa": {
+      "can_omit": "yes", 
+      "choice": [
+        "-scalarrepl-ssa", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -scalarrepl-ssa", 
+      "sort": 10810, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#sccp": {
+      "can_omit": "yes", 
+      "choice": [
+        "-sccp", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -sccp", 
+      "sort": 10820, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#scev_aa": {
+      "can_omit": "yes", 
+      "choice": [
+        "-scev-aa", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -scev-aa", 
+      "sort": 10830, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#simplify_libcalls": {
+      "can_omit": "yes", 
+      "choice": [
+        "-simplify-libcalls", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -simplify-libcalls", 
+      "sort": 10840, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#simplifycfg": {
+      "can_omit": "yes", 
+      "choice": [
+        "-simplifycfg", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -simplifycfg", 
+      "sort": 10850, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#sink": {
+      "can_omit": "yes", 
+      "choice": [
+        "-sink", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -sink", 
+      "sort": 10860, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#std_compile_opts": {
+      "can_omit": "yes", 
+      "choice": [
+        "-std-compile-opts", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -std-compile-opts", 
+      "sort": 10040, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#std_link_opts": {
+      "can_omit": "yes", 
+      "choice": [
+        "-std-link-opts", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -std-link-opts", 
+      "sort": 10050, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#strip": {
+      "can_omit": "yes", 
+      "choice": [
+        "-strip", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -strip", 
+      "sort": 10870, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#strip_dead_debug_info": {
+      "can_omit": "yes", 
+      "choice": [
+        "-strip-dead-debug-info", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -strip-dead-debug-info", 
+      "sort": 10880, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#strip_dead_prototypes": {
+      "can_omit": "yes", 
+      "choice": [
+        "-strip-dead-prototypes", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -strip-dead-prototypes", 
+      "sort": 10890, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#strip_debug_declare": {
+      "can_omit": "yes", 
+      "choice": [
+        "-strip-debug-declare", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -strip-debug-declare", 
+      "sort": 10900, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#strip_nondebug": {
+      "can_omit": "yes", 
+      "choice": [
+        "-strip-nondebug", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -strip-nondebug", 
+      "sort": 10910, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#tailcallelim": {
+      "can_omit": "yes", 
+      "choice": [
+        "-tailcallelim", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -tailcallelim", 
+      "sort": 10920, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#targetlibinfo": {
+      "can_omit": "yes", 
+      "choice": [
+        "-targetlibinfo", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -targetlibinfo", 
+      "sort": 10940, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#tbaa": {
+      "can_omit": "yes", 
+      "choice": [
+        "-tbaa", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -tbaa", 
+      "sort": 10950, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#vectorize": {
+      "can_omit": "yes", 
+      "choice": [
+        "-vectorize", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: -vectorize", 
+      "sort": 10960, 
+      "tags": [
+        "basic", 
         "optimization"
       ], 
       "type": "text"
     }, 
     "##dataset_uoa": {
       "choices": [
-        "f994f708cc102713", 
         "1aaaa23c44e588f9", 
-        "21500da03e4ccfa3", 
-        "4070a925b6077f3c", 
-        "3821f8b25917cab0", 
-        "ff6a34d62a55c85b", 
-        "b8a5e9fe4d94a468", 
-        "ed469fdd4a37bd88", 
-        "51694ca9764d88b7", 
-        "3fe364dc4d218734", 
-        "ce947b2b6233bdfa", 
-        "1a169bc4b8baaddc", 
         "44ca5ab7a268cf4d", 
-        "4e64ecddc481c8dd", 
+        "ce947b2b6233bdfa", 
+        "ff6a34d62a55c85b", 
+        "1a169bc4b8baaddc", 
         "bf5d476534f04885", 
+        "3821f8b25917cab0", 
+        "51694ca9764d88b7", 
+        "4e64ecddc481c8dd", 
+        "ed469fdd4a37bd88", 
         "b41491866f4f4ce8", 
-        "481066c6404d96b7", 
-        "38cfe7c67cec0612", 
-        "c59c2aab21a48a29", 
-        "9ddbbe02281b6d13", 
-        "65d42f68279f6b63", 
-        "24b4e8d89ff3cc85", 
-        "96fdd91703544877", 
-        "c1242929d23e4899", 
-        "bf8554677900d79e", 
-        "2b8f9d53789948f6", 
-        "ab3453cad8a007bc", 
-        "175c91c2e97845a5", 
-        "8df77b462ea8b0a3", 
-        "bd7b4b0a8ff44d45", 
-        "5458e41669da5482", 
-        "4dfb81be6aa11ece", 
-        "3da4b4444db6588f", 
-        "406b4c40b3854b42", 
-        "eb0c3b428c284c33"
+        "3fe364dc4d218734", 
+        "4070a925b6077f3c", 
+        "b8a5e9fe4d94a468", 
+        "21500da03e4ccfa3"
       ], 
       "has_choice": "yes", 
       "sort": 1200, 
@@ -140,259 +1491,157 @@
   }, 
   "dependencies": {
     "compiler": {
-      "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\289842d618a4e54a\\env.bat\n", 
-      "build_dir_name": "icc", 
+      "bat": ". /home/fursin/fggwork/ck-repos/local/env/a1b99414d88b48b4/env.sh\n", 
+      "build_dir_name": "llvm", 
       "choices": [
-        "289842d618a4e54a", 
-        "924e05b4e11f9dcc", 
-        "94e0f4653b0fe9fa", 
-        "ac64c238d32a89b3", 
-        "b90ce949dca060c0", 
-        "ba51adfd437ab8de", 
-        "d1cad28a354152b3"
+        "a1b99414d88b48b4", 
+        "b660ede86248c8bc"
       ], 
       "cus": {
-        "build-dir-name": "icc", 
-        "build_dir_name": "icc", 
-        "env_prefix": "CK_ENV_COMPILER_ICC", 
-        "extra_dir": "", 
+        "build_dir_name": "llvm", 
+        "can_strip_dynamic_lib": "yes", 
+        "env_prefix": "CK_ENV_COMPILER_LLVM", 
         "languages": [
           "C", 
-          "CPP", 
-          "F77", 
-          "F90", 
-          "F95"
+          "CPP"
         ], 
-        "path_install": "C:\\Program Files (x86)\\Intel\\Composer XE 2015", 
-        "retarget": "", 
-        "skip_add_to_bin": "yes", 
-        "skip_add_to_ld_path": "yes", 
-        "skip_add_to_path": "yes", 
-        "tool_prefix": "", 
-        "version": "2015", 
-        "version_int": 2015
+        "path_bin": "/home/fursin/fggwork/work/clang+llvm-3.6.0-armv7a-linux-gnueabihf/bin", 
+        "path_install": "/home/fursin/fggwork/work/clang+llvm-3.6.0-armv7a-linux-gnueabihf", 
+        "path_lib": "/home/fursin/fggwork/work/clang+llvm-3.6.0-armv7a-linux-gnueabihf/lib", 
+        "skip_add_to_ld_path": "no", 
+        "version": "3.6.0", 
+        "version_int": 30600
       }, 
       "dict": {
         "customize": {
-          "build-dir-name": "icc", 
-          "build_dir_name": "icc", 
-          "env_prefix": "CK_ENV_COMPILER_ICC", 
-          "extra_dir": "", 
+          "build_dir_name": "llvm", 
+          "can_strip_dynamic_lib": "yes", 
+          "env_prefix": "CK_ENV_COMPILER_LLVM", 
           "languages": [
             "C", 
-            "CPP", 
-            "F77", 
-            "F90", 
-            "F95"
+            "CPP"
           ], 
-          "path_install": "C:\\Program Files (x86)\\Intel\\Composer XE 2015", 
-          "retarget": "", 
-          "skip_add_to_bin": "yes", 
-          "skip_add_to_ld_path": "yes", 
-          "skip_add_to_path": "yes", 
-          "tool_prefix": "", 
-          "version": "2015", 
-          "version_int": 2015
+          "path_bin": "/home/fursin/fggwork/work/clang+llvm-3.6.0-armv7a-linux-gnueabihf/bin", 
+          "path_install": "/home/fursin/fggwork/work/clang+llvm-3.6.0-armv7a-linux-gnueabihf", 
+          "path_lib": "/home/fursin/fggwork/work/clang+llvm-3.6.0-armv7a-linux-gnueabihf/lib", 
+          "skip_add_to_ld_path": "no", 
+          "version": "3.6.0", 
+          "version_int": 30600
         }, 
-        "deps": {
-          "compiler_mcl": {
-            "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\924e05b4e11f9dcc\\env.bat\n", 
-            "build_dir_name": "mcl", 
-            "dict": {
-              "customize": {
-                "add_win_sdk_path": "yes", 
-                "build-dir-name": "mcl", 
-                "build_dir_name": "mcl", 
-                "env_prefix": "CK_ENV_COMPILER_MVSC", 
-                "extra_dir": "", 
-                "input_path_example": "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC", 
-                "languages": [
-                  "C", 
-                  "CPP"
-                ], 
-                "path_install": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC", 
-                "retarget": "", 
-                "skip_add_to_bin": "yes", 
-                "skip_add_to_ld_path": "yes", 
-                "skip_add_to_path": "yes", 
-                "tool_prefix": "", 
-                "version": "18.00", 
-                "version_int": 1800
-              }, 
-              "deps": {}, 
-              "env": {
-                "CK_AR": "lib", 
-                "CK_ASM_EXT": ".asm", 
-                "CK_CC": "cl", 
-                "CK_COMPILER_FLAGS_OBLIGATORY": "/DWINDOWS /GS-", 
-                "CK_COMPILER_FLAG_CPP11": "/Qstd=c++11", 
-                "CK_COMPILER_FLAG_OPENMP": "/openmp", 
-                "CK_COMPILER_FLAG_PTHREAD_LIB": "/pthread", 
-                "CK_COMPILER_FLAG_STD90": "/Qstd=c90", 
-                "CK_COMPILER_FLAG_STD99": "/Qstd=c99", 
-                "CK_CXX": "cl", 
-                "CK_DLL_EXT": ".dll", 
-                "CK_EXE_EXT": ".exe", 
-                "CK_FLAGS_CREATE_ASM": "/Fa /c", 
-                "CK_FLAGS_CREATE_OBJ": "/c", 
-                "CK_FLAGS_DLL": "/MT /DWin /LD", 
-                "CK_FLAGS_DLL_EXTRA": "/link /dll", 
-                "CK_FLAGS_DYNAMIC_BIN": "/MD", 
-                "CK_FLAGS_OUTPUT": "/Fe", 
-                "CK_FLAGS_STATIC_BIN": "/MT", 
-                "CK_FLAGS_STATIC_LIB": "/MD", 
-                "CK_FLAG_PREFIX_INCLUDE": "/I", 
-                "CK_FLAG_PREFIX_VAR": "/D", 
-                "CK_LB": "lib", 
-                "CK_LB_OUTPUT": "/OUT:", 
-                "CK_LD_DYNAMIC_FLAGS": "/link /NODEFAULTLIB:LIBCMT", 
-                "CK_LD_FLAGS_EXTRA": "", 
-                "CK_LIB_EXT": ".lib", 
-                "CK_MAKE": "nmake", 
-                "CK_OBJDUMP": "dumpbin /disasm", 
-                "CK_OBJ_EXT": ".obj"
-              }, 
-              "env_script": "env.bat", 
-              "setup": {
-                "host_os_uoa": "7a95e0754c37610a", 
-                "target_os_bits": "64", 
-                "target_os_uoa": "7a95e0754c37610a", 
-                "version": "18.00"
-              }, 
-              "soft_uoa": "a4c8d6c8e946c49f", 
-              "tags": [
-                "64bits", 
-                "compiler", 
-                "host-os-windows-64", 
-                "lang-c", 
-                "lang-cpp", 
-                "mcl", 
-                "target-os-windows-64", 
-                "v18", 
-                "v18.00"
-              ]
-            }, 
-            "local": "yes", 
-            "num_entries": 1, 
-            "tags": "compiler,mcl,v18.00", 
-            "uoa": "924e05b4e11f9dcc", 
-            "ver": "18.00"
-          }
-        }, 
+        "deps": {}, 
         "env": {
-          "CK_AR": "lib", 
-          "CK_ASM_EXT": ".asm", 
-          "CK_CC": "icl", 
-          "CK_COMPILER_FLAGS_OBLIGATORY": "/DWINDOWS /GS-", 
-          "CK_COMPILER_FLAG_CPP11": "/Qstd=c++11", 
-          "CK_COMPILER_FLAG_OPENMP": "/openmp", 
-          "CK_COMPILER_FLAG_PTHREAD_LIB": "/pthread", 
-          "CK_COMPILER_FLAG_STD90": "/Qstd=c90", 
-          "CK_COMPILER_FLAG_STD99": "/Qstd=c99", 
-          "CK_CSTD99": "/Qstd=c99", 
-          "CK_CXX": "icl", 
-          "CK_DLL_EXT": ".dll", 
-          "CK_EXE_EXT": ".exe", 
-          "CK_EXTRA_LIB_DL": "", 
-          "CK_EXTRA_LIB_M": "", 
-          "CK_F90": "ifort /fpp", 
-          "CK_F95": "ifort /fpp", 
-          "CK_FC": "ifort /fpp", 
-          "CK_FLAGS_CREATE_ASM": "/Fa /c", 
-          "CK_FLAGS_CREATE_OBJ": "/c", 
-          "CK_FLAGS_DLL": "/MT /DWin /LD /FIwindows.h", 
-          "CK_FLAGS_DLL_EXTRA": "/link /dll", 
-          "CK_FLAGS_DYNAMIC_BIN": "/MD", 
-          "CK_FLAGS_OUTPUT": "/Fe", 
-          "CK_FLAGS_STATIC_BIN": "/MT", 
-          "CK_FLAGS_STATIC_LIB": "/MD", 
-          "CK_FLAG_PREFIX_INCLUDE": "/I", 
-          "CK_FLAG_PREFIX_VAR": "/D", 
-          "CK_LB": "lib", 
-          "CK_LB_OUTPUT": "/OUT:", 
-          "CK_LD_DYNAMIC_FLAGS": "/link /NODEFAULTLIB:LIBCMT", 
-          "CK_LD_FLAGS_EXTRA": "bufferoverflowU.lib", 
-          "CK_LIB_EXT": ".lib", 
-          "CK_MAKE": "nmake", 
-          "CK_OBJDUMP": "dumpbin /disasm", 
-          "CK_OBJ_EXT": ".obj"
+          "CK_AR": "ar", 
+          "CK_ASM_EXT": ".s", 
+          "CK_CC": "clang", 
+          "CK_COMPILER_FLAGS_OBLIGATORY": "", 
+          "CK_COMPILER_FLAG_CPP11": "-std=c++11", 
+          "CK_COMPILER_FLAG_GPROF": "-pg", 
+          "CK_COMPILER_FLAG_OPENMP": "-fopenmp", 
+          "CK_COMPILER_FLAG_PLUGIN": "-fplugin=", 
+          "CK_COMPILER_FLAG_PTHREAD_LIB": "-lpthread", 
+          "CK_CXX": "clang++", 
+          "CK_DLL_EXT": ".so", 
+          "CK_EXE_EXT": ".out", 
+          "CK_EXTRA_LIB_DL": "-ldl", 
+          "CK_EXTRA_LIB_M": "-lm", 
+          "CK_FLAGS_CREATE_ASM": "-S", 
+          "CK_FLAGS_CREATE_OBJ": "-c", 
+          "CK_FLAGS_DLL": "-shared -fPIC", 
+          "CK_FLAGS_DLL_EXTRA": "", 
+          "CK_FLAGS_OUTPUT": "-o ", 
+          "CK_FLAGS_STATIC_BIN": "-static -fPIC", 
+          "CK_FLAGS_STATIC_LIB": "-fPIC", 
+          "CK_FLAG_PREFIX_INCLUDE": "-I", 
+          "CK_FLAG_PREFIX_LIB_DIR": "-L", 
+          "CK_FLAG_PREFIX_VAR": "-D", 
+          "CK_GPROF_OUT_FILE": "gmon.out", 
+          "CK_LB": "ar rcs", 
+          "CK_LB_OUTPUT": "-o ", 
+          "CK_LD_FLAGS_EXTRA": "", 
+          "CK_LIB_EXT": ".a", 
+          "CK_LINKER_FLAG_OPENMP": "-lgomp -lrt", 
+          "CK_MAKE": "make", 
+          "CK_OBJDUMP": "objdump -d", 
+          "CK_OBJ_EXT": ".o", 
+          "CK_OPT_SIZE": "-Os", 
+          "CK_OPT_SPEED": "-O3", 
+          "CK_OPT_SPEED_SAFE": "-O2", 
+          "CK_PLUGIN_FLAG": "-fplugin=", 
+          "CK_PROFILER": "gprof"
         }, 
-        "env_script": "env.bat", 
-        "package_uoa": "8ec292a541719523", 
+        "env_script": "env.sh", 
         "setup": {
-          "deps_compiler_mcl": "924e05b4e11f9dcc", 
-          "host_os_uoa": "7a95e0754c37610a", 
-          "target_os_bits": "64", 
-          "target_os_uoa": "7a95e0754c37610a", 
-          "version": "2015"
+          "host_os_uoa": "fb525e34243f49c1", 
+          "target_os_bits": "32", 
+          "target_os_uoa": "fb525e34243f49c1", 
+          "version": "3.6.0"
         }, 
-        "soft_uoa": "f0e7b534fc84d18a", 
+        "soft_uoa": "1c2eb494b8ae3bc4", 
         "tags": [
-          "64bits", 
+          "32bits", 
           "compiler", 
-          "host-os-windows-64", 
-          "icc", 
+          "host-os-linux-32", 
           "lang-c", 
           "lang-cpp", 
-          "lang-f77", 
-          "lang-f90", 
-          "lang-f95", 
-          "target-os-windows-64", 
-          "v2015"
+          "llvm", 
+          "target-os-linux-32", 
+          "v3", 
+          "v3.6", 
+          "v3.6.0"
         ]
       }, 
       "local": "yes", 
       "num_entries": 1, 
       "sort": 10, 
       "tags": "compiler,lang-cpp", 
-      "uoa": "289842d618a4e54a", 
-      "ver": "2015"
+      "uoa": "a1b99414d88b48b4", 
+      "ver": "3.6.0"
     }, 
     "lib.xopenme": {
-      "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\ce48085aba489278\\env.bat\n", 
+      "bat": ". /home/fursin/fggwork/ck-repos/local/env/b3be540f9b6ae5b5/env.sh\n", 
       "choices": [
-        "ce48085aba489278"
+        "b3be540f9b6ae5b5"
       ], 
       "cus": {
         "add_include_path": "yes", 
-        "dynamic_lib": "librtlxopenme.dll", 
+        "dynamic_lib": "librtlxopenme.so", 
         "env_prefix": "CK_ENV_LIB_RTL_XOPENME", 
         "extra_dir": "", 
         "include_name": "xopenme.h", 
-        "path_include": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64\\include", 
-        "path_install": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64", 
-        "path_lib": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64\\lib", 
+        "path_include": "/home/fursin/fggwork/ck-tools/lib-rtl-xopenme-0.3-gcc-local-linux-32/include", 
+        "path_install": "/home/fursin/fggwork/ck-tools/lib-rtl-xopenme-0.3-gcc-local-linux-32", 
+        "path_lib": "/home/fursin/fggwork/ck-tools/lib-rtl-xopenme-0.3-gcc-local-linux-32/lib", 
         "skip_add_to_bin": "yes", 
         "skip_add_to_path": "yes", 
-        "static_lib": "librtlxopenme.lib", 
+        "static_lib": "librtlxopenme.a", 
         "version": "0.3", 
         "version_int": 3
       }, 
       "dict": {
         "customize": {
           "add_include_path": "yes", 
-          "dynamic_lib": "librtlxopenme.dll", 
+          "dynamic_lib": "librtlxopenme.so", 
           "env_prefix": "CK_ENV_LIB_RTL_XOPENME", 
           "extra_dir": "", 
           "include_name": "xopenme.h", 
-          "path_include": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64\\include", 
-          "path_install": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64", 
-          "path_lib": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64\\lib", 
+          "path_include": "/home/fursin/fggwork/ck-tools/lib-rtl-xopenme-0.3-gcc-local-linux-32/include", 
+          "path_install": "/home/fursin/fggwork/ck-tools/lib-rtl-xopenme-0.3-gcc-local-linux-32", 
+          "path_lib": "/home/fursin/fggwork/ck-tools/lib-rtl-xopenme-0.3-gcc-local-linux-32/lib", 
           "skip_add_to_bin": "yes", 
           "skip_add_to_path": "yes", 
-          "static_lib": "librtlxopenme.lib", 
+          "static_lib": "librtlxopenme.a", 
           "version": "0.3", 
           "version_int": 3
         }, 
         "deps": {
           "compiler": {
-            "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\289842d618a4e54a\\env.bat\n", 
-            "build_dir_name": "icc", 
+            "bat": ". /home/fursin/fggwork/ck-repos/ck-autotuning/env/compiler-gcc-local-linux-h32-t32/env.sh\n", 
+            "build_dir_name": "gcc", 
             "cus": {
-              "build-dir-name": "icc", 
-              "build_dir_name": "icc", 
-              "env_prefix": "CK_ENV_COMPILER_ICC", 
-              "extra_dir": "", 
+              "add_m32": "yes", 
+              "build_dir_name": "gcc", 
+              "can_strip_dynamic_lib": "yes", 
+              "env_prefix": "CK_ENV_COMPILER_GCC", 
               "languages": [
                 "C", 
                 "CPP", 
@@ -400,21 +1649,19 @@
                 "F90", 
                 "F95"
               ], 
-              "path_install": "C:\\Program Files (x86)\\Intel\\Composer XE 2015", 
-              "retarget": "", 
-              "skip_add_to_bin": "yes", 
+              "retarget": "no", 
               "skip_add_to_ld_path": "yes", 
-              "skip_add_to_path": "yes", 
-              "tool_prefix": "", 
-              "version": "2015", 
-              "version_int": 2015
+              "skip_path": "yes", 
+              "tool_prefix_configured": "yes", 
+              "version": "local", 
+              "version_int": 88888
             }, 
             "dict": {
               "customize": {
-                "build-dir-name": "icc", 
-                "build_dir_name": "icc", 
-                "env_prefix": "CK_ENV_COMPILER_ICC", 
-                "extra_dir": "", 
+                "add_m32": "yes", 
+                "build_dir_name": "gcc", 
+                "can_strip_dynamic_lib": "yes", 
+                "env_prefix": "CK_ENV_COMPILER_GCC", 
                 "languages": [
                   "C", 
                   "CPP", 
@@ -422,187 +1669,99 @@
                   "F90", 
                   "F95"
                 ], 
-                "path_install": "C:\\Program Files (x86)\\Intel\\Composer XE 2015", 
-                "retarget": "", 
-                "skip_add_to_bin": "yes", 
+                "retarget": "no", 
                 "skip_add_to_ld_path": "yes", 
-                "skip_add_to_path": "yes", 
-                "tool_prefix": "", 
-                "version": "2015", 
-                "version_int": 2015
+                "skip_path": "yes", 
+                "tool_prefix_configured": "yes", 
+                "version": "local", 
+                "version_int": 88888
               }, 
-              "deps": {
-                "compiler_mcl": {
-                  "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\924e05b4e11f9dcc\\env.bat\n", 
-                  "build_dir_name": "mcl", 
-                  "dict": {
-                    "customize": {
-                      "add_win_sdk_path": "yes", 
-                      "build-dir-name": "mcl", 
-                      "build_dir_name": "mcl", 
-                      "env_prefix": "CK_ENV_COMPILER_MVSC", 
-                      "extra_dir": "", 
-                      "input_path_example": "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC", 
-                      "languages": [
-                        "C", 
-                        "CPP"
-                      ], 
-                      "path_install": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC", 
-                      "retarget": "", 
-                      "skip_add_to_bin": "yes", 
-                      "skip_add_to_ld_path": "yes", 
-                      "skip_add_to_path": "yes", 
-                      "tool_prefix": "", 
-                      "version": "18.00", 
-                      "version_int": 1800
-                    }, 
-                    "deps": {}, 
-                    "env": {
-                      "CK_AR": "lib", 
-                      "CK_ASM_EXT": ".asm", 
-                      "CK_CC": "cl", 
-                      "CK_COMPILER_FLAGS_OBLIGATORY": "/DWINDOWS /GS-", 
-                      "CK_COMPILER_FLAG_CPP11": "/Qstd=c++11", 
-                      "CK_COMPILER_FLAG_OPENMP": "/openmp", 
-                      "CK_COMPILER_FLAG_PTHREAD_LIB": "/pthread", 
-                      "CK_COMPILER_FLAG_STD90": "/Qstd=c90", 
-                      "CK_COMPILER_FLAG_STD99": "/Qstd=c99", 
-                      "CK_CXX": "cl", 
-                      "CK_DLL_EXT": ".dll", 
-                      "CK_EXE_EXT": ".exe", 
-                      "CK_FLAGS_CREATE_ASM": "/Fa /c", 
-                      "CK_FLAGS_CREATE_OBJ": "/c", 
-                      "CK_FLAGS_DLL": "/MT /DWin /LD", 
-                      "CK_FLAGS_DLL_EXTRA": "/link /dll", 
-                      "CK_FLAGS_DYNAMIC_BIN": "/MD", 
-                      "CK_FLAGS_OUTPUT": "/Fe", 
-                      "CK_FLAGS_STATIC_BIN": "/MT", 
-                      "CK_FLAGS_STATIC_LIB": "/MD", 
-                      "CK_FLAG_PREFIX_INCLUDE": "/I", 
-                      "CK_FLAG_PREFIX_VAR": "/D", 
-                      "CK_LB": "lib", 
-                      "CK_LB_OUTPUT": "/OUT:", 
-                      "CK_LD_DYNAMIC_FLAGS": "/link /NODEFAULTLIB:LIBCMT", 
-                      "CK_LD_FLAGS_EXTRA": "", 
-                      "CK_LIB_EXT": ".lib", 
-                      "CK_MAKE": "nmake", 
-                      "CK_OBJDUMP": "dumpbin /disasm", 
-                      "CK_OBJ_EXT": ".obj"
-                    }, 
-                    "env_script": "env.bat", 
-                    "setup": {
-                      "host_os_uoa": "7a95e0754c37610a", 
-                      "target_os_bits": "64", 
-                      "target_os_uoa": "7a95e0754c37610a", 
-                      "version": "18.00"
-                    }, 
-                    "soft_uoa": "a4c8d6c8e946c49f", 
-                    "tags": [
-                      "64bits", 
-                      "compiler", 
-                      "host-os-windows-64", 
-                      "lang-c", 
-                      "lang-cpp", 
-                      "mcl", 
-                      "target-os-windows-64", 
-                      "v18", 
-                      "v18.00"
-                    ]
-                  }, 
-                  "local": "yes", 
-                  "num_entries": 1, 
-                  "tags": "compiler,mcl,v18.00", 
-                  "uoa": "924e05b4e11f9dcc", 
-                  "ver": "18.00"
-                }
-              }, 
+              "deps": {}, 
               "env": {
-                "CK_AR": "lib", 
-                "CK_ASM_EXT": ".asm", 
-                "CK_CC": "icl", 
-                "CK_COMPILER_FLAGS_OBLIGATORY": "/DWINDOWS /GS-", 
-                "CK_COMPILER_FLAG_CPP11": "/Qstd=c++11", 
-                "CK_COMPILER_FLAG_OPENMP": "/openmp", 
-                "CK_COMPILER_FLAG_PTHREAD_LIB": "/pthread", 
-                "CK_COMPILER_FLAG_STD90": "/Qstd=c90", 
-                "CK_COMPILER_FLAG_STD99": "/Qstd=c99", 
-                "CK_CSTD99": "/Qstd=c99", 
-                "CK_CXX": "icl", 
-                "CK_DLL_EXT": ".dll", 
-                "CK_EXE_EXT": ".exe", 
-                "CK_EXTRA_LIB_DL": "", 
-                "CK_EXTRA_LIB_M": "", 
-                "CK_F90": "ifort /fpp", 
-                "CK_F95": "ifort /fpp", 
-                "CK_FC": "ifort /fpp", 
-                "CK_FLAGS_CREATE_ASM": "/Fa /c", 
-                "CK_FLAGS_CREATE_OBJ": "/c", 
-                "CK_FLAGS_DLL": "/MT /DWin /LD /FIwindows.h", 
-                "CK_FLAGS_DLL_EXTRA": "/link /dll", 
-                "CK_FLAGS_DYNAMIC_BIN": "/MD", 
-                "CK_FLAGS_OUTPUT": "/Fe", 
-                "CK_FLAGS_STATIC_BIN": "/MT", 
-                "CK_FLAGS_STATIC_LIB": "/MD", 
-                "CK_FLAG_PREFIX_INCLUDE": "/I", 
-                "CK_FLAG_PREFIX_VAR": "/D", 
-                "CK_LB": "lib", 
-                "CK_LB_OUTPUT": "/OUT:", 
-                "CK_LD_DYNAMIC_FLAGS": "/link /NODEFAULTLIB:LIBCMT", 
-                "CK_LD_FLAGS_EXTRA": "bufferoverflowU.lib", 
-                "CK_LIB_EXT": ".lib", 
-                "CK_MAKE": "nmake", 
-                "CK_OBJDUMP": "dumpbin /disasm", 
-                "CK_OBJ_EXT": ".obj"
+                "CK_AR": "ar", 
+                "CK_ASM_EXT": ".s", 
+                "CK_CC": "gcc", 
+                "CK_COMPILER_FLAGS_OBLIGATORY": "", 
+                "CK_CXX": "g++", 
+                "CK_DLL_EXT": ".so", 
+                "CK_EXE_EXT": ".out", 
+                "CK_EXTRA_LIB_DL": "-ldl", 
+                "CK_EXTRA_LIB_M": "-lm", 
+                "CK_F90": "gfortran", 
+                "CK_F95": "gfortran", 
+                "CK_FC": "gfortran", 
+                "CK_FLAGS_CREATE_ASM": "-S", 
+                "CK_FLAGS_CREATE_OBJ": "-c", 
+                "CK_FLAGS_DLL": "-shared -fPIC", 
+                "CK_FLAGS_DLL_EXTRA": "", 
+                "CK_FLAGS_OUTPUT": "-o ", 
+                "CK_FLAGS_STATIC_BIN": "-static -fPIC", 
+                "CK_FLAGS_STATIC_LIB": "-fPIC", 
+                "CK_FLAG_PREFIX_INCLUDE": "-I", 
+                "CK_FLAG_PREFIX_LIB_DIR": "-L", 
+                "CK_FLAG_PREFIX_VAR": "-D", 
+                "CK_LB": "ar rcs", 
+                "CK_LB_OUTPUT": "-o ", 
+                "CK_LD": "ld", 
+                "CK_LD_FLAGS_EXTRA": "", 
+                "CK_LIB_EXT": ".a", 
+                "CK_MAKE": "make", 
+                "CK_OBJDUMP": "objdump -d", 
+                "CK_OBJ_EXT": ".o", 
+                "CK_OPT_SIZE": "-Os", 
+                "CK_OPT_SPEED": "-O3", 
+                "CK_OPT_SPEED_SAFE": "-O2", 
+                "CK_PLUGIN_FLAG": "-fplugin=", 
+                "CK_PROFILER": "gprof"
               }, 
-              "env_script": "env.bat", 
-              "package_uoa": "8ec292a541719523", 
+              "env_script": "env.sh", 
               "setup": {
-                "deps_compiler_mcl": "924e05b4e11f9dcc", 
-                "host_os_uoa": "7a95e0754c37610a", 
-                "target_os_bits": "64", 
-                "target_os_uoa": "7a95e0754c37610a", 
-                "version": "2015"
+                "host_os_uoa": "fb525e34243f49c1", 
+                "target_os_bits": "32", 
+                "target_os_uoa": "fb525e34243f49c1", 
+                "version": "local"
               }, 
-              "soft_uoa": "f0e7b534fc84d18a", 
+              "soft_uoa": "3a8a82fa40bf992d", 
               "tags": [
-                "64bits", 
+                "32bits", 
                 "compiler", 
-                "host-os-windows-64", 
-                "icc", 
+                "gcc", 
+                "host-os-linux-32", 
                 "lang-c", 
                 "lang-cpp", 
                 "lang-f77", 
                 "lang-f90", 
                 "lang-f95", 
-                "target-os-windows-64", 
-                "v2015"
+                "target-os-linux-32", 
+                "vlocal"
               ]
             }, 
             "local": "yes", 
             "num_entries": 1, 
+            "sort": 10, 
             "tags": "compiler,lang-c", 
-            "uoa": "289842d618a4e54a", 
-            "ver": "2015"
+            "uoa": "b660ede86248c8bc", 
+            "ver": "local"
           }
         }, 
         "env": {
-          "CK_ENV_LIB_RTL_XOPENME_DYNAMIC_NAME": "librtlxopenme.dll", 
+          "CK_ENV_LIB_RTL_XOPENME_DYNAMIC_NAME": "librtlxopenme.so", 
           "CK_ENV_LIB_RTL_XOPENME_INCLUDE_NAME": "xopenme.h", 
-          "CK_ENV_LIB_RTL_XOPENME_STATIC_NAME": "librtlxopenme.lib"
+          "CK_ENV_LIB_RTL_XOPENME_STATIC_NAME": "librtlxopenme.a"
         }, 
-        "env_script": "env.bat", 
+        "env_script": "env.sh", 
         "package_uoa": "0573487b8121d094", 
         "setup": {
-          "deps_compiler": "289842d618a4e54a", 
-          "host_os_uoa": "7a95e0754c37610a", 
-          "target_os_bits": "64", 
-          "target_os_uoa": "7a95e0754c37610a", 
+          "deps_compiler": "b660ede86248c8bc", 
+          "host_os_uoa": "fb525e34243f49c1", 
+          "target_os_bits": "32", 
+          "target_os_uoa": "fb525e34243f49c1", 
           "version": "0.3"
         }, 
         "soft_uoa": "673507878d649b4a", 
         "tags": [
-          "64bits", 
-          "host-os-windows-64", 
+          "32bits", 
+          "host-os-linux-32", 
           "lang-c", 
           "lang-cpp", 
           "lang-f77", 
@@ -610,7 +1769,7 @@
           "lang-f95", 
           "lib", 
           "rtl", 
-          "target-os-windows-64", 
+          "target-os-linux-32", 
           "v0", 
           "v0.3", 
           "xopenme"
@@ -620,359 +1779,581 @@
       "num_entries": 1, 
       "sort": 40, 
       "tags": "lib,xopenme", 
-      "uoa": "ce48085aba489278", 
+      "uoa": "b3be540f9b6ae5b5", 
       "ver": "0.3"
     }, 
     "lib_opencl": {
-      "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\de433cac44b1c0f7\\env.bat\n", 
+      "bat": ". /home/fursin/fggwork/ck-repos/local/env/e8f2542a13f4a0eb/env.sh\n", 
       "choices": [
-        "de433cac44b1c0f7"
+        "e8f2542a13f4a0eb"
       ], 
       "cus": {
         "add_include_path": "yes", 
+        "dynamic_lib": "libmali.so", 
         "env_prefix": "CK_ENV_LIB_OPENCL", 
-        "include_name": "CL\\opencl.h", 
-        "path_bin": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\bin\\x64", 
-        "path_include": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\include", 
-        "path_install": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6", 
-        "path_lib": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\lib\\x64", 
-        "skip_add_to_ld_path": "yes", 
-        "static_lib": "OpenCL.lib", 
-        "version": "4.6", 
-        "version_int": 406
+        "extra_dir": "", 
+        "include_name": "CL/opencl.h", 
+        "path_bin": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0/bin", 
+        "path_include": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0/include", 
+        "path_install": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0", 
+        "path_lib": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0/lib", 
+        "static_lib": "libmali.so", 
+        "version": "1.1.0", 
+        "version_int": 10100
       }, 
       "dict": {
         "customize": {
           "add_include_path": "yes", 
+          "dynamic_lib": "libmali.so", 
           "env_prefix": "CK_ENV_LIB_OPENCL", 
-          "include_name": "CL\\opencl.h", 
-          "path_bin": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\bin\\x64", 
-          "path_include": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\include", 
-          "path_install": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6", 
-          "path_lib": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\lib\\x64", 
-          "skip_add_to_ld_path": "yes", 
-          "static_lib": "OpenCL.lib", 
-          "version": "4.6", 
-          "version_int": 406
+          "extra_dir": "", 
+          "include_name": "CL/opencl.h", 
+          "path_bin": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0/bin", 
+          "path_include": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0/include", 
+          "path_install": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0", 
+          "path_lib": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0/lib", 
+          "static_lib": "libmali.so", 
+          "version": "1.1.0", 
+          "version_int": 10100
         }, 
-        "deps": {}, 
+        "deps": {
+          "compiler": {
+            "bat": ". /home/fursin/fggwork/ck-repos/ck-autotuning/env/compiler-gcc-local-linux-h32-t32/env.sh\n", 
+            "build_dir_name": "gcc", 
+            "dict": {
+              "customize": {
+                "add_m32": "yes", 
+                "build_dir_name": "gcc", 
+                "can_strip_dynamic_lib": "yes", 
+                "env_prefix": "CK_ENV_COMPILER_GCC", 
+                "languages": [
+                  "C", 
+                  "CPP", 
+                  "F77", 
+                  "F90", 
+                  "F95"
+                ], 
+                "retarget": "no", 
+                "skip_add_to_ld_path": "yes", 
+                "skip_path": "yes", 
+                "tool_prefix_configured": "yes", 
+                "version": "local", 
+                "version_int": 88888
+              }, 
+              "deps": {}, 
+              "env": {
+                "CK_AR": "ar", 
+                "CK_ASM_EXT": ".s", 
+                "CK_CC": "gcc", 
+                "CK_COMPILER_FLAGS_OBLIGATORY": "", 
+                "CK_CXX": "g++", 
+                "CK_DLL_EXT": ".so", 
+                "CK_EXE_EXT": ".out", 
+                "CK_EXTRA_LIB_DL": "-ldl", 
+                "CK_EXTRA_LIB_M": "-lm", 
+                "CK_F90": "gfortran", 
+                "CK_F95": "gfortran", 
+                "CK_FC": "gfortran", 
+                "CK_FLAGS_CREATE_ASM": "-S", 
+                "CK_FLAGS_CREATE_OBJ": "-c", 
+                "CK_FLAGS_DLL": "-shared -fPIC", 
+                "CK_FLAGS_DLL_EXTRA": "", 
+                "CK_FLAGS_OUTPUT": "-o ", 
+                "CK_FLAGS_STATIC_BIN": "-static -fPIC", 
+                "CK_FLAGS_STATIC_LIB": "-fPIC", 
+                "CK_FLAG_PREFIX_INCLUDE": "-I", 
+                "CK_FLAG_PREFIX_LIB_DIR": "-L", 
+                "CK_FLAG_PREFIX_VAR": "-D", 
+                "CK_LB": "ar rcs", 
+                "CK_LB_OUTPUT": "-o ", 
+                "CK_LD": "ld", 
+                "CK_LD_FLAGS_EXTRA": "", 
+                "CK_LIB_EXT": ".a", 
+                "CK_MAKE": "make", 
+                "CK_OBJDUMP": "objdump -d", 
+                "CK_OBJ_EXT": ".o", 
+                "CK_OPT_SIZE": "-Os", 
+                "CK_OPT_SPEED": "-O3", 
+                "CK_OPT_SPEED_SAFE": "-O2", 
+                "CK_PLUGIN_FLAG": "-fplugin=", 
+                "CK_PROFILER": "gprof"
+              }, 
+              "env_script": "env.sh", 
+              "setup": {
+                "host_os_uoa": "fb525e34243f49c1", 
+                "target_os_bits": "32", 
+                "target_os_uoa": "fb525e34243f49c1", 
+                "version": "local"
+              }, 
+              "soft_uoa": "3a8a82fa40bf992d", 
+              "tags": [
+                "32bits", 
+                "compiler", 
+                "gcc", 
+                "host-os-linux-32", 
+                "lang-c", 
+                "lang-cpp", 
+                "lang-f77", 
+                "lang-f90", 
+                "lang-f95", 
+                "target-os-linux-32", 
+                "vlocal"
+              ]
+            }, 
+            "local": "yes", 
+            "num_entries": 1, 
+            "tags": "compiler,lang-c", 
+            "uoa": "b660ede86248c8bc", 
+            "ver": "local"
+          }
+        }, 
         "env": {
-          "CK_ENV_LIB_OPENCL_DYNAMIC_NAME": "", 
-          "CK_ENV_LIB_OPENCL_INCLUDE_NAME": "CL\\opencl.h", 
-          "CK_ENV_LIB_OPENCL_STATIC_NAME": "OpenCL.lib"
+          "CK_ENV_LIB_OPENCL_DYNAMIC_NAME": "libmali.so", 
+          "CK_ENV_LIB_OPENCL_INCLUDE_NAME": "CL/opencl.h", 
+          "CK_ENV_LIB_OPENCL_STATIC_NAME": "libmali.so"
         }, 
-        "env_script": "env.bat", 
+        "env_script": "env.sh", 
         "setup": {
-          "host_os_uoa": "7a95e0754c37610a", 
-          "target_os_bits": "64", 
-          "target_os_uoa": "7a95e0754c37610a", 
-          "version": "4.6"
+          "deps_compiler": "b660ede86248c8bc", 
+          "host_os_uoa": "fb525e34243f49c1", 
+          "target_os_bits": "32", 
+          "target_os_uoa": "fb525e34243f49c1", 
+          "version": "1.1.0"
         }, 
-        "soft_uoa": "b13b6a18695c3675", 
+        "soft_uoa": "5dc9cd7423fb4c68", 
         "tags": [
-          "64bits", 
-          "host-os-windows-64", 
-          "intel", 
+          "32bits", 
+          "arm", 
+          "host-os-linux-32", 
           "lib", 
+          "mali", 
           "opencl", 
-          "target-os-windows-64", 
-          "v4", 
-          "v4.6"
+          "target-os-linux-32", 
+          "v1", 
+          "v1.1", 
+          "v1.1.0"
         ]
       }, 
       "local": "yes", 
       "num_entries": 1, 
       "sort": 30, 
       "tags": "lib,opencl", 
-      "uoa": "de433cac44b1c0f7", 
-      "ver": "4.6"
+      "uoa": "e8f2542a13f4a0eb", 
+      "ver": "1.1.0"
     }, 
     "lib_opencv": {
-      "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\4d4186ee57672b1e\\env.bat\n", 
+      "bat": ". /home/fursin/fggwork/ck-repos/local/env/96c22a2ae10243a7/env.sh\n", 
       "choices": [
-        "4d4186ee57672b1e"
+        "96c22a2ae10243a7"
       ], 
       "cus": {
-        "add_include_path": "yes", 
-        "dynamic_lib": "opencv_core2411d.dll", 
+        "add_include_path": "no", 
+        "dynamic_lib": "libopencv_core.so", 
         "env_prefix": "CK_ENV_LIB_OPENCV", 
-        "extra_dir": "build\\install", 
+        "extra_dir": "build/install", 
         "extra_dynamic_libs": {
-          "opencv_highgui": "opencv_highgui2411d.dll", 
-          "opencv_imgproc": "opencv_imgproc2411d.dll", 
-          "opencv_ocl": "opencv_ocl2411d.dll"
-        }, 
-        "extra_static_libs": {
-          "opencv_highgui": "opencv_highgui2411d.lib", 
-          "opencv_imgproc": "opencv_imgproc2411d.lib", 
-          "opencv_ocl": "opencv_ocl2411d.lib"
+          "opencv_highgui": "libopencv_highgui.so", 
+          "opencv_imgproc": "libopencv_imgproc.so", 
+          "opencv_ocl": "libopencv_ocl.so"
         }, 
         "lib_extension": "2411d", 
-        "lib_extension_configured": "yes", 
-        "path_bin": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\bin", 
-        "path_dynamic_lib": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\bin", 
+        "path_bin": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/bin", 
+        "path_dynamic_lib": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/lib", 
         "path_extension": "vc12", 
-        "path_extension_configured": "yes", 
-        "path_include": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\include", 
-        "path_install": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install", 
-        "path_lib": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\lib", 
-        "path_static_lib": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\lib", 
+        "path_include": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/include", 
+        "path_install": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install", 
+        "path_lib": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/lib", 
+        "path_static_lib": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/lib", 
         "skip_add_to_ld_path": "yes", 
-        "static_lib": "opencv_core2411d.lib", 
         "version": "2.4.11", 
         "version_int": 20411
       }, 
       "dict": {
         "customize": {
-          "add_include_path": "yes", 
-          "dynamic_lib": "opencv_core2411d.dll", 
+          "add_include_path": "no", 
+          "dynamic_lib": "libopencv_core.so", 
           "env_prefix": "CK_ENV_LIB_OPENCV", 
-          "extra_dir": "build\\install", 
+          "extra_dir": "build/install", 
           "extra_dynamic_libs": {
-            "opencv_highgui": "opencv_highgui2411d.dll", 
-            "opencv_imgproc": "opencv_imgproc2411d.dll", 
-            "opencv_ocl": "opencv_ocl2411d.dll"
-          }, 
-          "extra_static_libs": {
-            "opencv_highgui": "opencv_highgui2411d.lib", 
-            "opencv_imgproc": "opencv_imgproc2411d.lib", 
-            "opencv_ocl": "opencv_ocl2411d.lib"
+            "opencv_highgui": "libopencv_highgui.so", 
+            "opencv_imgproc": "libopencv_imgproc.so", 
+            "opencv_ocl": "libopencv_ocl.so"
           }, 
           "lib_extension": "2411d", 
-          "lib_extension_configured": "yes", 
-          "path_bin": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\bin", 
-          "path_dynamic_lib": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\bin", 
+          "path_bin": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/bin", 
+          "path_dynamic_lib": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/lib", 
           "path_extension": "vc12", 
-          "path_extension_configured": "yes", 
-          "path_include": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\include", 
-          "path_install": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install", 
-          "path_lib": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\lib", 
-          "path_static_lib": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\lib", 
+          "path_include": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/include", 
+          "path_install": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install", 
+          "path_lib": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/lib", 
+          "path_static_lib": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/lib", 
           "skip_add_to_ld_path": "yes", 
-          "static_lib": "opencv_core2411d.lib", 
           "version": "2.4.11", 
           "version_int": 20411
         }, 
         "deps": {
-          "cmake": {
-            "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\4b201441c6ae66b0\\env.bat\n", 
-            "dict": {
-              "customize": {
-                "env_prefix": "CK_ENV_TOOL_CMAKE", 
-                "extra_dir": "cmake-3.1.3-win32-x86", 
-                "linking_for_retargeting": "", 
-                "path_bin": "D:\\!FGG\\Installations\\cmake-3.1.3\\cmake-3.1.3-win32-x86\\bin", 
-                "path_install": "D:\\!FGG\\Installations\\cmake-3.1.3\\cmake-3.1.3-win32-x86", 
-                "skip_add_to_ld_path": "yes", 
-                "tool_prefix": "", 
-                "version": "3.1.3", 
-                "version_int": 30103
-              }, 
-              "deps": {}, 
-              "env": {
-                "CK_CMAKE": "cmake"
-              }, 
-              "env_script": "env.bat", 
-              "setup": {
-                "host_os_uoa": "7a95e0754c37610a", 
-                "target_os_bits": "64", 
-                "target_os_uoa": "7a95e0754c37610a", 
-                "version": "3.1.3"
-              }, 
-              "soft_uoa": "77ef5e31404d9589", 
-              "tags": [
-                "64bits", 
-                "cmake", 
-                "host-os-windows-64", 
-                "target-os-windows-64", 
-                "tool", 
-                "v3", 
-                "v3.1", 
-                "v3.1.3"
-              ]
-            }, 
-            "local": "yes", 
-            "num_entries": 1, 
-            "skip_from_bat": "yes", 
-            "tags": "tool,cmake", 
-            "uoa": "4b201441c6ae66b0", 
-            "ver": "3.1.3"
-          }, 
           "compiler": {
-            "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\924e05b4e11f9dcc\\env.bat\n", 
-            "build_dir_name": "mcl", 
+            "bat": ". /home/fursin/fggwork/ck-repos/ck-autotuning/env/compiler-gcc-local-linux-h32-t32/env.sh\n", 
+            "build_dir_name": "gcc", 
             "dict": {
               "customize": {
-                "add_win_sdk_path": "yes", 
-                "build-dir-name": "mcl", 
-                "build_dir_name": "mcl", 
-                "env_prefix": "CK_ENV_COMPILER_MVSC", 
-                "extra_dir": "", 
-                "input_path_example": "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC", 
+                "add_m32": "yes", 
+                "build_dir_name": "gcc", 
+                "can_strip_dynamic_lib": "yes", 
+                "env_prefix": "CK_ENV_COMPILER_GCC", 
                 "languages": [
                   "C", 
-                  "CPP"
+                  "CPP", 
+                  "F77", 
+                  "F90", 
+                  "F95"
                 ], 
-                "path_install": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC", 
-                "retarget": "", 
-                "skip_add_to_bin": "yes", 
+                "retarget": "no", 
                 "skip_add_to_ld_path": "yes", 
-                "skip_add_to_path": "yes", 
-                "tool_prefix": "", 
-                "version": "18.00", 
-                "version_int": 1800
+                "skip_path": "yes", 
+                "tool_prefix_configured": "yes", 
+                "version": "local", 
+                "version_int": 88888
               }, 
               "deps": {}, 
               "env": {
-                "CK_AR": "lib", 
-                "CK_ASM_EXT": ".asm", 
-                "CK_CC": "cl", 
-                "CK_COMPILER_FLAGS_OBLIGATORY": "/DWINDOWS /GS-", 
-                "CK_COMPILER_FLAG_CPP11": "/Qstd=c++11", 
-                "CK_COMPILER_FLAG_OPENMP": "/openmp", 
-                "CK_COMPILER_FLAG_PTHREAD_LIB": "/pthread", 
-                "CK_COMPILER_FLAG_STD90": "/Qstd=c90", 
-                "CK_COMPILER_FLAG_STD99": "/Qstd=c99", 
-                "CK_CXX": "cl", 
-                "CK_DLL_EXT": ".dll", 
-                "CK_EXE_EXT": ".exe", 
-                "CK_FLAGS_CREATE_ASM": "/Fa /c", 
-                "CK_FLAGS_CREATE_OBJ": "/c", 
-                "CK_FLAGS_DLL": "/MT /DWin /LD", 
-                "CK_FLAGS_DLL_EXTRA": "/link /dll", 
-                "CK_FLAGS_DYNAMIC_BIN": "/MD", 
-                "CK_FLAGS_OUTPUT": "/Fe", 
-                "CK_FLAGS_STATIC_BIN": "/MT", 
-                "CK_FLAGS_STATIC_LIB": "/MD", 
-                "CK_FLAG_PREFIX_INCLUDE": "/I", 
-                "CK_FLAG_PREFIX_VAR": "/D", 
-                "CK_LB": "lib", 
-                "CK_LB_OUTPUT": "/OUT:", 
-                "CK_LD_DYNAMIC_FLAGS": "/link /NODEFAULTLIB:LIBCMT", 
+                "CK_AR": "ar", 
+                "CK_ASM_EXT": ".s", 
+                "CK_CC": "gcc", 
+                "CK_COMPILER_FLAGS_OBLIGATORY": "", 
+                "CK_CXX": "g++", 
+                "CK_DLL_EXT": ".so", 
+                "CK_EXE_EXT": ".out", 
+                "CK_EXTRA_LIB_DL": "-ldl", 
+                "CK_EXTRA_LIB_M": "-lm", 
+                "CK_F90": "gfortran", 
+                "CK_F95": "gfortran", 
+                "CK_FC": "gfortran", 
+                "CK_FLAGS_CREATE_ASM": "-S", 
+                "CK_FLAGS_CREATE_OBJ": "-c", 
+                "CK_FLAGS_DLL": "-shared -fPIC", 
+                "CK_FLAGS_DLL_EXTRA": "", 
+                "CK_FLAGS_OUTPUT": "-o ", 
+                "CK_FLAGS_STATIC_BIN": "-static -fPIC", 
+                "CK_FLAGS_STATIC_LIB": "-fPIC", 
+                "CK_FLAG_PREFIX_INCLUDE": "-I", 
+                "CK_FLAG_PREFIX_LIB_DIR": "-L", 
+                "CK_FLAG_PREFIX_VAR": "-D", 
+                "CK_LB": "ar rcs", 
+                "CK_LB_OUTPUT": "-o ", 
+                "CK_LD": "ld", 
                 "CK_LD_FLAGS_EXTRA": "", 
-                "CK_LIB_EXT": ".lib", 
-                "CK_MAKE": "nmake", 
-                "CK_OBJDUMP": "dumpbin /disasm", 
-                "CK_OBJ_EXT": ".obj"
+                "CK_LIB_EXT": ".a", 
+                "CK_MAKE": "make", 
+                "CK_OBJDUMP": "objdump -d", 
+                "CK_OBJ_EXT": ".o", 
+                "CK_OPT_SIZE": "-Os", 
+                "CK_OPT_SPEED": "-O3", 
+                "CK_OPT_SPEED_SAFE": "-O2", 
+                "CK_PLUGIN_FLAG": "-fplugin=", 
+                "CK_PROFILER": "gprof"
               }, 
-              "env_script": "env.bat", 
+              "env_script": "env.sh", 
               "setup": {
-                "host_os_uoa": "7a95e0754c37610a", 
-                "target_os_bits": "64", 
-                "target_os_uoa": "7a95e0754c37610a", 
-                "version": "18.00"
+                "host_os_uoa": "fb525e34243f49c1", 
+                "target_os_bits": "32", 
+                "target_os_uoa": "fb525e34243f49c1", 
+                "version": "local"
               }, 
-              "soft_uoa": "a4c8d6c8e946c49f", 
+              "soft_uoa": "3a8a82fa40bf992d", 
               "tags": [
-                "64bits", 
+                "32bits", 
                 "compiler", 
-                "host-os-windows-64", 
+                "gcc", 
+                "host-os-linux-32", 
                 "lang-c", 
                 "lang-cpp", 
-                "mcl", 
-                "target-os-windows-64", 
-                "v18", 
-                "v18.00"
+                "lang-f77", 
+                "lang-f90", 
+                "lang-f95", 
+                "target-os-linux-32", 
+                "vlocal"
               ]
             }, 
             "local": "yes", 
             "num_entries": 1, 
             "skip_from_bat": "yes", 
-            "tags": "compiler,lang-c,mcl", 
-            "uoa": "924e05b4e11f9dcc", 
-            "ver": "18.00"
+            "tags": "compiler,lang-c", 
+            "uoa": "b660ede86248c8bc", 
+            "ver": "local"
           }, 
           "opencl": {
-            "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\de433cac44b1c0f7\\env.bat\n", 
+            "bat": ". /home/fursin/fggwork/ck-repos/local/env/e8f2542a13f4a0eb/env.sh\n", 
             "dict": {
               "customize": {
                 "add_include_path": "yes", 
+                "dynamic_lib": "libmali.so", 
                 "env_prefix": "CK_ENV_LIB_OPENCL", 
-                "include_name": "CL\\opencl.h", 
-                "path_bin": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\bin\\x64", 
-                "path_include": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\include", 
-                "path_install": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6", 
-                "path_lib": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\lib\\x64", 
-                "skip_add_to_ld_path": "yes", 
-                "static_lib": "OpenCL.lib", 
-                "version": "4.6", 
-                "version_int": 406
+                "extra_dir": "", 
+                "include_name": "CL/opencl.h", 
+                "path_bin": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0/bin", 
+                "path_include": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0/include", 
+                "path_install": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0", 
+                "path_lib": "/home/fursin/fggwork/ck-tools/Mali_OpenCL_SDK_v1.1.0/lib", 
+                "static_lib": "libmali.so", 
+                "version": "1.1.0", 
+                "version_int": 10100
               }, 
-              "deps": {}, 
+              "deps": {
+                "compiler": {
+                  "bat": ". /home/fursin/fggwork/ck-repos/ck-autotuning/env/compiler-gcc-local-linux-h32-t32/env.sh\n", 
+                  "build_dir_name": "gcc", 
+                  "dict": {
+                    "customize": {
+                      "add_m32": "yes", 
+                      "build_dir_name": "gcc", 
+                      "can_strip_dynamic_lib": "yes", 
+                      "env_prefix": "CK_ENV_COMPILER_GCC", 
+                      "languages": [
+                        "C", 
+                        "CPP", 
+                        "F77", 
+                        "F90", 
+                        "F95"
+                      ], 
+                      "retarget": "no", 
+                      "skip_add_to_ld_path": "yes", 
+                      "skip_path": "yes", 
+                      "tool_prefix_configured": "yes", 
+                      "version": "local", 
+                      "version_int": 88888
+                    }, 
+                    "deps": {}, 
+                    "env": {
+                      "CK_AR": "ar", 
+                      "CK_ASM_EXT": ".s", 
+                      "CK_CC": "gcc", 
+                      "CK_COMPILER_FLAGS_OBLIGATORY": "", 
+                      "CK_CXX": "g++", 
+                      "CK_DLL_EXT": ".so", 
+                      "CK_EXE_EXT": ".out", 
+                      "CK_EXTRA_LIB_DL": "-ldl", 
+                      "CK_EXTRA_LIB_M": "-lm", 
+                      "CK_F90": "gfortran", 
+                      "CK_F95": "gfortran", 
+                      "CK_FC": "gfortran", 
+                      "CK_FLAGS_CREATE_ASM": "-S", 
+                      "CK_FLAGS_CREATE_OBJ": "-c", 
+                      "CK_FLAGS_DLL": "-shared -fPIC", 
+                      "CK_FLAGS_DLL_EXTRA": "", 
+                      "CK_FLAGS_OUTPUT": "-o ", 
+                      "CK_FLAGS_STATIC_BIN": "-static -fPIC", 
+                      "CK_FLAGS_STATIC_LIB": "-fPIC", 
+                      "CK_FLAG_PREFIX_INCLUDE": "-I", 
+                      "CK_FLAG_PREFIX_LIB_DIR": "-L", 
+                      "CK_FLAG_PREFIX_VAR": "-D", 
+                      "CK_LB": "ar rcs", 
+                      "CK_LB_OUTPUT": "-o ", 
+                      "CK_LD": "ld", 
+                      "CK_LD_FLAGS_EXTRA": "", 
+                      "CK_LIB_EXT": ".a", 
+                      "CK_MAKE": "make", 
+                      "CK_OBJDUMP": "objdump -d", 
+                      "CK_OBJ_EXT": ".o", 
+                      "CK_OPT_SIZE": "-Os", 
+                      "CK_OPT_SPEED": "-O3", 
+                      "CK_OPT_SPEED_SAFE": "-O2", 
+                      "CK_PLUGIN_FLAG": "-fplugin=", 
+                      "CK_PROFILER": "gprof"
+                    }, 
+                    "env_script": "env.sh", 
+                    "setup": {
+                      "host_os_uoa": "fb525e34243f49c1", 
+                      "target_os_bits": "32", 
+                      "target_os_uoa": "fb525e34243f49c1", 
+                      "version": "local"
+                    }, 
+                    "soft_uoa": "3a8a82fa40bf992d", 
+                    "tags": [
+                      "32bits", 
+                      "compiler", 
+                      "gcc", 
+                      "host-os-linux-32", 
+                      "lang-c", 
+                      "lang-cpp", 
+                      "lang-f77", 
+                      "lang-f90", 
+                      "lang-f95", 
+                      "target-os-linux-32", 
+                      "vlocal"
+                    ]
+                  }, 
+                  "local": "yes", 
+                  "num_entries": 1, 
+                  "tags": "compiler,lang-c", 
+                  "uoa": "b660ede86248c8bc", 
+                  "ver": "local"
+                }
+              }, 
               "env": {
-                "CK_ENV_LIB_OPENCL_DYNAMIC_NAME": "", 
-                "CK_ENV_LIB_OPENCL_INCLUDE_NAME": "CL\\opencl.h", 
-                "CK_ENV_LIB_OPENCL_STATIC_NAME": "OpenCL.lib"
+                "CK_ENV_LIB_OPENCL_DYNAMIC_NAME": "libmali.so", 
+                "CK_ENV_LIB_OPENCL_INCLUDE_NAME": "CL/opencl.h", 
+                "CK_ENV_LIB_OPENCL_STATIC_NAME": "libmali.so"
               }, 
-              "env_script": "env.bat", 
+              "env_script": "env.sh", 
               "setup": {
-                "host_os_uoa": "7a95e0754c37610a", 
-                "target_os_bits": "64", 
-                "target_os_uoa": "7a95e0754c37610a", 
-                "version": "4.6"
+                "deps_compiler": "b660ede86248c8bc", 
+                "host_os_uoa": "fb525e34243f49c1", 
+                "target_os_bits": "32", 
+                "target_os_uoa": "fb525e34243f49c1", 
+                "version": "1.1.0"
               }, 
-              "soft_uoa": "b13b6a18695c3675", 
+              "soft_uoa": "5dc9cd7423fb4c68", 
               "tags": [
-                "64bits", 
-                "host-os-windows-64", 
-                "intel", 
+                "32bits", 
+                "arm", 
+                "host-os-linux-32", 
                 "lib", 
+                "mali", 
                 "opencl", 
-                "target-os-windows-64", 
-                "v4", 
-                "v4.6"
+                "target-os-linux-32", 
+                "v1", 
+                "v1.1", 
+                "v1.1.0"
               ]
             }, 
             "local": "yes", 
             "num_entries": 1, 
             "skip_from_bat": "yes", 
             "tags": "lib,opencl", 
-            "uoa": "de433cac44b1c0f7", 
-            "ver": "4.6"
+            "uoa": "e8f2542a13f4a0eb", 
+            "ver": "1.1.0"
           }, 
           "tbb": {
-            "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\7f0942428d7790d4\\env.bat\n", 
+            "bat": ". /home/fursin/fggwork/ck-repos/local/env/46ddf34311961231/env.sh\n", 
             "dict": {
               "customize": {
                 "add_include_path": "yes", 
-                "dynamic_lib": "libtbb.dll", 
+                "dynamic_lib": "libtbb.so", 
                 "env_prefix": "CK_ENV_LIB_TBB", 
                 "extra_dir": "tbb43_20150424oss", 
                 "extra_dynamic_libs": {
-                  "libtbbmalloc": "tbb.dll", 
-                  "libtbbproxy": "tbbproxy.dll"
+                  "libtbbmalloc": "libtbbmalloc.so"
                 }, 
-                "extra_static_libs": {
-                  "libtbbmalloc": "tbbmalloc.lib", 
-                  "libtbbproxy": "tbbproxy.lib"
-                }, 
-                "path_bin": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss\\bin\\intel64\\vc12", 
-                "path_include": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss\\include", 
-                "path_install": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss", 
-                "path_lib": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss\\lib\\intel64\\vc12", 
+                "from_sources": "yes", 
+                "path_dynamic_lib": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss/build/install_release", 
+                "path_include": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss/include", 
+                "path_install": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss", 
+                "path_lib": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss/build/install_release", 
+                "skip_add_to_bin": "yes", 
                 "skip_add_to_ld_path": "yes", 
-                "static_lib": "tbb.lib", 
                 "version": "4.3", 
-                "version_int": 403, 
-                "visual_studio_compiler": "vc12", 
-                "visual_studio_compiler_configured": "yes"
+                "version_int": 403
               }, 
-              "deps": {}, 
+              "deps": {
+                "compiler": {
+                  "bat": ". /home/fursin/fggwork/ck-repos/ck-autotuning/env/compiler-gcc-local-linux-h32-t32/env.sh\n", 
+                  "build_dir_name": "gcc", 
+                  "dict": {
+                    "customize": {
+                      "add_m32": "yes", 
+                      "build_dir_name": "gcc", 
+                      "can_strip_dynamic_lib": "yes", 
+                      "env_prefix": "CK_ENV_COMPILER_GCC", 
+                      "languages": [
+                        "C", 
+                        "CPP", 
+                        "F77", 
+                        "F90", 
+                        "F95"
+                      ], 
+                      "retarget": "no", 
+                      "skip_add_to_ld_path": "yes", 
+                      "skip_path": "yes", 
+                      "tool_prefix_configured": "yes", 
+                      "version": "local", 
+                      "version_int": 88888
+                    }, 
+                    "deps": {}, 
+                    "env": {
+                      "CK_AR": "ar", 
+                      "CK_ASM_EXT": ".s", 
+                      "CK_CC": "gcc", 
+                      "CK_COMPILER_FLAGS_OBLIGATORY": "", 
+                      "CK_CXX": "g++", 
+                      "CK_DLL_EXT": ".so", 
+                      "CK_EXE_EXT": ".out", 
+                      "CK_EXTRA_LIB_DL": "-ldl", 
+                      "CK_EXTRA_LIB_M": "-lm", 
+                      "CK_F90": "gfortran", 
+                      "CK_F95": "gfortran", 
+                      "CK_FC": "gfortran", 
+                      "CK_FLAGS_CREATE_ASM": "-S", 
+                      "CK_FLAGS_CREATE_OBJ": "-c", 
+                      "CK_FLAGS_DLL": "-shared -fPIC", 
+                      "CK_FLAGS_DLL_EXTRA": "", 
+                      "CK_FLAGS_OUTPUT": "-o ", 
+                      "CK_FLAGS_STATIC_BIN": "-static -fPIC", 
+                      "CK_FLAGS_STATIC_LIB": "-fPIC", 
+                      "CK_FLAG_PREFIX_INCLUDE": "-I", 
+                      "CK_FLAG_PREFIX_LIB_DIR": "-L", 
+                      "CK_FLAG_PREFIX_VAR": "-D", 
+                      "CK_LB": "ar rcs", 
+                      "CK_LB_OUTPUT": "-o ", 
+                      "CK_LD": "ld", 
+                      "CK_LD_FLAGS_EXTRA": "", 
+                      "CK_LIB_EXT": ".a", 
+                      "CK_MAKE": "make", 
+                      "CK_OBJDUMP": "objdump -d", 
+                      "CK_OBJ_EXT": ".o", 
+                      "CK_OPT_SIZE": "-Os", 
+                      "CK_OPT_SPEED": "-O3", 
+                      "CK_OPT_SPEED_SAFE": "-O2", 
+                      "CK_PLUGIN_FLAG": "-fplugin=", 
+                      "CK_PROFILER": "gprof"
+                    }, 
+                    "env_script": "env.sh", 
+                    "setup": {
+                      "host_os_uoa": "fb525e34243f49c1", 
+                      "target_os_bits": "32", 
+                      "target_os_uoa": "fb525e34243f49c1", 
+                      "version": "local"
+                    }, 
+                    "soft_uoa": "3a8a82fa40bf992d", 
+                    "tags": [
+                      "32bits", 
+                      "compiler", 
+                      "gcc", 
+                      "host-os-linux-32", 
+                      "lang-c", 
+                      "lang-cpp", 
+                      "lang-f77", 
+                      "lang-f90", 
+                      "lang-f95", 
+                      "target-os-linux-32", 
+                      "vlocal"
+                    ]
+                  }, 
+                  "local": "yes", 
+                  "num_entries": 1, 
+                  "skip_from_bat": "yes", 
+                  "tags": "compiler,lang-cpp", 
+                  "uoa": "b660ede86248c8bc", 
+                  "ver": "local"
+                }
+              }, 
               "env": {}, 
-              "env_script": "env.bat", 
+              "env_script": "env.sh", 
+              "package_uoa": "f3acaed8770c50fc", 
               "setup": {
-                "host_os_uoa": "7a95e0754c37610a", 
-                "target_os_bits": "64", 
-                "target_os_uoa": "7a95e0754c37610a", 
+                "deps_compiler": "b660ede86248c8bc", 
+                "host_os_uoa": "fb525e34243f49c1", 
+                "target_os_bits": "32", 
+                "target_os_uoa": "fb525e34243f49c1", 
                 "version": "4.3"
               }, 
               "soft_uoa": "fe71b1243e6bb329", 
               "tags": [
-                "64bits", 
-                "host-os-windows-64", 
+                "32bits", 
+                "host-os-linux-32", 
                 "intel", 
                 "lib", 
-                "target-os-windows-64", 
+                "target-os-linux-32", 
                 "tbb", 
                 "v4", 
                 "v4.3"
@@ -981,33 +2362,32 @@
             "local": "yes", 
             "num_entries": 1, 
             "tags": "lib,tbb", 
-            "uoa": "7f0942428d7790d4", 
+            "uoa": "46ddf34311961231", 
             "ver": "4.3"
           }
         }, 
         "env": {
-          "CK_ENV_LIB_OPENCV_DYNAMIC_LIB_PATH": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\bin", 
-          "CK_ENV_LIB_OPENCV_STATIC_LIB_PATH": "D:\\!FGG\\Installations\\lib-opencv-2.4.11-mcl-18.00-windows-64\\build\\install\\x64\\vc12\\lib"
+          "CK_ENV_LIB_OPENCV_DYNAMIC_LIB_PATH": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/lib", 
+          "CK_ENV_LIB_OPENCV_STATIC_LIB_PATH": "/home/fursin/fggwork/ck-tools/lib-opencv-2.4.11-gcc-local-linux-32/build/install/lib"
         }, 
-        "env_script": "env.bat", 
-        "package_uoa": "edcaeb00453e8f52", 
+        "env_script": "env.sh", 
+        "package_uoa": "d2ae4c2abb3711d5", 
         "setup": {
-          "deps_cmake": "4b201441c6ae66b0", 
-          "deps_compiler": "924e05b4e11f9dcc", 
-          "deps_opencl": "de433cac44b1c0f7", 
-          "deps_tbb": "7f0942428d7790d4", 
-          "host_os_uoa": "7a95e0754c37610a", 
-          "target_os_bits": "64", 
-          "target_os_uoa": "7a95e0754c37610a", 
+          "deps_compiler": "b660ede86248c8bc", 
+          "deps_opencl": "e8f2542a13f4a0eb", 
+          "deps_tbb": "46ddf34311961231", 
+          "host_os_uoa": "fb525e34243f49c1", 
+          "target_os_bits": "32", 
+          "target_os_uoa": "fb525e34243f49c1", 
           "version": "2.4.11"
         }, 
         "soft_uoa": "18eb79fe079438fb", 
         "tags": [
-          "64bits", 
-          "host-os-windows-64", 
+          "32bits", 
+          "host-os-linux-32", 
           "lib", 
           "opencv", 
-          "target-os-windows-64", 
+          "target-os-linux-32", 
           "v2", 
           "v2.4", 
           "v2.4.11"
@@ -1022,79 +2402,160 @@
       "num_entries": 1, 
       "sort": 20, 
       "tags": "lib,opencv", 
-      "uoa": "4d4186ee57672b1e", 
+      "uoa": "96c22a2ae10243a7", 
       "ver": "2.4.11"
     }, 
     "lib_tbb": {
-      "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\7f0942428d7790d4\\env.bat\n", 
+      "bat": ". /home/fursin/fggwork/ck-repos/local/env/46ddf34311961231/env.sh\n", 
       "choices": [
-        "7f0942428d7790d4"
+        "46ddf34311961231"
       ], 
       "cus": {
         "add_include_path": "yes", 
-        "dynamic_lib": "libtbb.dll", 
+        "dynamic_lib": "libtbb.so", 
         "env_prefix": "CK_ENV_LIB_TBB", 
         "extra_dir": "tbb43_20150424oss", 
         "extra_dynamic_libs": {
-          "libtbbmalloc": "tbb.dll", 
-          "libtbbproxy": "tbbproxy.dll"
+          "libtbbmalloc": "libtbbmalloc.so"
         }, 
-        "extra_static_libs": {
-          "libtbbmalloc": "tbbmalloc.lib", 
-          "libtbbproxy": "tbbproxy.lib"
-        }, 
-        "path_bin": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss\\bin\\intel64\\vc12", 
-        "path_include": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss\\include", 
-        "path_install": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss", 
-        "path_lib": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss\\lib\\intel64\\vc12", 
+        "from_sources": "yes", 
+        "path_dynamic_lib": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss/build/install_release", 
+        "path_include": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss/include", 
+        "path_install": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss", 
+        "path_lib": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss/build/install_release", 
+        "skip_add_to_bin": "yes", 
         "skip_add_to_ld_path": "yes", 
-        "static_lib": "tbb.lib", 
         "version": "4.3", 
-        "version_int": 403, 
-        "visual_studio_compiler": "vc12", 
-        "visual_studio_compiler_configured": "yes"
+        "version_int": 403
       }, 
       "dict": {
         "customize": {
           "add_include_path": "yes", 
-          "dynamic_lib": "libtbb.dll", 
+          "dynamic_lib": "libtbb.so", 
           "env_prefix": "CK_ENV_LIB_TBB", 
           "extra_dir": "tbb43_20150424oss", 
           "extra_dynamic_libs": {
-            "libtbbmalloc": "tbb.dll", 
-            "libtbbproxy": "tbbproxy.dll"
+            "libtbbmalloc": "libtbbmalloc.so"
           }, 
-          "extra_static_libs": {
-            "libtbbmalloc": "tbbmalloc.lib", 
-            "libtbbproxy": "tbbproxy.lib"
-          }, 
-          "path_bin": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss\\bin\\intel64\\vc12", 
-          "path_include": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss\\include", 
-          "path_install": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss", 
-          "path_lib": "D:\\!FGG\\Installations\\lib-tbb-4.3-windows-64\\tbb43_20150424oss\\lib\\intel64\\vc12", 
+          "from_sources": "yes", 
+          "path_dynamic_lib": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss/build/install_release", 
+          "path_include": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss/include", 
+          "path_install": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss", 
+          "path_lib": "/home/fursin/fggwork/ck-tools/lib-tbb-4.3-gcc-local-linux-32/tbb43_20150424oss/build/install_release", 
+          "skip_add_to_bin": "yes", 
           "skip_add_to_ld_path": "yes", 
-          "static_lib": "tbb.lib", 
           "version": "4.3", 
-          "version_int": 403, 
-          "visual_studio_compiler": "vc12", 
-          "visual_studio_compiler_configured": "yes"
+          "version_int": 403
         }, 
-        "deps": {}, 
+        "deps": {
+          "compiler": {
+            "bat": ". /home/fursin/fggwork/ck-repos/ck-autotuning/env/compiler-gcc-local-linux-h32-t32/env.sh\n", 
+            "build_dir_name": "gcc", 
+            "dict": {
+              "customize": {
+                "add_m32": "yes", 
+                "build_dir_name": "gcc", 
+                "can_strip_dynamic_lib": "yes", 
+                "env_prefix": "CK_ENV_COMPILER_GCC", 
+                "languages": [
+                  "C", 
+                  "CPP", 
+                  "F77", 
+                  "F90", 
+                  "F95"
+                ], 
+                "retarget": "no", 
+                "skip_add_to_ld_path": "yes", 
+                "skip_path": "yes", 
+                "tool_prefix_configured": "yes", 
+                "version": "local", 
+                "version_int": 88888
+              }, 
+              "deps": {}, 
+              "env": {
+                "CK_AR": "ar", 
+                "CK_ASM_EXT": ".s", 
+                "CK_CC": "gcc", 
+                "CK_COMPILER_FLAGS_OBLIGATORY": "", 
+                "CK_CXX": "g++", 
+                "CK_DLL_EXT": ".so", 
+                "CK_EXE_EXT": ".out", 
+                "CK_EXTRA_LIB_DL": "-ldl", 
+                "CK_EXTRA_LIB_M": "-lm", 
+                "CK_F90": "gfortran", 
+                "CK_F95": "gfortran", 
+                "CK_FC": "gfortran", 
+                "CK_FLAGS_CREATE_ASM": "-S", 
+                "CK_FLAGS_CREATE_OBJ": "-c", 
+                "CK_FLAGS_DLL": "-shared -fPIC", 
+                "CK_FLAGS_DLL_EXTRA": "", 
+                "CK_FLAGS_OUTPUT": "-o ", 
+                "CK_FLAGS_STATIC_BIN": "-static -fPIC", 
+                "CK_FLAGS_STATIC_LIB": "-fPIC", 
+                "CK_FLAG_PREFIX_INCLUDE": "-I", 
+                "CK_FLAG_PREFIX_LIB_DIR": "-L", 
+                "CK_FLAG_PREFIX_VAR": "-D", 
+                "CK_LB": "ar rcs", 
+                "CK_LB_OUTPUT": "-o ", 
+                "CK_LD": "ld", 
+                "CK_LD_FLAGS_EXTRA": "", 
+                "CK_LIB_EXT": ".a", 
+                "CK_MAKE": "make", 
+                "CK_OBJDUMP": "objdump -d", 
+                "CK_OBJ_EXT": ".o", 
+                "CK_OPT_SIZE": "-Os", 
+                "CK_OPT_SPEED": "-O3", 
+                "CK_OPT_SPEED_SAFE": "-O2", 
+                "CK_PLUGIN_FLAG": "-fplugin=", 
+                "CK_PROFILER": "gprof"
+              }, 
+              "env_script": "env.sh", 
+              "setup": {
+                "host_os_uoa": "fb525e34243f49c1", 
+                "target_os_bits": "32", 
+                "target_os_uoa": "fb525e34243f49c1", 
+                "version": "local"
+              }, 
+              "soft_uoa": "3a8a82fa40bf992d", 
+              "tags": [
+                "32bits", 
+                "compiler", 
+                "gcc", 
+                "host-os-linux-32", 
+                "lang-c", 
+                "lang-cpp", 
+                "lang-f77", 
+                "lang-f90", 
+                "lang-f95", 
+                "target-os-linux-32", 
+                "vlocal"
+              ]
+            }, 
+            "local": "yes", 
+            "num_entries": 1, 
+            "skip_from_bat": "yes", 
+            "tags": "compiler,lang-cpp", 
+            "uoa": "b660ede86248c8bc", 
+            "ver": "local"
+          }
+        }, 
         "env": {}, 
-        "env_script": "env.bat", 
+        "env_script": "env.sh", 
+        "package_uoa": "f3acaed8770c50fc", 
         "setup": {
-          "host_os_uoa": "7a95e0754c37610a", 
-          "target_os_bits": "64", 
-          "target_os_uoa": "7a95e0754c37610a", 
+          "deps_compiler": "b660ede86248c8bc", 
+          "host_os_uoa": "fb525e34243f49c1", 
+          "target_os_bits": "32", 
+          "target_os_uoa": "fb525e34243f49c1", 
           "version": "4.3"
         }, 
         "soft_uoa": "fe71b1243e6bb329", 
         "tags": [
-          "64bits", 
-          "host-os-windows-64", 
+          "32bits", 
+          "host-os-linux-32", 
           "intel", 
           "lib", 
-          "target-os-windows-64", 
+          "target-os-linux-32", 
           "tbb", 
           "v4", 
           "v4.3"
@@ -1104,7 +2565,7 @@
       "num_entries": 1, 
       "sort": 50, 
       "tags": "lib,tbb", 
-      "uoa": "7f0942428d7790d4", 
+      "uoa": "46ddf34311961231", 
       "ver": "4.3"
     }
   }, 
@@ -1112,25 +2573,23 @@
   "features": {
     "compiler_version": {
       "list": [
-        "15", 
-        "0", 
-        "1", 
-        "148"
+        "3", 
+        "6", 
+        "0"
       ], 
       "raw": [
-        "Intel(R) C++ Intel(R) 64 Compiler XE for applications running on Intel(R) 64, Version 15.0.1.148 Build 20141023", 
-        "Copyright (C) 1985-2014 Intel Corporation.  All rights reserved.", 
-        "", 
-        "icl: command line error: no files specified; for help type \"icl /help\"", 
+        "clang version 3.6.0 (tags/RELEASE_360/final)", 
+        "Target: armv7l-unknown-linux-gnueabihf", 
+        "Thread model: posix", 
         ""
       ], 
-      "str": "15.0.1.148"
+      "str": "3.6.0"
     }
   }, 
   "ready": "yes", 
   "speed": "yes", 
   "state": {
-    "cur_dir": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\demo\\explore-hog-compilers", 
+    "cur_dir": "/home/fursin/fggwork/ck-repos/reproduce-carp-project/demo/explore-hog-compilers", 
     "tmp_dir": "tmp"
   }
 }

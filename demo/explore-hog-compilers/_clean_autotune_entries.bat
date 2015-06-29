@@ -1,1 +1,1 @@
-ck rm experiment:autotune-demo-hog-lws-*
+ck rm experiment:explore-hog-compilers

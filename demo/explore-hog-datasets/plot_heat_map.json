@@ -1,12 +1,12 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["demo-compile-run-hog-tbb-2-explore-freq"],
+  "data_uoa_list":["explore-hog-4x4-datasets"],
 
   "flat_keys_list":[
-    "##choices#cpu_freq#min",
-    "##choices#gpu_freq#min",
-    "##characteristics#run#derived_cpu_time_div_by_gpu_with_mem_time#min"
+    "##features#dataset#height#min",
+    "##features#dataset#width#min",
+    "##characteristics#run#dim_gpu_with_mem#exp"
   ],
 
   "plot_type":"mpl_2d_heatmap",
@@ -15,9 +15,9 @@
 
   "title":"Powered by Collective Knowledge",
 
-  "axis_x_desc":"CPU frequency",
-  "axis_y_desc":"GPU frequency",
-  "axis_z_desc":"CPU / GPU with mem",
+  "axis_x_desc":"Image height",
+  "axis_y_desc":"Image width",
+  "axis_z_desc":"GPU with mem execution time",
 
   "plot_grid":"no",
 
@@ -25,6 +25,6 @@
   "mpl_image_size_y":"6",
   "mpl_image_dpi":"100",
 
-  "point_style":{"0":{"elinewidth":"0", "marker":"s", "size":400, "colorbar_orietation":"horizontal", "colorbar_label":"test"}}
+  "point_style":{"0":{"elinewidth":"0", "marker":"s", "size":400, "colorbar_orietation":"horizontal", "colorbar_label":"GPU with mem execution time"}}
 
 }

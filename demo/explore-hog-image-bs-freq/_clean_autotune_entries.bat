@@ -1,1 +1,1 @@
-ck rm experiment:autotune-demo-hog-block-size-*
+ck rm experiment:explore-hog-*

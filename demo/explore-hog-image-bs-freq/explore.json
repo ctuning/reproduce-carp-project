@@ -25,7 +25,8 @@
    "compiler_vars": {
      "HOG4X4":""
    },
-   "skip_calibration":"yes"
+   "skip_calibration":"yes",
+   "no_state_check":"yes"
   },
 
   "seed":12345,
