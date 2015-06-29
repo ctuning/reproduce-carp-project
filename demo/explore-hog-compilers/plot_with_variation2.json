@@ -1,21 +1,18 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-demo-hog-lws-random"],
+  "data_uoa_list":["autotune-demo-hog-cpu-gpu-all-performance"],
 
   "flat_keys_list":[
-    "##characteristics#run#dim_gpu_only#center",
-    "##characteristics#run#dim_gpu_only#halfrange"
+    "##choices#compiler_vars#BLOCK_SIZE#min",
+    "##characteristics#run#dim_cpu#min"
   ],
-
-  "add_x_loop":"yes",
-  "sort_index":0,
 
   "ignore_point_if_empty_string":"yes",
 
   "plot_type":"mpl_2d_scatter",
   "display_x_error_bar":"no",
-  "display_y_error_bar":"yes",
+  "display_y_error_bar":"no",
 
   "title":"Powered by Collective Knowledge",
 

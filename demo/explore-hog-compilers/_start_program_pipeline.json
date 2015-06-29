@@ -1,0 +1,7 @@
+{
+ "pipeline_update":{
+  "cpu_freq":"max",
+  "gpu_freq":"max",
+  "compiler_env_uoa":"d1cad28a354152b3"
+ }
+}

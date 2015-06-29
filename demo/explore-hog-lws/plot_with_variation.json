@@ -1,7 +1,7 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-demo-hog-lws-1x1-bs16-llvm-loop", "autotune-demo-hog-lws-1x1-bs16-llvm-best"],
+  "data_uoa_list":["autotune-demo-hog-lws-4x4-bs64-gcc-loop", "autotune-demo-hog-lws-4x4-bs64-gcc-best"],
 
   "flat_keys_list":[
     "##characteristics#run#dim_gpu_only#center",
@@ -9,6 +9,7 @@
   ],
 
   "add_x_loop":"yes",
+  "sort_index":0,
 
   "ignore_point_if_empty_string":"yes",
 

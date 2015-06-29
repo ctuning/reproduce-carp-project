@@ -1,12 +1,12 @@
 {
   "choices_order":[
     [
-     "##dataset_uoa"
+     "##compiler_env_uoa"
     ]
   ],
 
   "choices_selection": [
-    {"type":"loop", "default":"3fe364dc4d218734"}
+    {"type":"loop"}
   ],
 
   "pipeline_update":{
@@ -24,10 +24,10 @@
 
   "seed":12345,
   "iterations":1000,
-  "repetitions":1,
+  "repetitions":2,
 
   "record":"yes",
-  "record_uoa":"autotune-demo-hog-datasets-all",
+  "record_uoa":"autotune-demo-hog-compilers-all",
 
   "features_keys_to_process":["##choices#*"],
 

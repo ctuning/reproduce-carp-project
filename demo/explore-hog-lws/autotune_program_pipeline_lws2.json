@@ -13,6 +13,10 @@
     {"type":"loop", "choice":[64], "default":64}
   ],
 
+  "pipeline_update":{
+     "repeat":10,
+   },
+
 
   "seed":12345,
   "iterations":1000,

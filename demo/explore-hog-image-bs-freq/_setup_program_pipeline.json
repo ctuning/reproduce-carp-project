@@ -6,9 +6,5 @@
  "data_uoa":"realeyes-hog-opencl-tbb",
 
  "energy":"no",
- "speed":"yes",
-
- "cpu_freq":"max",
- "gpu_freq":"max",
- "compiler_vars":{"HOG1X1":""}
+ "speed":"yes"
 }

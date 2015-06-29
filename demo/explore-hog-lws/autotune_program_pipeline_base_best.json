@@ -6,8 +6,8 @@
      "cpu_freq":"max",
      "gpu_freq":"max",
      "compiler_vars": {
-       "HOG1X1":"",
-       "BLOCK_SIZE":16
+       "HOG2X2":"",
+       "BLOCK_SIZE":64
      },
 
      "skip_calibration":"yes",
@@ -16,7 +16,7 @@
    },
 
   "record":"yes",
-  "record_uoa":"autotune-demo-hog-lws-1x1-bs16-llvm-best",
+  "record_uoa":"autotune-demo-hog-lws-2x2-bs64-icc-best",
 
   "features_keys_to_process":["##choices#*"],
 

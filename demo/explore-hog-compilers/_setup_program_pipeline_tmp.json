@@ -8,7 +8,7 @@
     }, 
     "cpu_freq": "max", 
     "data_uoa": "realeyes-hog-opencl-tbb", 
-    "dataset_uoa": "image-jpeg-carp-eso1113a", 
+    "dataset_uoa": "image-jpeg-0001", 
     "device_id": "", 
     "energy": "no", 
     "gpu_freq": "max", 
@@ -18,6 +18,20 @@
     "target_os_bits": "64"
   }, 
   "choices_desc": {
+    "##compiler_env_uoa": {
+      "choices": [
+        "289842d618a4e54a", 
+        "924e05b4e11f9dcc", 
+        "94e0f4653b0fe9fa", 
+        "ac64c238d32a89b3", 
+        "b90ce949dca060c0", 
+        "ba51adfd437ab8de", 
+        "d1cad28a354152b3"
+      ], 
+      "has_choice": "yes", 
+      "sort": 2000, 
+      "type": "uoa"
+    }, 
     "##compiler_flags#base_opt": {
       "choice": [
         "-O3", 
@@ -70,741 +84,41 @@
     }, 
     "##dataset_uoa": {
       "choices": [
-        {
-          "data_uid": "f994f708cc102713", 
-          "data_uoa": "image-jpeg-1c4bb3eb5", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets1\\dataset\\image-jpeg-1c4bb3eb5", 
-          "repo_uid": "425c960167ced32c", 
-          "repo_uoa": "ctuning-datasets1", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "1aaaa23c44e588f9", 
-          "data_uoa": "image-jpeg-0001", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets-min\\dataset\\image-jpeg-0001", 
-          "repo_uid": "4ffcc1307484d840", 
-          "repo_uoa": "ctuning-datasets-min", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "21500da03e4ccfa3", 
-          "data_uoa": "image-jpeg-fgg", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ck-autotuning\\dataset\\image-jpeg-fgg", 
-          "repo_uid": "a4328ba99679e0d1", 
-          "repo_uoa": "ck-autotuning", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "4070a925b6077f3c", 
-          "data_uoa": "image-jpeg-carp-3970203935-2be6dbb13e-o", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-3970203935-2be6dbb13e-o", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "3821f8b25917cab0", 
-          "data_uoa": "image-jpeg-carp-5093098866-9bfa0c1f8b-o", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-5093098866-9bfa0c1f8b-o", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "ff6a34d62a55c85b", 
-          "data_uoa": "image-jpeg-carp-514764580-4fec5cfb71-o", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-514764580-4fec5cfb71-o", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "b8a5e9fe4d94a468", 
-          "data_uoa": "image-jpeg-carp-7048000969-3190d06555-o", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-7048000969-3190d06555-o", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "ed469fdd4a37bd88", 
-          "data_uoa": "image-jpeg-carp-8316449920-217c5edf56-o", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-8316449920-217c5edf56-o", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "51694ca9764d88b7", 
-          "data_uoa": "image-jpeg-carp-8455950567-c3a0bba489-o", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-8455950567-c3a0bba489-o", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "3fe364dc4d218734", 
-          "data_uoa": "image-jpeg-carp-eso1113a", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-eso1113a", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "ce947b2b6233bdfa", 
-          "data_uoa": "image-jpeg-carp-final-owl-web", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-final-owl-web", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "1a169bc4b8baaddc", 
-          "data_uoa": "image-jpeg-carp-GLIMPSE-MIPSGAL-Milky-Way-12", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-GLIMPSE-MIPSGAL-Milky-Way-12", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "44ca5ab7a268cf4d", 
-          "data_uoa": "image-jpeg-carp-heic0619e-ngc6357", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-heic0619e-ngc6357", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "4e64ecddc481c8dd", 
-          "data_uoa": "image-jpeg-carp-Kings-Cross-Western-Concourse-central-position-2012-05-02-75", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-Kings-Cross-Western-Concourse-central-position-2012-05-02-75", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "bf5d476534f04885", 
-          "data_uoa": "image-jpeg-carp-M104-ngc4594-sombrero-galaxy-hi-res", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-M104-ngc4594-sombrero-galaxy-hi-res", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "b41491866f4f4ce8", 
-          "data_uoa": "image-jpeg-carp-Super-Moon-Panorma", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\dataset\\image-jpeg-carp-Super-Moon-Panorma", 
-          "repo_uid": "7d60433aa9fd29fe", 
-          "repo_uoa": "reproduce-carp-project", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "481066c6404d96b7", 
-          "data_uoa": "image-jpeg-0002", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0002", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "38cfe7c67cec0612", 
-          "data_uoa": "image-jpeg-0003", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0003", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "c59c2aab21a48a29", 
-          "data_uoa": "image-jpeg-0004", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0004", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "9ddbbe02281b6d13", 
-          "data_uoa": "image-jpeg-0005", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0005", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "65d42f68279f6b63", 
-          "data_uoa": "image-jpeg-0006", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0006", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "24b4e8d89ff3cc85", 
-          "data_uoa": "image-jpeg-0007", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0007", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "96fdd91703544877", 
-          "data_uoa": "image-jpeg-0008", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0008", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "c1242929d23e4899", 
-          "data_uoa": "image-jpeg-0009", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0009", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "bf8554677900d79e", 
-          "data_uoa": "image-jpeg-0010", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0010", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "2b8f9d53789948f6", 
-          "data_uoa": "image-jpeg-0011", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0011", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "ab3453cad8a007bc", 
-          "data_uoa": "image-jpeg-0012", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0012", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "175c91c2e97845a5", 
-          "data_uoa": "image-jpeg-0013", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0013", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "8df77b462ea8b0a3", 
-          "data_uoa": "image-jpeg-0014", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0014", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "bd7b4b0a8ff44d45", 
-          "data_uoa": "image-jpeg-0015", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0015", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "5458e41669da5482", 
-          "data_uoa": "image-jpeg-0016", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0016", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "4dfb81be6aa11ece", 
-          "data_uoa": "image-jpeg-0017", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0017", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "3da4b4444db6588f", 
-          "data_uoa": "image-jpeg-0018", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0018", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "406b4c40b3854b42", 
-          "data_uoa": "image-jpeg-0019", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0019", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }, 
-        {
-          "data_uid": "eb0c3b428c284c33", 
-          "data_uoa": "image-jpeg-0020", 
-          "ignore_case": "", 
-          "ignore_update": "", 
-          "module_uid": "8a7141c59cd335f5", 
-          "module_uoa": "dataset", 
-          "out": "", 
-          "path": "D:\\Work1\\CK\\ck-repos\\ctuning-datasets\\dataset\\image-jpeg-0020", 
-          "repo_uid": "32332f6412da1be1", 
-          "repo_uoa": "ctuning-datasets", 
-          "search_by_name": "", 
-          "search_dict": {
-            "tags": [
-              "dataset", 
-              "image", 
-              "jpeg"
-            ]
-          }, 
-          "search_string": ""
-        }
+        "f994f708cc102713", 
+        "1aaaa23c44e588f9", 
+        "21500da03e4ccfa3", 
+        "4070a925b6077f3c", 
+        "3821f8b25917cab0", 
+        "ff6a34d62a55c85b", 
+        "b8a5e9fe4d94a468", 
+        "ed469fdd4a37bd88", 
+        "51694ca9764d88b7", 
+        "3fe364dc4d218734", 
+        "ce947b2b6233bdfa", 
+        "1a169bc4b8baaddc", 
+        "44ca5ab7a268cf4d", 
+        "4e64ecddc481c8dd", 
+        "bf5d476534f04885", 
+        "b41491866f4f4ce8", 
+        "481066c6404d96b7", 
+        "38cfe7c67cec0612", 
+        "c59c2aab21a48a29", 
+        "9ddbbe02281b6d13", 
+        "65d42f68279f6b63", 
+        "24b4e8d89ff3cc85", 
+        "96fdd91703544877", 
+        "c1242929d23e4899", 
+        "bf8554677900d79e", 
+        "2b8f9d53789948f6", 
+        "ab3453cad8a007bc", 
+        "175c91c2e97845a5", 
+        "8df77b462ea8b0a3", 
+        "bd7b4b0a8ff44d45", 
+        "5458e41669da5482", 
+        "4dfb81be6aa11ece", 
+        "3da4b4444db6588f", 
+        "406b4c40b3854b42", 
+        "eb0c3b428c284c33"
       ], 
       "has_choice": "yes", 
       "sort": 1200, 
@@ -828,6 +142,15 @@
     "compiler": {
       "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\289842d618a4e54a\\env.bat\n", 
       "build_dir_name": "icc", 
+      "choices": [
+        "289842d618a4e54a", 
+        "924e05b4e11f9dcc", 
+        "94e0f4653b0fe9fa", 
+        "ac64c238d32a89b3", 
+        "b90ce949dca060c0", 
+        "ba51adfd437ab8de", 
+        "d1cad28a354152b3"
+      ], 
       "cus": {
         "build-dir-name": "icc", 
         "build_dir_name": "icc", 
@@ -1027,6 +350,9 @@
     }, 
     "lib.xopenme": {
       "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\ce48085aba489278\\env.bat\n", 
+      "choices": [
+        "ce48085aba489278"
+      ], 
       "cus": {
         "add_include_path": "yes", 
         "dynamic_lib": "librtlxopenme.dll", 
@@ -1299,6 +625,9 @@
     }, 
     "lib_opencl": {
       "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\de433cac44b1c0f7\\env.bat\n", 
+      "choices": [
+        "de433cac44b1c0f7"
+      ], 
       "cus": {
         "add_include_path": "yes", 
         "env_prefix": "CK_ENV_LIB_OPENCL", 
@@ -1360,6 +689,9 @@
     }, 
     "lib_opencv": {
       "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\4d4186ee57672b1e\\env.bat\n", 
+      "choices": [
+        "4d4186ee57672b1e"
+      ], 
       "cus": {
         "add_include_path": "yes", 
         "dynamic_lib": "opencv_core2411d.dll", 
@@ -1695,6 +1027,9 @@
     }, 
     "lib_tbb": {
       "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\7f0942428d7790d4\\env.bat\n", 
+      "choices": [
+        "7f0942428d7790d4"
+      ], 
       "cus": {
         "add_include_path": "yes", 
         "dynamic_lib": "libtbb.dll", 
@@ -1795,7 +1130,7 @@
   "ready": "yes", 
   "speed": "yes", 
   "state": {
-    "cur_dir": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\demo\\explore-hog-lws", 
+    "cur_dir": "D:\\Work1\\CK\\ck-repos\\reproduce-carp-project\\demo\\explore-hog-compilers", 
     "tmp_dir": "tmp"
   }
 }

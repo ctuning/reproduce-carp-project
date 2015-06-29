@@ -3,12 +3,12 @@
   "cpu_freq":"max",
   "gpu_freq":"max",
   "compiler_vars": {
-    "HOG2X2":"",
-    "BLOCK_SIZE":16,
+    "HOG4X4":"",
+    "BLOCK_SIZE":32,
     "LWS_X":4,
-    "LWS_Y":1,
+    "LWS_Y":8,
     "LWS_Z":4
- },
+  },
   "skip_calibration":"yes"
  }
 }

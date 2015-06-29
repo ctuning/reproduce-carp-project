@@ -17,6 +17,9 @@
     {"type":"random-with-next", "choice":[4,8,16,24,32,48,64,96,128], "default":64},
   ],
 
+  "pipeline_update":{
+     "repeat":10,
+   },
 
   "seed":12345,
   "iterations":1000,

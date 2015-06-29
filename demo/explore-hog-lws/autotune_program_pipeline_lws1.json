@@ -9,6 +9,10 @@
     {"type":"loop", "choice":[8,16,32,48,64,96,128], "default":8}
   ],
 
+  "pipeline_update":{
+     "repeat":10,
+   },
+
 
   "seed":12345,
   "iterations":1000,
