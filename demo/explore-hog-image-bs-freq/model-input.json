@@ -1,0 +1,46 @@
+{
+  "data_uoa":"explore-hog-4x4-all-random",
+
+  "features_flat_keys_ext":"#min",
+
+  "features_flat_keys_list":[
+
+    "##choices#compiler_vars#BLOCK_SIZE",
+
+    "##choices#cpu_freq",
+    "##choices#gpu_freq",
+
+    "##characteristics#run#run_time_state#lws_x", 
+    "##characteristics#run#run_time_state#lws_y", 
+    "##characteristics#run#run_time_state#lws_z", 
+
+    "##features#dataset#height",
+    "##features#dataset#width",
+
+    "##features#dataset#total_size"
+   ],
+
+   "features_flat_keys_desc": {
+    "##choices#compiler_vars#BLOCK_SIZE":{"name":"block size"},
+
+    "##choices#cpu_freq":{"name":"CPU frequency"},
+    "##choices#gpu_freq":{"name":"GPU frequency"},
+
+    "##characteristics#run#run_time_state#lws_x":{"name":"LWS X"}, 
+    "##characteristics#run#run_time_state#lws_y":{"name":"LWS Y"}, 
+    "##characteristics#run#run_time_state#lws_z":{"name":"LWS Z"}, 
+
+    "##features#dataset#height":{"name":"image height"},
+    "##features#dataset#width":{"name":"image width"},
+
+    "##features#dataset#total_size":{"name":"image size"}
+  },
+
+  "characteristics_flat_keys_list":[
+    "##characteristics#run#derived_gpu_only_is_much_better_cpu#min"
+  ],
+
+  "remove_points_with_none":"yes",
+
+  "keep_temp_files":"yes"
+}
