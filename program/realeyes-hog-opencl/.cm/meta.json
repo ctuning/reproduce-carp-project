@@ -78,9 +78,6 @@
       }
     }
   }, 
-  "run_vars": {
-    "CT_REPEAT_MAIN": "1"
-  }, 
   "source_files": [
     "test_hog.cpp"
   ], 
