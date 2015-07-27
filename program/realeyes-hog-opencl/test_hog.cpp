@@ -98,6 +98,8 @@
 #define HOG_OPENCL_CL "hog/hog.opencl.cl"
 #endif
 
+#include "hog.adapt.h" //FGG - dynamic adaptation
+
 namespace {
     template<typename T>
     inline int fast_floor(T f) {
@@ -519,6 +521,11 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
     bool first_execution_pencil = true;
 #endif
 
+    /****** FGG: Init for possible dynamic adaptation ******************************************************************************/
+    bool adapt_run[3]={true, true, true};
+    int adapt_features[10];
+
+    /****** Prepare algorithm ******************************************************************************/
     for (;repeat>0; --repeat) {
         for ( auto & size : sizes ) {
             for ( auto & item : pool ) {
@@ -562,8 +569,28 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                 }
 
                 cv::Mat_<float> cpu_result, gpu_result, pen_result;
-                std::chrono::duration<double> elapsed_time_cpu, elapsed_time_gpu;
+                std::chrono::duration<double> elapsed_time_cpu, elapsed_time_gpu, elapsed_adapt_tree, elapsed_adapt;
 
+                /****** FGG: Init for possible dynamic adaptation ******************************************************************************/
+                if ((getenv("CK_ADAPT_HOG")!=NULL) && (atoi(getenv("CK_ADAPT_HOG"))==1))
+                {
+                   const auto adapt_tree_start = std::chrono::high_resolution_clock::now();
+
+                   adapt_features[0]=cpu_gray.rows;
+                   adapt_features[1]=cpu_gray.cols;
+                   adapt_features[2]=cpu_gray.rows*cpu_gray.cols;
+
+
+                   adapt_hog(adapt_features, adapt_run);
+
+                   const auto adapt_tree_end = std::chrono::high_resolution_clock::now();
+                   elapsed_adapt_tree = adapt_tree_end - adapt_tree_start;
+                }
+
+                const auto adapt_start = std::chrono::high_resolution_clock::now();
+
+                /****** CPU implementation ******************************************************************************/
+                if (adapt_run[0])
                 {
                     //CPU implementation
                     static nel::HOGDescriptorCPP descriptor( NUMBER_OF_CELLS
@@ -579,6 +606,9 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                     elapsed_time_cpu = cpu_end - cpu_start;
                     //Free up resources
                 }
+
+                /****** OpenCL implementation ******************************************************************************/
+                if (adapt_run[1])
                 {
                     //OpenCL implementation
                     static nel::HOGDescriptorOCL descriptor( NUMBER_OF_CELLS
@@ -602,7 +632,12 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                     elapsed_time_gpu = gpu_end - gpu_start;
                     //Free up resources
                 }
+
+
+                /****** Pencil implementation ******************************************************************************/
+
 #ifdef __PENCIL__
+                if (adapt_run[2])
                 {
 		    //PENCIL implementation
                     pen_result.create(num_positions, HISTOGRAM_BINS);
@@ -635,6 +670,15 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                     prl_timings_dump();
                 }
 #endif
+
+                const auto adapt_end = std::chrono::high_resolution_clock::now();
+                elapsed_adapt = adapt_end - adapt_start;
+
+                xopenme_add_var_f(16, (char*) "  \"adapt_tree_time\":%f", elapsed_adapt_tree.count());
+                xopenme_add_var_f(17, (char*) "  \"adapt_time\":%f", elapsed_adapt.count());
+
+
+                /****** Dumping run-time state via OpenME ******************************************************************************/
 
 /* FGG */
 #ifdef XOPENME_DUMP_IMAGES
@@ -685,7 +729,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
 int main(int argc, char* argv[])
 {
 #ifdef XOPENME
-        xopenme_init(1,16);
+        xopenme_init(1,18);
         xopenme_clock_start(0);
 #endif
 

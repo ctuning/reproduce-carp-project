@@ -86,7 +86,8 @@
     }
   }, 
   "source_files": [
-    "test_hog.cpp"
+    "test_hog.cpp",
+    "hog.adapt.cpp"
   ], 
   "species": [
     "c84ac2ab43ad1400"
