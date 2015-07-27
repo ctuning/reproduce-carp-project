@@ -523,7 +523,8 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
 
     /****** FGG: Init for possible dynamic adaptation ******************************************************************************/
     bool adapt_run[3]={true, true, true};
-    int adapt_features[10];
+    int adapt_features[4];
+    float adapt_features_f[2];
 
     /****** Prepare algorithm ******************************************************************************/
     for (;repeat>0; --repeat) {
@@ -580,8 +581,16 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                    adapt_features[1]=cpu_gray.cols;
                    adapt_features[2]=cpu_gray.rows*cpu_gray.cols;
 
+                   adapt_features[3]=0;
+                   if (getenv("CK_CPU_HARDWARE_SPECIES")!=NULL) adapt_features[3]=atof(getenv("CK_CPU_HARDWARE_SPECIES"));
 
-                   adapt_hog(adapt_features, adapt_run);
+                   adapt_features_f[0]=0;
+                   if (getenv("CK_CPU_FREQUENCY")!=NULL) adapt_features_f[0]=atof(getenv("CK_CPU_FREQUENCY"));
+
+                   adapt_features_f[1]=0;
+                   if (getenv("CK_GPU_FREQUENCY")!=NULL) adapt_features_f[1]=atof(getenv("CK_GPU_FREQUENCY"));
+
+                   adapt_hog(adapt_run, adapt_features, adapt_features_f);
 
                    const auto adapt_tree_end = std::chrono::high_resolution_clock::now();
                    elapsed_adapt_tree = adapt_tree_end - adapt_tree_start;

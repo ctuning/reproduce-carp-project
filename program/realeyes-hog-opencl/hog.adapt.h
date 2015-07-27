@@ -14,6 +14,6 @@
 #ifndef HOG_ADAPT_H
 #define HOG_ADAPT_H
 
-int adapt_hog(int* input, bool* output);
+int adapt_hog(bool* output, int* input, float* input_f);
 
 #endif
