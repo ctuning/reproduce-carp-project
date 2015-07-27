@@ -569,7 +569,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                 }
 
                 cv::Mat_<float> cpu_result, gpu_result, pen_result;
-                std::chrono::duration<double> elapsed_time_cpu, elapsed_time_gpu, elapsed_adapt_tree, elapsed_adapt;
+                std::chrono::duration<double> elapsed_time_cpu, elapsed_time_gpu, elapsed_time_pencil, elapsed_adapt_tree, elapsed_adapt;
 
                 /****** FGG: Init for possible dynamic adaptation ******************************************************************************/
                 if ((getenv("CK_ADAPT_HOG")!=NULL) && (atoi(getenv("CK_ADAPT_HOG"))==1))
@@ -587,8 +587,6 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                    elapsed_adapt_tree = adapt_tree_end - adapt_tree_start;
                 }
 
-                const auto adapt_start = std::chrono::high_resolution_clock::now();
-
                 /****** CPU implementation ******************************************************************************/
                 if (adapt_run[0])
                 {
@@ -605,6 +603,8 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
 
                     elapsed_time_cpu = cpu_end - cpu_start;
                     //Free up resources
+
+                    elapsed_adapt=elapsed_time_cpu;
                 }
 
                 /****** OpenCL implementation ******************************************************************************/
@@ -631,6 +631,8 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
 
                     elapsed_time_gpu = gpu_end - gpu_start;
                     //Free up resources
+
+                    elapsed_adapt=elapsed_time_gpu;
                 }
 
 
@@ -657,6 +659,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
 		    prl_timings_reset();
 		    prl_timings_start();
 
+                    const auto pencil_start = std::chrono::high_resolution_clock::now();
                     pencil_hog( NUMBER_OF_CELLS, NUMBER_OF_BINS, GAUSSIAN_WEIGHTS, SPARTIAL_WEIGHTS, SIGNED_HOG
                               , cpu_gray.rows, cpu_gray.cols, cpu_gray.step1(), cpu_gray.ptr<uint8_t>()
                               , num_positions
@@ -664,15 +667,17 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                               , reinterpret_cast<const float (*)[2]>(blocksizes.data)
                               , reinterpret_cast<      float  *    >(pen_result.data)
                               );
+                    const auto pencil_end = std::chrono::high_resolution_clock::now();
+
+                    elapsed_time_pencil = pencil_end - pencil_start;
 
 		    prl_timings_stop();
                     // Dump execution times for PENCIL code.
                     prl_timings_dump();
+
+                    elapsed_adapt=elapsed_time_pencil;
                 }
 #endif
-
-                const auto adapt_end = std::chrono::high_resolution_clock::now();
-                elapsed_adapt = adapt_end - adapt_start;
 
                 xopenme_add_var_f(16, (char*) "  \"adapt_tree_time\":%f", elapsed_adapt_tree.count());
                 xopenme_add_var_f(17, (char*) "  \"adapt_time\":%f", elapsed_adapt.count());
