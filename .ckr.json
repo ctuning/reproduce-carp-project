@@ -1,11 +1,15 @@
 {
+  "data_name": "reproduce-carp-project", 
+  "data_alias": "reproduce-carp-project", 
   "data_uid": "7d60433aa9fd29fe", 
-  "data_name": "CK reproduce - project CARP 2015", 
+  "data_uoa": "reproduce-carp-project", 
   "dict": {
+    "repo_deps": [
+      {
+        "repo_uoa": "ck-autotuning"
+      }
+    ], 
     "url": "https://github.com/ctuning/reproduce-carp-project", 
     "shared": "git"
-  }, 
-  "data_alias": "reproduce-carp-project", 
-  "data_uoa": "reproduce-carp-project",
-  "repo_deps":[{"repo_uoa":"ck-autotuning"}]
+  }
 }
