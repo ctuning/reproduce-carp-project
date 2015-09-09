@@ -1,3 +1,0 @@
-[submodule "Extended Polyhedral Benchmark"]
-    path = src/
-    url = git@github.com:rbaghdadi/extended-polyhedral-benchmark.git

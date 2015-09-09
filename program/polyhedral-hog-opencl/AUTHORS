@@ -1,7 +1,9 @@
 Authors:
-- Róbert Dávid <robert.david@realeyesit.com> (RealEyes)
-- László Marák <laszlo.marak@realeyesit.com> (RealEyes)
+- László Marák <laszlo.marak@realeyesit.com> (Realeyes)
+- Róbert Dávid <robert.david@realeyesit.com> (Realeyes)
 - Baghdadi Riyadh <baghdadi.mr@gmail.com> (INRIA/ENS Paris)
 
-- Grigori Fursin <Grigori.Fursin@cTuning.org> (cTuning foundation) - 
+- Grigori Fursin <Grigori.Fursin@cTuning.org> (cTuning foundation) -
   converted to CK for collaborative and reproducible R&D
+- Anton Lokhmotov <anton@dividiti.com> - updated to include
+  Extended Polyhedral Benchmark as submodule.

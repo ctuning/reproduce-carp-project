@@ -1,0 +1,3 @@
+[submodule "program/polyhedral-hog-opencl/extended-polyhedral-benchmark"]
+	path = program/polyhedral-hog-opencl/extended-polyhedral-benchmark
+	url = git@github.com:rbaghdadi/extended-polyhedral-benchmark.git

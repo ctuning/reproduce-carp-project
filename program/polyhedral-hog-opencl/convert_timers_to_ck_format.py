@@ -1,11 +1,11 @@
 #
-# Converting raw slambench timing to CK universal 
-# autotuning and machine learning format
+# Converting raw HOG timing to CK universal
+# autotuning and machine learning format.
 #
 # Collective Knowledge (CK)
 #
 # See CK LICENSE.txt for licensing details.
-# See CK Copyright.txt for copyright details.
+# See CK COPYRIGHT.txt for copyright details.
 #
 # Developer: Grigori Fursin
 #
