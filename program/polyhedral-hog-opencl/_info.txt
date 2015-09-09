@@ -1,0 +1,2 @@
+Grigori managed to compile code on Windows using Microsoft or Intel compilers >=2013 
+ (otherwise can't find chrono), but not LLVM (problems with exceptions)
