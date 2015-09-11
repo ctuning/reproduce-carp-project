@@ -1,2 +1,5 @@
 Grigori managed to compile code on Windows using Microsoft or Intel compilers >=2013 
  (otherwise can't find chrono), but not LLVM (problems with exceptions)
+
+You need to clone all benchmark repository to this directory (get_from_git.bat)
+Later we plan to convert the whole benchmark into reusable CK entry ...
