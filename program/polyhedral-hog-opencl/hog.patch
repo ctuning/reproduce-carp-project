@@ -1,8 +1,18 @@
 diff --git a/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp b/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
-index 79b41e2..7c74b14 100644
+index 79b41e2..98824a5 100644
 --- a/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
 +++ b/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
-@@ -19,6 +19,18 @@
+@@ -14,11 +14,28 @@
+ #error This is a private implementation file for HogDescriptor.h, do not include directly
+ #endif
+ 
++/* FGG */
++#ifndef M_1_PI
++#define M_1_PI 3.14159265358979323846
++#endif
++
+ #ifdef WITH_TBB
+     #include <tbb/parallel_for.h>
      #include <tbb/blocked_range.h>
  #endif
  
@@ -21,7 +31,7 @@ index 79b41e2..7c74b14 100644
  namespace {
      template<typename T>
      inline int fast_floor(T f) {
-@@ -114,8 +126,10 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
+@@ -114,8 +131,10 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
  
          // compute edges, magnitudes, orientations and the histogram
          for (int pointy = minyi; pointy <= maxyi; pointy++) {
@@ -32,7 +42,7 @@ index 79b41e2..7c74b14 100644
              int cellyi;
              float yscale0;
              float yscale1;
-@@ -199,7 +213,9 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
+@@ -199,7 +218,9 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
                      }
                  }
              }
@@ -42,7 +52,7 @@ index 79b41e2..7c74b14 100644
          }
          cv::Mat_<float> destRow = descriptors.row(n);
          cv::Mat(hist).reshape(0,1).copyTo(destRow);
-@@ -228,8 +244,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -228,8 +249,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
  
      //Get the used device
      std::vector<cl::Device> devices;
@@ -53,7 +63,7 @@ index 79b41e2..7c74b14 100644
  
      //Create context
      m_context = cl::Context(m_device);
-@@ -237,7 +254,7 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -237,7 +259,7 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      m_has_local_memory = (CL_LOCAL == m_device.getInfo<CL_DEVICE_LOCAL_MEM_TYPE>());
  
      //Load source
@@ -62,7 +72,7 @@ index 79b41e2..7c74b14 100644
      std::string source{ std::istreambuf_iterator<char>{source_file}, std::istreambuf_iterator<char>{} };
  
      //Create program
-@@ -250,7 +267,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -250,7 +272,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      build_opts << " -cl-denorms-are-zero";
      build_opts << " -cl-mad-enable";
      build_opts << " -cl-no-signed-zeros";
@@ -72,7 +82,7 @@ index 79b41e2..7c74b14 100644
      build_opts << " -Werror";
      build_opts << " -D NUMBER_OF_CELLS="  << numberOfCells;
      build_opts << " -D NUMBER_OF_BINS="   << numberOfBins;
-@@ -269,6 +288,10 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -269,6 +293,10 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      build_opts << " -D DEBUG";
  #endif
  
@@ -83,7 +93,7 @@ index 79b41e2..7c74b14 100644
      //Build program
      try {
          program.build(build_opts.str().c_str());
-@@ -328,16 +351,22 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
+@@ -328,16 +356,22 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
      m_queue.enqueueWriteBuffer( locations_cl, CL_FALSE, 0,  locations_bytes,  locations.data);
      auto blocksizes_cl = blocksizes.convert_to_opencl_data(m_context, m_queue);   //If dynamic: creates cl::Buffer like the rest. If static: creates a functor that returns the static value as cl_float
  
@@ -109,7 +119,7 @@ index 79b41e2..7c74b14 100644
  #endif
      {
          //Figure out the work group sizes
-@@ -353,6 +382,31 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
+@@ -353,6 +387,31 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
  
          cl_int2 image_size = { image.cols, image.rows };
  
@@ -142,10 +152,20 @@ index 79b41e2..7c74b14 100644
          {
              //ADD MULTITHREAD LOCK HERE (if needed)
 diff --git a/pencil-benchmarks-imageproc/hog/test_hog.cpp b/pencil-benchmarks-imageproc/hog/test_hog.cpp
-index a9c88f5..130970c 100644
+index a9c88f5..d07d8bb 100644
 --- a/pencil-benchmarks-imageproc/hog/test_hog.cpp
 +++ b/pencil-benchmarks-imageproc/hog/test_hog.cpp
-@@ -12,6 +12,47 @@
+@@ -1,3 +1,9 @@
++/* FGG */
++#ifdef WINDOWS
++# include <numeric>
++# include <random>
++#endif
++
+ #include "utility.hpp"
+ #include "HogDescriptor.h"
+ 
+@@ -12,6 +18,47 @@
  #define prl_shutdown(x)
  #endif
  
@@ -193,7 +213,7 @@ index a9c88f5..130970c 100644
  //Useful set 1:
  //#define NUMBER_OF_CELLS 4
  //#define NUMBER_OF_BINS 8
-@@ -73,11 +114,24 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -73,11 +120,24 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
              for ( auto & item : pool ) {
                  std::mt19937 rng(1);   //uses same seed, reseed for all iteration
  
@@ -219,7 +239,7 @@ index a9c88f5..130970c 100644
  
                  cv::Mat_<float> locations(num_positions, 2);
  #if !STATIC_HOG
-@@ -170,6 +224,21 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -170,6 +230,21 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                      prl_timings_dump();
                  }
  #endif
@@ -241,7 +261,7 @@ index a9c88f5..130970c 100644
                  // Verifying the results
                  if ( cv::norm( cpu_result, gpu_result, cv::NORM_INF) > cv::norm( gpu_result, cv::NORM_INF)*1e-5 )
                  {
-@@ -203,6 +272,12 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -203,6 +278,12 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
  
  int main(int argc, char* argv[])
  {
@@ -254,7 +274,7 @@ index a9c88f5..130970c 100644
      try
      {
          prl_init((prl_init_flags)(PRL_TARGET_DEVICE_DYNAMIC | PRL_PROFILING_ENABLED));
-@@ -218,6 +293,12 @@ int main(int argc, char* argv[])
+@@ -218,6 +299,12 @@ int main(int argc, char* argv[])
  
          prl_shutdown();
  
@@ -267,7 +287,7 @@ index a9c88f5..130970c 100644
          return EXIT_SUCCESS;
      }
      catch(const std::exception& e)
-@@ -225,6 +306,14 @@ int main(int argc, char* argv[])
+@@ -225,6 +312,14 @@ int main(int argc, char* argv[])
          std::cout << e.what() << std::endl;
  
          prl_shutdown();
