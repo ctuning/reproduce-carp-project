@@ -1,9 +1,9 @@
 {
-  "backup_data_uid": "4393a84317c177cd",
+  "backup_data_uid": "7cb46e0a0268992f",
   "build_compiler_vars": {
     "HOG_CL": "\\\"../extended-polyhedral-benchmark/pencil-benchmarks-imageproc/hog/HogDescriptor.cl\\\"",
-    "EXCLUDE_PENCIL_TEST": "",
-    "RUN_ONLY_ONE_EXPERIMENT": "",
+    "EXCLUDE_PENCIL_TEST": "1",
+    "RUN_ONLY_ONE_EXPERIMENT": "1",
     "SELECT_CL_DEVICE_TYPE": "CL_DEVICE_TYPE_GPU",
     "XOPENME": "1",
     "XOPENME_DUMP_IMAGES": "0"

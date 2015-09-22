@@ -1,102 +1,102 @@
 {
-  "backup_data_uid": "b93bc750890706bc", 
-  "base_uoa": "4393a84317c177cd", 
+  "backup_data_uid": "b93bc750890706bc",
+  "base_uoa": "4393a84317c177cd",
   "build_compiler_vars": {
-    "HOG_OPENCL_CL": "\\\"../hog.opencl.cl\\\"", 
-    "NO_PENCIL": "", 
-    "RUN_ONLY_ONE_EXPERIMENT": "", 
-    "SELECT_CL_DEVICE_TYPE": "CL_DEVICE_TYPE_GPU", 
-    "WITH_TBB": "", 
-    "XOPENME": "1", 
+    "HOG_OPENCL_CL": "\\\"../hog.opencl.cl\\\"",
+    "NO_PENCIL": "",
+    "RUN_ONLY_ONE_EXPERIMENT": "",
+    "SELECT_CL_DEVICE_TYPE": "CL_DEVICE_TYPE_GPU",
+    "WITH_TBB": "",
+    "XOPENME": "1",
     "XOPENME_DUMP_IMAGES": ""
-  }, 
+  },
   "compile_deps": {
     "compiler": {
-      "local": "yes", 
-      "sort": 10, 
+      "local": "yes",
+      "sort": 10,
       "tags": "compiler,lang-cpp"
-    }, 
+    },
     "lib.xopenme": {
-      "local": "yes", 
-      "sort": 40, 
+      "local": "yes",
+      "sort": 40,
       "tags": "lib,xopenme"
-    }, 
+    },
     "lib_opencl": {
-      "local": "yes", 
-      "sort": 30, 
+      "local": "yes",
+      "sort": 30,
       "tags": "lib,opencl"
-    }, 
+    },
     "lib_opencv": {
       "extra_libs": [
-        "opencv_imgproc", 
-        "opencv_ocl", 
+        "opencv_imgproc",
+        "opencv_ocl",
         "opencv_highgui"
-      ], 
-      "local": "yes", 
-      "sort": 20, 
+      ],
+      "local": "yes",
+      "sort": 20,
       "tags": "lib,opencv"
-    }, 
+    },
     "lib_tbb": {
-      "local": "yes", 
-      "sort": 50, 
+      "local": "yes",
+      "sort": 50,
       "tags": "lib,tbb"
     }
-  }, 
+  },
   "compiler_add_include_as_env_from_deps": [
-    "CK_ENV_LIB_STDCPP_INCLUDE", 
+    "CK_ENV_LIB_STDCPP_INCLUDE",
     "CK_ENV_LIB_STDCPP_INCLUDE_EXTRA"
-  ], 
-  "compiler_env": "CK_CXX", 
-  "compiler_flags_as_env": "$<<CK_COMPILER_FLAG_CPP11>>$", 
-  "data_name": "realeyes-hog-opencl", 
-  "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
+  ],
+  "compiler_env": "CK_CXX",
+  "compiler_flags_as_env": "$<<CK_COMPILER_FLAG_CPP11>>$",
+  "data_name": "realeyes-hog-opencl",
+  "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$",
   "include_dirs": [
     "include"
-  ], 
+  ],
   "linker_add_lib_as_env": [
-    "CK_CXX_EXTRA", 
+    "CK_CXX_EXTRA",
     "CK_ENV_LIB_STDCPP_STATIC"
-  ], 
-  "main_language": "cpp", 
-  "process_in_tmp": "yes", 
-  "program": "yes", 
+  ],
+  "main_language": "cpp",
+  "process_in_tmp": "yes",
+  "program": "yes",
   "run_cmds": {
     "default": {
       "dataset_tags": [
-        "dataset", 
-        "image", 
+        "dataset",
+        "image",
         "jpeg"
-      ], 
-      "ignore_return_code": "no", 
+      ],
+      "ignore_return_code": "no",
       "run_time": {
-        "fine_grain_timer_file": "tmp-ck-timer.json", 
-        "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
-        "run_cmd_main": "$#BIN_FILE#$ $#dataset_path#$$#dataset_filename#$", 
-        "run_cmd_out1": "stdout.log", 
-        "run_cmd_out2": "", 
-        "run_correctness_output_files": [], 
+        "fine_grain_timer_file": "tmp-ck-timer.json",
+        "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py",
+        "run_cmd_main": "$#BIN_FILE#$ $#dataset_path#$$#dataset_filename#$",
+        "run_cmd_out1": "stdout.log",
+        "run_cmd_out2": "",
+        "run_correctness_output_files": [],
         "run_input_files": [
           "hog.opencl.cl"
-        ], 
+        ],
         "run_output_files": [
-          "stdout.log", 
+          "stdout.log",
           "tmp-ck-timer.json"
         ]
       }
     }
-  }, 
+  },
   "source_files": [
     "test_hog.cpp",
     "hog.adapt.cpp"
-  ], 
+  ],
   "species": [
     "c84ac2ab43ad1400"
-  ], 
+  ],
   "tags": [
-    "program", 
-    "realeyes", 
-    "hog", 
+    "program",
+    "realeyes",
+    "hog",
     "lang-cpp"
-  ], 
+  ],
   "target_file": "a"
 }
