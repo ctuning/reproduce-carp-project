@@ -6,7 +6,7 @@
     "RUN_ONLY_ONE_EXPERIMENT": "",
     "SELECT_CL_DEVICE_TYPE": "CL_DEVICE_TYPE_GPU",
     "XOPENME": "1",
-    "XOPENME_DUMP_IMAGES": ""
+    "XOPENME_DUMP_IMAGES": "0"
   },
   "compile_deps": {
     "compiler": {

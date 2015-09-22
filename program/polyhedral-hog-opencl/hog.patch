@@ -1,23 +1,28 @@
 diff --git a/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp b/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
-index 79b41e2..98824a5 100644
+index 79b41e2..274c9fb 100644
 --- a/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
 +++ b/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
-@@ -14,11 +14,28 @@
- #error This is a private implementation file for HogDescriptor.h, do not include directly
+@@ -11,7 +11,7 @@
+ */
+ 
+ #ifndef HOGDESCRIPTOR_H
+-#error This is a private implementation file for HogDescriptor.h, do not include directly
++#error This is a private implementation file for HogDescriptor.h, do not include directly!
  #endif
  
-+/* FGG */
-+#ifndef M_1_PI
-+#define M_1_PI 3.14159265358979323846
-+#endif
-+
  #ifdef WITH_TBB
-     #include <tbb/parallel_for.h>
+@@ -19,6 +19,24 @@
      #include <tbb/blocked_range.h>
  #endif
  
-+#ifdef XOPENME
++//CK
++#if (1 == XOPENME)
 +#include <xopenme.h>
++#endif
++
++//CK
++#ifndef M_1_PI
++#define M_1_PI 3.14159265358979323846
 +#endif
 +
 +#ifndef SELECT_CL_DEVICE_TYPE
@@ -31,7 +36,7 @@ index 79b41e2..98824a5 100644
  namespace {
      template<typename T>
      inline int fast_floor(T f) {
-@@ -114,8 +131,10 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
+@@ -114,8 +132,10 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
  
          // compute edges, magnitudes, orientations and the histogram
          for (int pointy = minyi; pointy <= maxyi; pointy++) {
@@ -42,7 +47,7 @@ index 79b41e2..98824a5 100644
              int cellyi;
              float yscale0;
              float yscale1;
-@@ -199,7 +218,9 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
+@@ -199,7 +219,9 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
                      }
                  }
              }
@@ -52,7 +57,7 @@ index 79b41e2..98824a5 100644
          }
          cv::Mat_<float> destRow = descriptors.row(n);
          cv::Mat(hist).reshape(0,1).copyTo(destRow);
-@@ -228,8 +249,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -228,8 +250,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
  
      //Get the used device
      std::vector<cl::Device> devices;
@@ -63,7 +68,7 @@ index 79b41e2..98824a5 100644
  
      //Create context
      m_context = cl::Context(m_device);
-@@ -237,7 +259,7 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -237,7 +260,7 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      m_has_local_memory = (CL_LOCAL == m_device.getInfo<CL_DEVICE_LOCAL_MEM_TYPE>());
  
      //Load source
@@ -72,7 +77,7 @@ index 79b41e2..98824a5 100644
      std::string source{ std::istreambuf_iterator<char>{source_file}, std::istreambuf_iterator<char>{} };
  
      //Create program
-@@ -250,7 +272,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -250,7 +273,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      build_opts << " -cl-denorms-are-zero";
      build_opts << " -cl-mad-enable";
      build_opts << " -cl-no-signed-zeros";
@@ -82,18 +87,18 @@ index 79b41e2..98824a5 100644
      build_opts << " -Werror";
      build_opts << " -D NUMBER_OF_CELLS="  << numberOfCells;
      build_opts << " -D NUMBER_OF_BINS="   << numberOfBins;
-@@ -269,6 +293,10 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -269,6 +294,10 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      build_opts << " -D DEBUG";
  #endif
  
-+#ifdef XOPENME
-+    xopenme_add_var_s(2, (char*) "  \"kernel_build_options\":\"%s\"", (void*) build_opts.str().c_str());
++#if (1 == XOPENME)
++    xopenme_add_var_s(10, (char*) "  \"kernel_build_options\":\"%s\"", (void*) build_opts.str().c_str());
 +#endif
 +
      //Build program
      try {
          program.build(build_opts.str().c_str());
-@@ -328,16 +356,22 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
+@@ -328,16 +357,22 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
      m_queue.enqueueWriteBuffer( locations_cl, CL_FALSE, 0,  locations_bytes,  locations.data);
      auto blocksizes_cl = blocksizes.convert_to_opencl_data(m_context, m_queue);   //If dynamic: creates cl::Buffer like the rest. If static: creates a functor that returns the static value as cl_float
  
@@ -119,101 +124,99 @@ index 79b41e2..98824a5 100644
  #endif
      {
          //Figure out the work group sizes
-@@ -353,6 +387,31 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
+@@ -353,6 +388,20 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
  
          cl_int2 image_size = { image.cols, image.rows };
  
-+#ifdef XOPENME
-+        xopenme_add_var_i( 3, (char*) "  \"default_lws_x\":%u", DEFAULT_LWS_X);
-+        xopenme_add_var_i( 4, (char*) "  \"default_lws_y\":%u", DEFAULT_LWS_Y);
-+        xopenme_add_var_i( 5, (char*) "  \"default_lws_z\":%u", DEFAULT_LWS_Z);
++#if (1 == XOPENME)
++        xopenme_add_var_i(11, (char*) "  \"default_lws_x\":%u", DEFAULT_LWS_X);
++        xopenme_add_var_i(12, (char*) "  \"default_lws_y\":%u", DEFAULT_LWS_Y);
++        xopenme_add_var_i(13, (char*) "  \"default_lws_z\":%u", DEFAULT_LWS_Z);
 +
-+        xopenme_add_var_i( 6, (char*) "  \"lws_x\":%u", LWS_X);
-+        xopenme_add_var_i( 7, (char*) "  \"lws_y\":%u", LWS_Y);
-+        xopenme_add_var_i( 8, (char*) "  \"lws_z\":%u", LWS_Z);
++        xopenme_add_var_i(14, (char*) "  \"lws_x\":%u", lws_x);
++        xopenme_add_var_i(15, (char*) "  \"lws_y\":%u", lws_y);
++        xopenme_add_var_i(16, (char*) "  \"lws_z\":%u", lws_z);
 +
-+        // TODO: dump (gws_x, gws_y, gws_z)
-+
-+        xopenme_add_var_i( 9, (char*) "  \"number_of_cells\":%u", numberOfCells);
-+        xopenme_add_var_i(10, (char*) "  \"number_of_bins\":%u", numberOfBins);
-+        xopenme_add_var_i(11, (char*) "  \"gaussian_weights\":%u", gauss);
-+        xopenme_add_var_i(12, (char*) "  \"spartial_weights\":%u", spinterp);
-+        xopenme_add_var_i(13, (char*) "  \"signed_hog\":%u", _signed);
-+        xopenme_add_var_i(13, (char*) "  \"static_hog\":%u", _static);
-+
-+        //TODO: 
-+        // const BlockSizeParameter<_static> blocksize = blocksizes(0,(0);
-+        // xopenme_add_var_f(14, (char*) "  \"block_size\":%f", blocksize);
-+
-+        xopenme_add_var_i(15, (char*) "  \"number_of_locations\":%u", num_locations);
++        xopenme_add_var_i(17, (char*) "  \"gws_x\":%u", gws_x);
++        xopenme_add_var_i(18, (char*) "  \"gws_y\":%u", gws_y);
++        xopenme_add_var_i(19, (char*) "  \"gws_z\":%u", gws_z);
 +#endif
 +
          //Execute the kernel
          {
              //ADD MULTITHREAD LOCK HERE (if needed)
 diff --git a/pencil-benchmarks-imageproc/hog/test_hog.cpp b/pencil-benchmarks-imageproc/hog/test_hog.cpp
-index a9c88f5..59f7bc0 100644
+index a9c88f5..4549f33 100644
 --- a/pencil-benchmarks-imageproc/hog/test_hog.cpp
 +++ b/pencil-benchmarks-imageproc/hog/test_hog.cpp
-@@ -1,3 +1,9 @@
-+/* FGG */
+@@ -1,9 +1,20 @@
++//CK
 +#ifdef WINDOWS
-+# include <numeric>
-+# include <random>
++#include <numeric>
++#include <random>
++#define M_PI 3.14159265358979323846
++#endif
++
++//CK
++#if (1 == XOPENME)
++#include <xopenme.h>
 +#endif
 +
  #include "utility.hpp"
  #include "HogDescriptor.h"
  
-@@ -12,6 +18,47 @@
- #define prl_shutdown(x)
+ #include <opencv2/imgproc/imgproc.hpp>
+ 
+-
+ #ifndef EXCLUDE_PENCIL_TEST
+ #include <prl.h>
+ #include "hog.pencil.h"
+@@ -13,20 +24,24 @@
  #endif
  
-+/*
-+ * CK
-+ */
-+#ifdef WINDOWS
-+#include <numeric>
-+#define M_PI 3.14159265358979323846
-+#endif
-+
-+#ifdef XOPENME
-+#include <xopenme.h>
-+#endif
-+
-+//Useful sets (deprecated)
-+#ifdef HOG4X4
-+# define NUMBER_OF_CELLS  4
-+# define NUMBER_OF_BINS   8
-+# define GAUSSIAN_WEIGHTS 1
-+# define SPARTIAL_WEIGHTS 1
-+# define SIGNED_HOG       1
-+#endif
-+
-+#ifdef HOG2X2
-+# define NUMBER_OF_CELLS  2
-+# define NUMBER_OF_BINS   9
-+# define GAUSSIAN_WEIGHTS 0
-+# define SPARTIAL_WEIGHTS 1
-+# define SIGNED_HOG       0
-+#endif
-+
-+#ifdef HOG1X1
-+# define NUMBER_OF_CELLS  1
-+# define NUMBER_OF_BINS   9
-+# define GAUSSIAN_WEIGHTS 1
-+# define SPARTIAL_WEIGHTS 0
-+# define SIGNED_HOG       0
-+#endif
-+/*
-+ * CK
-+ */
-+
-+
  //Useful set 1:
- //#define NUMBER_OF_CELLS 4
- //#define NUMBER_OF_BINS 8
-@@ -73,11 +120,24 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+-//#define NUMBER_OF_CELLS 4
+-//#define NUMBER_OF_BINS 8
+-//#define GAUSSIAN_WEIGHTS 1
+-//#define SPARTIAL_WEIGHTS 1
+-//#define SIGNED_HOG 1
+-//#define STATIC_HOG 1
++#ifdef HOG4x4
++#define NUMBER_OF_CELLS 4
++#define NUMBER_OF_BINS 8
++#define GAUSSIAN_WEIGHTS 1
++#define SPARTIAL_WEIGHTS 1
++#define SIGNED_HOG 1
++#define STATIC_HOG 1
++#endif
+ 
+ //Useful set 2:
+-//#define NUMBER_OF_CELLS 2
+-//#define NUMBER_OF_BINS 4
+-//#define GAUSSIAN_WEIGHTS 1
+-//#define SPARTIAL_WEIGHTS 1
+-//#define SIGNED_HOG 0
+-//#define STATIC_HOG 0
++#ifdef HOG2x2
++#define NUMBER_OF_CELLS 2
++#define NUMBER_OF_BINS 4
++#define GAUSSIAN_WEIGHTS 1
++#define SPARTIAL_WEIGHTS 1
++#define SIGNED_HOG 0
++#define STATIC_HOG 0
++#endif
+ 
+ #ifndef BLOCK_SIZE
+ #define BLOCK_SIZE 32
+@@ -36,6 +51,7 @@
+ #define NUMBER_OF_LOCATIONS 49
+ #endif
+ 
++//Defaults as for HOG2x2.
+ #ifndef NUMBER_OF_CELLS
+ #define NUMBER_OF_CELLS 2
+ #endif
+@@ -73,11 +89,24 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
              for ( auto & item : pool ) {
                  std::mt19937 rng(1);   //uses same seed, reseed for all iteration
  
@@ -232,19 +235,19 @@ index a9c88f5..59f7bc0 100644
                  std::cout << "image path: " << item.path()   << std::endl;
                  std::cout << "image rows: " << cpu_gray.rows << std::endl;
                  std::cout << "image cols: " << cpu_gray.cols << std::endl;
-+#ifdef XOPENME
-+                xopenme_add_var_i(0, (char*) "  \"input_size_x\":%u", cpu_gray.rows);
-+                xopenme_add_var_i(1, (char*) "  \"input_size_y\":%u", cpu_gray.cols);
++#if (1 == XOPENME)
++                xopenme_add_var_i(8, (char*) "  \"input_size_x\":%u", cpu_gray.rows);
++                xopenme_add_var_i(9, (char*) "  \"input_size_y\":%u", cpu_gray.cols);
 +#endif
  
                  cv::Mat_<float> locations(num_positions, 2);
  #if !STATIC_HOG
-@@ -170,6 +230,21 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -170,6 +199,21 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                      prl_timings_dump();
                  }
  #endif
 +
-+#ifdef XOPENME_DUMP_IMAGES
++#if (1 == XOPENME_DUMP_IMAGES)
 +#ifdef WINDOWS
 +                IplImage tmp;
 +                tmp = cpu_result;
@@ -261,14 +264,23 @@ index a9c88f5..59f7bc0 100644
                  // Verifying the results
                  if ( cv::norm( cpu_result, gpu_result, cv::NORM_INF) > cv::norm( gpu_result, cv::NORM_INF)*1e-5 )
                  {
-@@ -203,6 +278,14 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -203,6 +247,23 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
  
  int main(int argc, char* argv[])
  {
 +
-+#ifdef XOPENME
-+    xopenme_init(1, 18);
++#if (1 == XOPENME)
++    xopenme_init(1, 20);
 +    xopenme_clock_start(0);
++
++    xopenme_add_var_i(0, (char*) "  \"number_of_cells\":%u"     , NUMBER_OF_CELLS     );
++    xopenme_add_var_i(1, (char*) "  \"number_of_bins\":%u"      , NUMBER_OF_BINS      );
++    xopenme_add_var_i(2, (char*) "  \"gaussian_weights\":%u"    , GAUSSIAN_WEIGHTS    );
++    xopenme_add_var_i(3, (char*) "  \"spartial_weights\":%u"    , SPARTIAL_WEIGHTS    );
++    xopenme_add_var_i(4, (char*) "  \"signed_hog\":%u"          , SIGNED_HOG          );
++    xopenme_add_var_i(5, (char*) "  \"static_hog\":%u"          , STATIC_HOG          );
++    xopenme_add_var_i(6, (char*) "  \"block_size\":%u"          , BLOCK_SIZE          );
++    xopenme_add_var_i(7, (char*) "  \"number_of_locations\":%u" , NUMBER_OF_LOCATIONS );
 +#endif
 +
 +    int exit_code = EXIT_SUCCESS;
@@ -276,7 +288,7 @@ index a9c88f5..59f7bc0 100644
      try
      {
          prl_init((prl_init_flags)(PRL_TARGET_DEVICE_DYNAMIC | PRL_PROFILING_ENABLED));
-@@ -218,13 +301,23 @@ int main(int argc, char* argv[])
+@@ -218,13 +279,23 @@ int main(int argc, char* argv[])
  
          prl_shutdown();
  
@@ -293,7 +305,7 @@ index a9c88f5..59f7bc0 100644
 +        exit_code = EXIT_FAILURE;
      }
 +
-+#ifdef XOPENME
++#if (1 == XOPENME)
 +    xopenme_clock_end(0);
 +    xopenme_dump_state();
 +    xopenme_finish();
