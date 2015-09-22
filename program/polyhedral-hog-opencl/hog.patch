@@ -152,7 +152,7 @@ index 79b41e2..98824a5 100644
          {
              //ADD MULTITHREAD LOCK HERE (if needed)
 diff --git a/pencil-benchmarks-imageproc/hog/test_hog.cpp b/pencil-benchmarks-imageproc/hog/test_hog.cpp
-index a9c88f5..d07d8bb 100644
+index a9c88f5..59f7bc0 100644
 --- a/pencil-benchmarks-imageproc/hog/test_hog.cpp
 +++ b/pencil-benchmarks-imageproc/hog/test_hog.cpp
 @@ -1,3 +1,9 @@
@@ -261,7 +261,7 @@ index a9c88f5..d07d8bb 100644
                  // Verifying the results
                  if ( cv::norm( cpu_result, gpu_result, cv::NORM_INF) > cv::norm( gpu_result, cv::NORM_INF)*1e-5 )
                  {
-@@ -203,6 +278,12 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -203,6 +278,14 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
  
  int main(int argc, char* argv[])
  {
@@ -271,35 +271,35 @@ index a9c88f5..d07d8bb 100644
 +    xopenme_clock_start(0);
 +#endif
 +
++    int exit_code = EXIT_SUCCESS;
++
      try
      {
          prl_init((prl_init_flags)(PRL_TARGET_DEVICE_DYNAMIC | PRL_PROFILING_ENABLED));
-@@ -218,6 +299,12 @@ int main(int argc, char* argv[])
+@@ -218,13 +301,23 @@ int main(int argc, char* argv[])
  
          prl_shutdown();
  
-+#ifdef XOPENME
-+        xopenme_clock_end(0);
-+        xopenme_dump_state();
-+        xopenme_finish();
-+#endif
-+
-         return EXIT_SUCCESS;
+-        return EXIT_SUCCESS;
++        exit_code = EXIT_SUCCESS;
      }
      catch(const std::exception& e)
-@@ -225,6 +312,14 @@ int main(int argc, char* argv[])
+     {
          std::cout << e.what() << std::endl;
  
          prl_shutdown();
+-        return EXIT_FAILURE;
++
++        exit_code = EXIT_FAILURE;
+     }
 +
 +#ifdef XOPENME
-+        xopenme_clock_end(0);
-+        xopenme_dump_state();
-+        xopenme_finish();
++    xopenme_clock_end(0);
++    xopenme_dump_state();
++    xopenme_finish();
 +#endif
 +
-         return EXIT_FAILURE;
-     }
++    return exit_code;
 +
  } // main
 diff --git a/pencil-benchmarks-imageproc/include/utility.hpp b/pencil-benchmarks-imageproc/include/utility.hpp
