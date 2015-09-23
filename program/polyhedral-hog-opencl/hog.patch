@@ -247,18 +247,20 @@ index 17122d6..bf41777 100644
              case use_local:
                  m_calc_hog.setArg(7, (size_t)(sizeof(cl_float) * getNumberOfBins() * lws_z), nullptr);
 diff --git a/pencil-benchmarks-imageproc/hog/test_hog.cpp b/pencil-benchmarks-imageproc/hog/test_hog.cpp
-index a9c88f5..a2eec76 100644
+index a9c88f5..b3d2ee3 100644
 --- a/pencil-benchmarks-imageproc/hog/test_hog.cpp
 +++ b/pencil-benchmarks-imageproc/hog/test_hog.cpp
-@@ -1,9 +1,20 @@
+@@ -1,9 +1,22 @@
++//CK - a temporary workaround for the autotuning compiler_vars issue.
++#define HOG4X4 1
++#define BLOCK_SIZE 64
++
 +//CK
 +#ifdef WINDOWS
 +#include <numeric>
 +#include <random>
 +#define M_PI 3.14159265358979323846
 +#endif
-+
-+//CK
 +#if (1 == XOPENME)
 +#include <xopenme.h>
 +#endif
@@ -272,7 +274,7 @@ index a9c88f5..a2eec76 100644
  #ifndef EXCLUDE_PENCIL_TEST
  #include <prl.h>
  #include "hog.pencil.h"
-@@ -12,30 +23,27 @@
+@@ -12,30 +25,27 @@
  #define prl_shutdown(x)
  #endif
  
@@ -320,7 +322,7 @@ index a9c88f5..a2eec76 100644
  #ifndef NUMBER_OF_CELLS
  #define NUMBER_OF_CELLS 2
  #endif
-@@ -60,6 +68,19 @@
+@@ -60,6 +70,19 @@
  #define STATIC_HOG 0
  #endif
  
@@ -340,7 +342,7 @@ index a9c88f5..a2eec76 100644
  void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>& sizes, int num_positions, int repeat )
  {
      carp::Timing timing("HOG");
-@@ -73,17 +94,30 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -73,17 +96,30 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
              for ( auto & item : pool ) {
                  std::mt19937 rng(1);   //uses same seed, reseed for all iteration
  
@@ -375,7 +377,7 @@ index a9c88f5..a2eec76 100644
  #endif
                  //fill locations and blocksizes
                  std::uniform_real_distribution<float> genx(size/2+1, cpu_gray.cols-1-size/2-1);
-@@ -91,7 +125,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -91,7 +127,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                  for( int i = 0; i < num_positions; ++i) {
                      locations(i, 0) = genx(rng);
                      locations(i, 1) = geny(rng);
@@ -384,7 +386,7 @@ index a9c88f5..a2eec76 100644
                      blocksizes(i, 0) = size;
                      blocksizes(i, 1) = size;
  #endif
-@@ -135,7 +169,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -135,7 +171,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
  
                      if (first_execution_pencil)
                      {
@@ -393,7 +395,7 @@ index a9c88f5..a2eec76 100644
                          pencil_hog_static (
  #else
                          pencil_hog_dynamic(
-@@ -144,7 +178,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -144,7 +180,7 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                                , cpu_gray.rows, cpu_gray.cols, cpu_gray.step1(), cpu_gray.ptr<uint8_t>()
                                , num_positions
                                , reinterpret_cast<const float (*)[2]>(locations.data)
@@ -402,7 +404,7 @@ index a9c88f5..a2eec76 100644
                                , blocksizes
  #else
                                , reinterpret_cast<const float (*)[2]>(blocksizes.data)
-@@ -170,6 +204,21 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -170,6 +206,21 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
                      prl_timings_dump();
                  }
  #endif
@@ -424,7 +426,7 @@ index a9c88f5..a2eec76 100644
                  // Verifying the results
                  if ( cv::norm( cpu_result, gpu_result, cv::NORM_INF) > cv::norm( gpu_result, cv::NORM_INF)*1e-5 )
                  {
-@@ -203,6 +252,24 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
+@@ -203,6 +254,24 @@ void time_hog( const std::vector<carp::record_t>& pool, const std::vector<float>
  
  int main(int argc, char* argv[])
  {
@@ -449,7 +451,7 @@ index a9c88f5..a2eec76 100644
      try
      {
          prl_init((prl_init_flags)(PRL_TARGET_DEVICE_DYNAMIC | PRL_PROFILING_ENABLED));
-@@ -218,13 +285,23 @@ int main(int argc, char* argv[])
+@@ -218,13 +287,23 @@ int main(int argc, char* argv[])
  
          prl_shutdown();
  
