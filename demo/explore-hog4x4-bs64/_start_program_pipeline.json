@@ -5,6 +5,7 @@
   "compiler_vars": {
     "HOG4X4":1,
     "BLOCK_SIZE":64,
+    "VECTOR_SIZE":4,
     "LWS_X":4,
     "LWS_Y":8,
     "LWS_Z":4

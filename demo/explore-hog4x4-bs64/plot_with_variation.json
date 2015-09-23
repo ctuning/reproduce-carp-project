@@ -11,10 +11,8 @@
   "add_x_loop":"yes",
   "sort_index":0,
 
-  "ymin":"0.00",
-  "ymax":"0.02",
-
-  "x_ticks_period":"1",
+  "ymin":"0.0",
+  "ymax":"0.2",
 
   "ignore_point_if_empty_string":"yes",
 

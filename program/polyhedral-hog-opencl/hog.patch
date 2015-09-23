@@ -54,7 +54,7 @@ index 08bce49..7d23e50 100644
  }
  
 diff --git a/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp b/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
-index 17122d6..bf41777 100644
+index 17122d6..9caf989 100644
 --- a/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
 +++ b/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
 @@ -7,6 +7,22 @@
@@ -154,7 +154,7 @@ index 17122d6..bf41777 100644
      build_opts << " -Werror";
      build_opts << " -D NUMBER_OF_CELLS="  << numberOfCells;
      build_opts << " -D NUMBER_OF_BINS="   << numberOfBins;
-@@ -246,17 +273,23 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -246,23 +273,29 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      build_opts << " -D SPARTIAL_WEIGHTS=" << (spinterp ? "1" : "0");
      build_opts << " -D SIGNED_HOG="       << (_signed  ? "1" : "0");
      build_opts << " -D STATIC_BLOCK_SIZE="<< (_static  ? "1" : "0");
@@ -181,6 +181,14 @@ index 17122d6..bf41777 100644
      //Build program
      try {
          program.build(build_opts.str().c_str());
+     } catch (const cl::Error&) {
+-        auto buildlog = program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(m_device);
+-        std::cerr << "OpenCL compilation error: " << buildlog << std::endl;
++        auto build_log = program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(m_device);
++        std::cerr << "OpenCL compilation error: " << build_log << std::endl;
+         throw;
+     }
+ 
 @@ -270,7 +303,7 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      m_queue = cl::CommandQueue(m_context, m_device, CL_QUEUE_PROFILING_ENABLE);
  
