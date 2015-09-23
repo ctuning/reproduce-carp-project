@@ -54,10 +54,10 @@ index 08bce49..7d23e50 100644
  }
  
 diff --git a/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp b/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
-index 17122d6..9caf989 100644
+index 17122d6..738d5a8 100644
 --- a/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
 +++ b/pencil-benchmarks-imageproc/hog/HogDescriptor.hpp
-@@ -7,6 +7,22 @@
+@@ -7,6 +7,28 @@
      #include <tbb/blocked_range.h>
  #endif
  
@@ -77,10 +77,16 @@ index 17122d6..9caf989 100644
 +#define HOG_CL "HogDescriptor.cl"
 +#endif
 +
++#ifndef USE_PRIVATE_THRESHOLD
++// The default that uses private for 2x2 HOG with <= 9 bins,
++// but switches to local or global for 4x4 HOG with > 2 bins.
++#define USE_PRIVATE_THRESHOLD (36)
++#endif
++
  namespace {
      template<typename T>
      inline int fast_floor(T f) {
-@@ -102,8 +118,10 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
+@@ -102,8 +124,10 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
  
          // compute edges, magnitudes, orientations and the histogram
          for (int pointy = minyi; pointy <= maxyi; pointy++) {
@@ -91,7 +97,7 @@ index 17122d6..9caf989 100644
              int cellyi;
              float yscale0;
              float yscale1;
-@@ -187,7 +205,9 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
+@@ -187,7 +211,9 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
                      }
                  }
              }
@@ -101,14 +107,15 @@ index 17122d6..9caf989 100644
          }
          cv::Mat_<float> destRow = descriptors.row(n);
          cv::Mat(hist).reshape(0,1).copyTo(destRow);
-@@ -201,12 +221,16 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
+@@ -201,12 +227,16 @@ cv::Mat_<float> nel::HOGDescriptorCPP<numberOfCells, numberOfBins, gauss, spinte
  template<size_t numberOfCells, size_t numberOfBins, bool gauss, bool spinterp, bool _signed, bool _static>
  typename nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _static>::HOGAlgorithmType
  nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _static>::getAlgorithmType() const {
+-    if (getNumberOfBins() <= 36)
 +#ifdef HOG_TYPE
 +    return ((HOGAlgorithmType) HOG_TYPE);
 +#else
-     if (getNumberOfBins() <= 36)
++    if (getNumberOfBins() <= USE_PRIVATE_THRESHOLD)
          return use_private;
      if (m_has_local_memory)
          return use_local;
@@ -118,7 +125,7 @@ index 17122d6..9caf989 100644
  }
  
  template<size_t numberOfCells, size_t numberOfBins, bool gauss, bool spinterp, bool _signed, bool _static>
-@@ -216,8 +240,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -216,8 +246,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
  
      //Get the used device
      std::vector<cl::Device> devices;
@@ -129,7 +136,7 @@ index 17122d6..9caf989 100644
  
      //Create context
      m_context = cl::Context(m_device);
-@@ -225,12 +250,12 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -225,12 +256,12 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      m_has_local_memory = (CL_LOCAL == m_device.getInfo<CL_DEVICE_LOCAL_MEM_TYPE>());
  
      //Load source
@@ -144,7 +151,7 @@ index 17122d6..9caf989 100644
  
      //Build options
      std::stringstream build_opts;
-@@ -238,7 +263,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -238,7 +269,9 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      build_opts << " -cl-denorms-are-zero";
      build_opts << " -cl-mad-enable";
      build_opts << " -cl-no-signed-zeros";
@@ -154,7 +161,7 @@ index 17122d6..9caf989 100644
      build_opts << " -Werror";
      build_opts << " -D NUMBER_OF_CELLS="  << numberOfCells;
      build_opts << " -D NUMBER_OF_BINS="   << numberOfBins;
-@@ -246,23 +273,29 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -246,17 +279,23 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      build_opts << " -D SPARTIAL_WEIGHTS=" << (spinterp ? "1" : "0");
      build_opts << " -D SIGNED_HOG="       << (_signed  ? "1" : "0");
      build_opts << " -D STATIC_BLOCK_SIZE="<< (_static  ? "1" : "0");
@@ -181,15 +188,7 @@ index 17122d6..9caf989 100644
      //Build program
      try {
          program.build(build_opts.str().c_str());
-     } catch (const cl::Error&) {
--        auto buildlog = program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(m_device);
--        std::cerr << "OpenCL compilation error: " << buildlog << std::endl;
-+        auto build_log = program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(m_device);
-+        std::cerr << "OpenCL compilation error: " << build_log << std::endl;
-         throw;
-     }
- 
-@@ -270,7 +303,7 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
+@@ -270,7 +309,7 @@ nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinterp, _signed, _st
      m_queue = cl::CommandQueue(m_context, m_device, CL_QUEUE_PROFILING_ENABLE);
  
      //Query kernels and work group infos
@@ -198,7 +197,7 @@ index 17122d6..9caf989 100644
      m_calc_hog_preferred_multiple = m_calc_hog.getWorkGroupInfo<CL_KERNEL_PREFERRED_WORK_GROUP_SIZE_MULTIPLE>(m_device);
      m_calc_hog_group_size         = m_calc_hog.getWorkGroupInfo<CL_KERNEL_WORK_GROUP_SIZE>(m_device);
  }
-@@ -316,16 +349,22 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
+@@ -316,16 +355,22 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
      m_queue.enqueueWriteBuffer( locations_cl, CL_FALSE, 0,  locations_bytes,  locations.data);
      auto blocksizes_cl = blocksizes.convert_to_opencl_data(m_context, m_queue);   //If dynamic: creates cl::Buffer like the rest. If static: creates a functor that returns the static value as cl_float
  
@@ -224,7 +223,7 @@ index 17122d6..9caf989 100644
  #endif
      {
          //Figure out the work group sizes
-@@ -341,6 +380,20 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
+@@ -341,6 +386,20 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
  
          cl_int2 image_size = { image.cols, image.rows };
  
@@ -245,7 +244,7 @@ index 17122d6..9caf989 100644
          //Execute the kernel
          {
              //ADD MULTITHREAD LOCK HERE (if needed)
-@@ -353,7 +406,7 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
+@@ -353,7 +412,7 @@ cv::Mat_<float> nel::HOGDescriptorOCL<numberOfCells, numberOfBins, gauss, spinte
              m_calc_hog.setArg(6, (cl_mem )descriptor_cl());
              switch (getAlgorithmType()) {
              case use_private:
