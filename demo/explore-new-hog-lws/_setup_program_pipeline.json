@@ -10,5 +10,5 @@
 
  "cpu_freq":"max",
  "gpu_freq":"max",
- "compiler_vars":{"HOG4X4":"1"}
+ "compiler_vars":{"HOG4X4":1,"BLOCK_SIZE":64}
 }

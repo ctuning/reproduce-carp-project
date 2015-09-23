@@ -3,8 +3,8 @@
   "cpu_freq":"max",
   "gpu_freq":"max",
   "compiler_vars": {
-    "HOG4X4":"",
-    "BLOCK_SIZE":32,
+    "HOG4X4":1,
+    "BLOCK_SIZE":64,
     "LWS_X":4,
     "LWS_Y":8,
     "LWS_Z":4
