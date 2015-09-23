@@ -8,13 +8,21 @@
     ],
     [
      "##compiler_vars#LWS_Z"
+    ],
+    [
+     "##compiler_vars#HOG_TYPE"
+    ],
+    [
+     "##compiler_vars#VECTOR_SIZE"
     ]
   ],
 
   "choices_selection": [
     {"type":"loop", "choice":[2,4,8,16,24,32,48,64], "default":4},
     {"type":"loop", "choice":[1,2,4,8], "default":1},
-    {"type":"loop", "choice":[2,4,8,16,32,48,64,96,128], "default":8}
+    {"type":"loop", "choice":[2,4,8,16,32,48,64,96,128], "default":8},
+    {"type":"loop", "choice":[1,2,4,8,16], "default":4},
+    {"type":"loop", "choice":[0,1,2], "default":2}
   ],
 
  "pipeline_update":{
