@@ -1,6 +1,6 @@
 {
   "experiment_module_uoa":"experiment",
-  "data_uoa_list":["autotune-demo-new-hog-lws-4x4-bs64"],
+  "data_uoa_list":["autotune-demo-hog4x4-bs64"],
   "ignore_graph_separation":"yes",
 
   "flat_keys_list":[

@@ -1,7 +1,7 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-demo-new-hog-lws-4x4-bs64", "autotune-demo-new-hog-lws-4x4-bs64-default"],
+  "data_uoa_list":["autotune-demo-hog4x4-bs64", "autotune-demo-hog4x4-bs64-default"],
 
   "flat_keys_list":[
     "##characteristics#run#dim_gpu_only#center",
@@ -28,7 +28,7 @@
   "mpl_image_size_y":"6",
   "mpl_image_dpi":"100",
 
-  "out_to_file":"autotune-demo-new-hog-lws-4x4-bs64.png",
+  "out_to_file":"autotune-demo-hog4x4-bs64.png",
 
   "point_style":{"1":{"elinewidth":"5", "color":"#dc3912"},
                  "0":{"color":"#3366cc"}}

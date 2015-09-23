@@ -16,7 +16,7 @@
    },
 
   "record":"yes",
-  "record_uoa":"autotune-demo-new-hog-lws-4x4-bs64-default",
+  "record_uoa":"autotune-demo-hog4x4-bs64-default",
 
   "features_keys_to_process":["##choices#*"],
 

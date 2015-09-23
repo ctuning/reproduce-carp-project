@@ -40,7 +40,7 @@
   "repetitions":3,
 
   "record":"yes",
-  "record_uoa":"autotune-demo-new-hog-lws-4x4-bs64",
+  "record_uoa":"autotune-demo-hog4x4-bs64",
 
   "features_keys_to_process":["##choices#*"],
 
