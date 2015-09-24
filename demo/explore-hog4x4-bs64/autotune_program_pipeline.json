@@ -18,11 +18,11 @@
   ],
 
   "choices_selection": [
-    {"type":"random-with-next", "choice":[2,4,8,16,24,32,48,64], "default":4},
-    {"type":"random-with-next", "choice":[1,2,4,8], "default":1},
-    {"type":"random-with-next", "choice":[2,4,8,16,32,48,64,96,128], "default":8},
+    {"type":"random-with-next", "choice":[1,2,4,8,12,16], "default":4},
+    {"type":"random-with-next", "choice":[1,2,4,8,12,16], "default":8},
+    {"type":"random-with-next", "choice":[1,2,4,8,12,16], "default":4},
     {"type":"random-with-next", "choice":[1,2,4,8,16], "default":4},
-    {"type":"random-with-next", "choice":[0,1,2], "default":2}
+    {"type":"random-with-next", "choice":[0], "default":0}
   ],
 
   "pipeline_update":{
