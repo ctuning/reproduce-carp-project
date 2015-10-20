@@ -1,3 +1,3 @@
 #!/bin/bash
-cd extended-polyhedral-benchmark
+cd pencil-benchmark
 patch -R -p1 < ../hog.patch

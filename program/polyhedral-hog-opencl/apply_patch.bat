@@ -1,2 +1,2 @@
-cd extended-polyhedral-benchmark
+cd pencil-benchmark
 patch -p1 < ../hog.patch
