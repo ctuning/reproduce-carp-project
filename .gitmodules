@@ -1,0 +1,3 @@
+[submodule "program/polyhedral-hog-opencl/pencil-benchmark"]
+       path = program/polyhedral-hog-opencl/pencil-benchmark
+       url = git@github.com:pencil-language/pencil-benchmark.git
