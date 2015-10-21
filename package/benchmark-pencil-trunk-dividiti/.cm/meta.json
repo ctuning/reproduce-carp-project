@@ -1,0 +1,23 @@
+{
+  "customize": {
+    "extra_dir": "pencil-benchmark/pencil-benchmarks-imageproc", 
+    "version": "99999", 
+    "version_int": 99999
+  }, 
+  "deps": {
+    "compiler": {
+      "local": "yes", 
+      "sort": 10, 
+      "tags": "compiler,lang-c,pencil"
+    }
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "433d85323a5e077d", 
+  "suggested_path": "benchmark-pencil", 
+  "tags": [
+    "benchmark", 
+    "pencil", 
+    "lang-c", 
+    "vtrunk"
+  ]
+}
