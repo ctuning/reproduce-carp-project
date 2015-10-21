@@ -1,0 +1,87 @@
+{
+  "backup_data_uid": "4b332e6b37e4dc50", 
+  "build_compiler_vars": {
+  }, 
+  "compile_deps": {
+    "benchmark_pencil": {
+      "local": "yes", 
+      "sort": 10, 
+      "tags": "benchmark,pencil"
+    }, 
+    "compiler_pencil": {
+      "local": "yes", 
+      "sort": 20, 
+      "tags": "compiler,pencil"
+    }, 
+    "compiler": {
+      "local": "yes", 
+      "sort": 30, 
+      "tags": "compiler,lang-cpp"
+    }, 
+    "lib_opencl": {
+      "local": "yes", 
+      "sort": 40, 
+      "tags": "lib,opencl"
+    }, 
+    "lib_opencv": {
+      "extra_libs": [
+        "opencv_imgproc", 
+        "opencv_ocl", 
+        "opencv_highgui"
+      ], 
+      "local": "yes", 
+      "sort": 50, 
+      "tags": "lib,opencv"
+    }
+  }, 
+  "compiler_add_include_as_env_from_deps": [
+    "CK_ENV_LIB_STDCPP_INCLUDE", 
+    "CK_ENV_LIB_STDCPP_INCLUDE_EXTRA"
+  ], 
+  "compiler_env": "CK_CXX", 
+  "compiler_flags_as_env": "$<<CK_COMPILER_FLAG_CPP11>>$", 
+  "data_name": "realeyes-hog-opencl", 
+  "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
+  "include_dirs": [
+    "include"
+  ], 
+  "linker_add_lib_as_env": [
+    "CK_CXX_EXTRA", 
+    "CK_ENV_LIB_STDCPP_STATIC"
+  ], 
+  "main_language": "cpp", 
+  "process_in_tmp": "yes", 
+  "program": "yes", 
+  "run_cmds": {
+    "default": {
+      "dataset_tags": [
+        "dataset", 
+        "image", 
+        "jpeg"
+      ], 
+      "ignore_return_code": "no", 
+      "run_time": {
+        "run_cmd_main": "$#BIN_FILE#$ $#dataset_path#$$#dataset_filename#$", 
+        "run_cmd_out1": "stdout.log", 
+        "run_cmd_out2": "", 
+        "run_correctness_output_files": [], 
+        "run_output_files": [
+          "stdout.log", 
+        ]
+      }
+    }
+  }, 
+  "compile_cmds": {
+    "default": {
+      "cmd": "../compile$#script_ext#$"
+    }
+  }, 
+  "use_compile_script":"yes",
+  "tags": [
+    "program", 
+    "pencilbench", 
+    "resize", 
+    "lang-cpp"
+  ], 
+  "target_file": "a"
+}

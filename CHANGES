@@ -1,2 +1,4 @@
+2015.10.22 - * adding first benchmark meta (resize)
+
 2015.10.21 - * adding pencil compiler package (from GitHub and with CK registered LLVM)
              * adding pencil benchmark package (from GitHub)
