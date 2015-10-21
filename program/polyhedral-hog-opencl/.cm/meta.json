@@ -1,7 +1,7 @@
 {
   "backup_data_uid": "7cb46e0a0268992f",
   "build_compiler_vars": {
-    "HOG_CL": "\\\"../extended-polyhedral-benchmark/pencil-benchmarks-imageproc/hog/HogDescriptor.cl\\\"",
+    "HOG_CL": "\\\"../pencil-benchmark/pencil-benchmarks-imageproc/hog/HogDescriptor.cl\\\"",
     "EXCLUDE_PENCIL_TEST": "1",
     "RUN_ONLY_ONE_EXPERIMENT": "1",
     "SELECT_CL_DEVICE_TYPE": "CL_DEVICE_TYPE_GPU",
@@ -45,8 +45,8 @@
   "data_name": "realeyes-hog-opencl",
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$",
   "include_dirs": [
-    "extended-polyhedral-benchmark/pencil-benchmarks-imageproc/hog",
-    "extended-polyhedral-benchmark/pencil-benchmarks-imageproc/include"
+    "pencil-benchmark/pencil-benchmarks-imageproc/hog",
+    "pencil-benchmark/pencil-benchmarks-imageproc/include"
   ],
   "linker_add_lib_as_env": [
     "CK_CXX_EXTRA",
@@ -71,7 +71,7 @@
         "run_cmd_out2": "",
         "run_correctness_output_files": [],
         "run_input_files": [
-          "extended-polyhedral-benchmark/pencil-benchmarks-imageproc/hog/HogDescriptor.cl"
+          "pencil-benchmark/pencil-benchmarks-imageproc/hog/HogDescriptor.cl"
         ],
         "run_output_files": [
           "stdout.log",
@@ -81,7 +81,7 @@
     }
   },
   "source_files": [
-    "extended-polyhedral-benchmark/pencil-benchmarks-imageproc/hog/test_hog.cpp"
+    "pencil-benchmark/pencil-benchmarks-imageproc/hog/test_hog.cpp"
   ],
   "species": [
     "c84ac2ab43ad1400"
