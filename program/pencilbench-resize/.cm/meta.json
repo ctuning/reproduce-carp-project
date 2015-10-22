@@ -62,7 +62,7 @@
   }, 
   "compile_cmds": {
     "default": {
-      "cmd": "../compile$#script_ext#$"
+      "cmd": "ck_compile$#script_ext#$"
     }
   }, 
   "use_compile_script":"yes",

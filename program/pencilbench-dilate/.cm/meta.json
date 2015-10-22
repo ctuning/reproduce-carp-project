@@ -6,7 +6,7 @@
   "build_compiler_vars": {}, 
   "compile_cmds": {
     "default": {
-      "cmd": "../compile$#script_ext#$"
+      "cmd": "ck_compile$#script_ext#$"
     }
   }, 
   "compile_deps": {
