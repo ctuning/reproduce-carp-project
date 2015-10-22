@@ -1,6 +1,7 @@
 {
   "add_extra_env_for_compliation": {
-    "PENCILBENCH_KERNEL": "hog"
+    "PENCILBENCH_KERNEL": "hog",
+    "PPCG_FLAG_BLOCK":"16,16"
   }, 
   "backup_data_uid": "8f8996a916c08fd1", 
   "build_compiler_vars": {}, 

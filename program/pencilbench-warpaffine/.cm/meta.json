@@ -1,6 +1,7 @@
 {
   "add_extra_env_for_compliation": {
-    "PENCILBENCH_KERNEL": "warpAffine"
+    "PENCILBENCH_KERNEL": "warpAffine",
+    "PPCG_FLAG_BLOCK":"16,16"
   }, 
   "backup_data_uid": "869438087e69bdac", 
   "build_compiler_vars": {}, 

@@ -1,6 +1,7 @@
 {
   "add_extra_env_for_compliation": {
-    "PENCILBENCH_KERNEL": "dilate"
+    "PENCILBENCH_KERNEL": "dilate",
+    "PPCG_FLAG_BLOCK":"16,16"
   }, 
   "backup_data_uid": "5e40eb901b6cbfe7", 
   "build_compiler_vars": {}, 

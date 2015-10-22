@@ -1,6 +1,7 @@
 {
   "add_extra_env_for_compliation": {
-    "PENCILBENCH_KERNEL": "cvt_kernel"
+    "PENCILBENCH_KERNEL": "cvt_kernel",
+    "PPCG_FLAG_BLOCK":"16,16"
   }, 
   "backup_data_uid": "b1eeb4e8043e48ae", 
   "build_compiler_vars": {}, 

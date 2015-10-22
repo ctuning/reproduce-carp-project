@@ -1,9 +1,14 @@
 {
   "add_extra_env_for_compliation": {
-    "PENCILBENCH_KERNEL":"resize"
-  },
+    "PENCILBENCH_KERNEL": "resize",
+    "PPCG_FLAG_BLOCK":"16,16"
+  }, 
   "backup_data_uid": "4b332e6b37e4dc50", 
-  "build_compiler_vars": {
+  "build_compiler_vars": {}, 
+  "compile_cmds": {
+    "default": {
+      "cmd": "ck_compile$#script_ext#$"
+    }
   }, 
   "compile_deps": {
     "benchmark_pencil": {
@@ -11,15 +16,15 @@
       "sort": 10, 
       "tags": "benchmark,pencil"
     }, 
-    "compiler_pencil": {
-      "local": "yes", 
-      "sort": 20, 
-      "tags": "compiler,pencil"
-    }, 
     "compiler": {
       "local": "yes", 
       "sort": 30, 
       "tags": "compiler,lang-cpp"
+    }, 
+    "compiler_pencil": {
+      "local": "yes", 
+      "sort": 20, 
+      "tags": "compiler,pencil"
     }, 
     "lib_opencl": {
       "local": "yes", 
@@ -60,17 +65,12 @@
       }
     }
   }, 
-  "compile_cmds": {
-    "default": {
-      "cmd": "ck_compile$#script_ext#$"
-    }
-  }, 
-  "use_compile_script":"yes",
   "tags": [
     "program", 
     "pencilbench", 
     "resize", 
     "lang-cpp"
   ], 
-  "target_file": "a"
+  "target_file": "a", 
+  "use_compile_script": "yes"
 }

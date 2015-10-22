@@ -1,6 +1,7 @@
 {
   "add_extra_env_for_compliation": {
-    "PENCILBENCH_KERNEL": "histogram"
+    "PENCILBENCH_KERNEL": "histogram",
+    "PPCG_FLAG_BLOCK":"16,16"
   }, 
   "backup_data_uid": "6579ef99a5513e38", 
   "build_compiler_vars": {}, 
