@@ -1,0 +1,26 @@
+{
+  "customize": {
+    "extra_dir": "_install", 
+    "version": "999", 
+    "version_int": 999
+  }, 
+  "deps": {
+    "compiler": {
+      "local": "yes", 
+      "sort": 10, 
+      "tags": "compiler,lang-c,llvm"
+    }
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "4aff7e7480ae0f6d", 
+  "suggested_path": "compiler-pencilcc-trunk", 
+  "tags": [
+    "compiler", 
+    "pencil", 
+    "polyhedral",
+    "source-to-source", 
+    "lang-c",
+    "lang-cpp",
+    "vtrunk" 
+  ]
+}
