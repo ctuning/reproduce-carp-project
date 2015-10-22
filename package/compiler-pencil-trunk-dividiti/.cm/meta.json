@@ -1,8 +1,8 @@
 {
   "customize": {
     "extra_dir": "_install", 
-    "version": "99999", 
-    "version_int": 99999
+    "version": "999", 
+    "version_int": 999
   }, 
   "deps": {
     "compiler": {
@@ -13,7 +13,7 @@
   }, 
   "process_script": "process", 
   "soft_uoa": "4aff7e7480ae0f6d", 
-  "suggested_path": "pencil", 
+  "suggested_path": "compiler-pencilcc", 
   "tags": [
     "compiler", 
     "pencil", 
