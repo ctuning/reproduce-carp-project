@@ -1,4 +1,7 @@
 {
+  "add_extra_env_for_compliation": {
+    "PENCILBENCH_KERNEL":"resize"
+  },
   "backup_data_uid": "4b332e6b37e4dc50", 
   "build_compiler_vars": {
   }, 
