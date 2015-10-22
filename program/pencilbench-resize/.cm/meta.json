@@ -40,11 +40,8 @@
   ], 
   "compiler_env": "CK_CXX", 
   "compiler_flags_as_env": "$<<CK_COMPILER_FLAG_CPP11>>$", 
-  "data_name": "realeyes-hog-opencl", 
+  "data_name": "pencilbench-resize", 
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
-  "include_dirs": [
-    "include"
-  ], 
   "linker_add_lib_as_env": [
     "CK_CXX_EXTRA", 
     "CK_ENV_LIB_STDCPP_STATIC"
@@ -66,7 +63,7 @@
         "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
         "run_output_files": [
-          "stdout.log", 
+          "stdout.log"
         ]
       }
     }

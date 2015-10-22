@@ -16,11 +16,17 @@ export PACKAGE_NAME=pencilcc
 
 cd ${INSTALL_DIR}
 
-# Clone latest version from GitHub
+# Clone latest version from GitHub via git
 echo ""
-echo "Cloning from GitHub (unless already cloned) ..."
+echo "Cloning from GitHub via git (unless already cloned) ..."
 echo ""
 git clone --recursive git@github.com:dividiti/${PACKAGE_NAME}.git
+
+# Clone latest version from GitHub via http
+echo ""
+echo "Cloning from GitHub via http (unless already cloned) ..."
+echo ""
+git clone --recursive http://github.com/dividiti/${PACKAGE_NAME}.git
 
 cd ${PACKAGE_NAME}
 
