@@ -23,7 +23,7 @@
     {"type":"random-with-next", "choice":["", "--no-shared-memory"], "default":""},
     {"type":"random-with-next", "choice":["", "--no-private-memory"], "default":""},
     {"type":"random-with-next", "choice":["4,4", "8,8", "16,16", "8,16", "16,8", "4,8", "8,4", "16,32", "32,8", "32,4",
-                                          "32,32", "64,64", "128,128"], "default":"16,16"},
+                                          "32,32", "64,64", "128,128"], "default":""},
     {"type":"random-with-next", "choice":["4,4", "8,8", "16,16", "8,16", "16,8", "4,8", "8,4", "16,32", "32,8", "32,4",
                                           "32,32", "64,64", "128,128"], "default":"16,16"}
   ],

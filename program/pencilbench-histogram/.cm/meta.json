@@ -1,5 +1,5 @@
 {
-  "extra_env_for_compliation": {
+  "extra_env_for_compilation": {
     "PENCILBENCH_KERNEL": "histogram",
     "PPCG_FLAG_BLOCK":"16,16"
   }, 
