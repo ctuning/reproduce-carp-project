@@ -29,5 +29,7 @@
   "mpl_image_dpi":"100",
 
   "point_style":{"1":{"elinewidth":"5", "color":"#dc3912"},
-                 "0":{"color":"#3366cc"}}
+                 "0":{"color":"#3366cc"}},
+
+  "out_to_file":"plot_with_variation_save_to_file.png"
 }
