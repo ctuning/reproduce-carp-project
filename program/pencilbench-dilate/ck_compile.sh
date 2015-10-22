@@ -28,14 +28,14 @@ fi
 
 if [ "$PPCG_FLAG_GRID" != "" ] ; then
    if [ "$ppcg_flag_sizes" != "" ] ; then
-      ppcg_flag_sizes=$ppcg_flag_sizes;
+      ppcg_flag_sizes="$ppcg_flag_sizes;"
    fi
    ppcg_flag_sizes="${ppcg_flag_sizes}kernel[i]->grid[$PPCG_FLAG_GRID]"
 fi
 
 if [ "$PPCG_FLAG_BLOCK" != "" ] ; then
    if [ "$ppcg_flag_sizes" != "" ] ; then
-      ppcg_flag_sizes=$ppcg_flag_sizes+";"
+      ppcg_flag_sizes="$ppcg_flag_sizes;"
    fi
    ppcg_flag_sizes="${ppcg_flag_sizes}kernel[i]->block[$PPCG_FLAG_BLOCK]"
 fi
