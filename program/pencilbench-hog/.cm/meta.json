@@ -1,0 +1,75 @@
+{
+  "add_extra_env_for_compliation": {
+    "PENCILBENCH_KERNEL": "hog"
+  }, 
+  "backup_data_uid": "8f8996a916c08fd1", 
+  "build_compiler_vars": {}, 
+  "compile_cmds": {
+    "default": {
+      "cmd": "../compile$#script_ext#$"
+    }
+  }, 
+  "compile_deps": {
+    "benchmark_pencil": {
+      "local": "yes", 
+      "sort": 10, 
+      "tags": "benchmark,pencil"
+    }, 
+    "compiler": {
+      "local": "yes", 
+      "sort": 30, 
+      "tags": "compiler,lang-cpp"
+    }, 
+    "compiler_pencil": {
+      "local": "yes", 
+      "sort": 20, 
+      "tags": "compiler,pencil"
+    }, 
+    "lib_opencl": {
+      "local": "yes", 
+      "sort": 40, 
+      "tags": "lib,opencl"
+    }, 
+    "lib_opencv": {
+      "extra_libs": [
+        "opencv_imgproc", 
+        "opencv_ocl", 
+        "opencv_highgui"
+      ], 
+      "local": "yes", 
+      "sort": 50, 
+      "tags": "lib,opencv"
+    }
+  }, 
+  "data_name": "pencilbench-hog", 
+  "main_language": "cpp", 
+  "process_in_tmp": "yes", 
+  "program": "yes", 
+  "run_cmds": {
+    "default": {
+      "dataset_tags": [
+        "dataset", 
+        "image", 
+        "jpeg"
+      ], 
+      "ignore_return_code": "no", 
+      "run_time": {
+        "run_cmd_main": "$#BIN_FILE#$ $#dataset_path#$$#dataset_filename#$", 
+        "run_cmd_out1": "stdout.log", 
+        "run_cmd_out2": "", 
+        "run_correctness_output_files": [], 
+        "run_output_files": [
+          "stdout.log"
+        ]
+      }
+    }
+  }, 
+  "tags": [
+    "program", 
+    "pencilbench", 
+    "resize", 
+    "lang-cpp"
+  ], 
+  "target_file": "a", 
+  "use_compile_script": "yes"
+}
