@@ -36,7 +36,7 @@ if ll>0:
              i2=qn.find('ms')
              if i2>0:
                 qq=qn[i1+1:i2].strip()
-                dcompute=float(qq)
+                dcompute+=float(qq)
 
 if dcompute>0:
    dcompute/=1e6
