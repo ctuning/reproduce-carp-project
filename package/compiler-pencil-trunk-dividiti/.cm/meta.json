@@ -16,7 +16,7 @@
   "suggested_path": "compiler-pencilcc", 
   "tags": [
     "compiler", 
-    "pencil", 
+    "pencilcc", 
     "polyhedral",
     "source-to-source", 
     "lang-c",
