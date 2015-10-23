@@ -1,0 +1,34 @@
+{
+  "iterations":1,
+
+  "pipeline_update":{
+
+     "cpu_freq":"max",
+     "gpu_freq":"max",
+     "compiler_vars": {
+     },
+
+     "skip_calibration":"yes",
+
+     "select_best_base_flag_for_first_iteration":"yes",
+
+     "extra_env_for_compilation":{
+
+       "PPCG_FLAG_LOOP_FUSION":"--isl-schedule-fuse=min",
+       "PPCG_FLAG_SHARED_MEM":"--no-shared-memory",
+       "PPCG_FLAG_PRIVATE_MEM":"--no-private-memory",
+       "PPCG_FLAG_TILE":"128,128",
+       "PPCG_FLAG_BLOCK":"16,4"
+     }
+
+   },
+
+  "record":"yes",
+  "record_uoa":"autotune-ppcg-1-best",
+
+  "features_keys_to_process":["##choices#*"],
+
+  "record_params": {
+    "search_point_by_features":"yes"
+  }
+}
