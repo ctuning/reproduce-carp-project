@@ -1,8 +1,8 @@
 {
   "customize": {
     "extra_dir": "pencil-benchmark/pencil-benchmarks-imageproc", 
-    "version": "999", 
-    "version_int": 999
+    "version": "998", 
+    "version_int": 998
   }, 
   "deps": {
     "compiler": {
