@@ -1,0 +1,83 @@
+{
+  "backup_data_uid": "60ac6bc55e814b91", 
+  "build_compiler_vars": {}, 
+  "compile_cmds": {
+    "default": {
+      "cmd": "../ck_compile$#script_ext#$"
+    }
+  }, 
+  "compile_deps": {
+    "benchmark_pencil": {
+      "local": "yes", 
+      "sort": 10, 
+      "tags": "benchmark,pencilcc"
+    }, 
+    "compiler": {
+      "local": "yes", 
+      "sort": 30, 
+      "tags": "compiler,lang-cpp"
+    }, 
+    "compiler_pencilcc": {
+      "local": "yes", 
+      "sort": 20, 
+      "tags": "compiler,pencilcc"
+    }, 
+    "lib_opencl": {
+      "local": "yes", 
+      "sort": 40, 
+      "tags": "lib,opencl"
+    }, 
+    "lib_opencv": {
+      "extra_libs": [
+        "opencv_imgproc", 
+        "opencv_ocl", 
+        "opencv_highgui"
+      ], 
+      "local": "yes", 
+      "sort": 50, 
+      "tags": "lib,opencv"
+    }
+  }, 
+  "data_name": "pencil-benchmark-filter2d", 
+  "extra_env_for_compilation": {
+    "PENCILBENCH_KERNEL": "filter2D", 
+    "PPCG_FLAG_BLOCK": "16,16"
+  }, 
+  "main_language": "cpp", 
+  "process_in_tmp": "yes", 
+  "program": "yes", 
+  "run_cmds": {
+    "default": {
+      "dataset_tags": [
+        "dataset", 
+        "image", 
+        "jpeg"
+      ], 
+      "ignore_return_code": "no", 
+      "run_time": {
+        "fine_grain_timer_file": "tmp-ck-timer.json", 
+        "post_process_cmd": "python $#src_path_local#$convert_timers_to_ck_format.py", 
+        "run_cmd_main": "$#BIN_FILE#$ $#dataset_path#$$#dataset_filename#$", 
+        "run_cmd_out1": "stdout.log", 
+        "run_cmd_out2": "", 
+        "run_correctness_output_files": [], 
+        "run_output_files": [
+          "stdout.log", 
+          "tmp-ck-timer.json"
+        ]
+      }
+    }
+  }, 
+  "run_vars": {
+    "PRL_BLOCKING":"1",
+    "PRL_PROFILING": "1"
+  }, 
+  "tags": [
+    "program", 
+    "pencil-benchmark", 
+    "resize", 
+    "lang-cpp"
+  ], 
+  "target_file": "a", 
+  "use_compile_script": "yes"
+}
