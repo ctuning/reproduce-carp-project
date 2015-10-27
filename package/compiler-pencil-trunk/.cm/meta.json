@@ -5,7 +5,7 @@
     "version_int": 998
   }, 
   "deps": {
-    "compiler": {
+    "support_compiler": {
       "local": "yes", 
       "sort": 10, 
       "tags": "compiler,lang-c,llvm"

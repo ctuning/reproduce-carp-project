@@ -10,17 +10,17 @@
     "benchmark_pencil": {
       "local": "yes", 
       "sort": 10, 
-      "tags": "benchmark,pencilcc"
+      "tags": "benchmark,pencil"
+    }, 
+    "pencilcc": {
+      "local": "yes", 
+      "sort": 20, 
+      "tags": "compiler,pencilcc"
     }, 
     "compiler": {
       "local": "yes", 
       "sort": 30, 
       "tags": "compiler,lang-cpp"
-    }, 
-    "compiler_pencil": {
-      "local": "yes", 
-      "sort": 20, 
-      "tags": "compiler,pencilcc"
     }, 
     "lib_opencl": {
       "local": "yes", 

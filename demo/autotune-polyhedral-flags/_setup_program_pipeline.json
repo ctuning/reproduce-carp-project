@@ -9,5 +9,9 @@
  "speed":"yes",
 
  "cpu_freq":"max",
- "gpu_freq":"max"
+ "gpu_freq":"max",
+
+ "extra_env_for_compilation":{
+   "PPCG_FLAG_BLOCK":"8,8"
+ }
 }
