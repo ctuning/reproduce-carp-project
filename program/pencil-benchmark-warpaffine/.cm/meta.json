@@ -17,7 +17,7 @@
       "sort": 30, 
       "tags": "compiler,lang-cpp"
     }, 
-    "compiler_pencilсс": {
+    "compiler_pencilcc": {
       "local": "yes", 
       "sort": 20, 
       "tags": "source-to-source-compiler,pencilcc"
@@ -69,7 +69,7 @@
     }
   }, 
   "run_vars": {
-    "PRL_BLOCKING":"1",
+    "PRL_BLOCKING": "1", 
     "PRL_PROFILING": "1"
   }, 
   "tags": [

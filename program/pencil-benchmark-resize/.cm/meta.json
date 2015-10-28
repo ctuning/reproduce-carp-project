@@ -12,15 +12,15 @@
       "sort": 10, 
       "tags": "benchmark,pencil"
     }, 
-    "compiler_pencilcc": {
-      "local": "yes", 
-      "sort": 20, 
-      "tags": "compiler,pencilcc"
-    }, 
     "compiler": {
       "local": "yes", 
       "sort": 30, 
-      "tags": "source-to-source-compiler,lang-cpp"
+      "tags": "compiler,lang-cpp"
+    }, 
+    "compiler_pencilcc": {
+      "local": "yes", 
+      "sort": 20, 
+      "tags": "source-to-source-compiler,pencilcc"
     }, 
     "lib_opencl": {
       "local": "yes", 
@@ -69,7 +69,7 @@
     }
   }, 
   "run_vars": {
-    "PRL_BLOCKING":"1",
+    "PRL_BLOCKING": "1", 
     "PRL_PROFILING": "1"
   }, 
   "tags": [
