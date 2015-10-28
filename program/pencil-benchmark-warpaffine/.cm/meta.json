@@ -1,6 +1,8 @@
 {
   "backup_data_uid": "869438087e69bdac", 
-  "build_compiler_vars": {}, 
+  "build_compiler_vars": {
+    "RUN_ONLY_ONE_EXPERIMENT":""
+  }, 
   "compile_cmds": {
     "default": {
       "cmd": "../ck_compile$#script_ext#$"
@@ -70,7 +72,7 @@
   }, 
   "run_vars": {
     "PRL_BLOCKING": "1", 
-    "PRL_PROFILING": "1"
+    "PRL_PROF_ALL": "1"
   }, 
   "tags": [
     "program", 
