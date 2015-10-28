@@ -20,7 +20,7 @@
     "compiler": {
       "local": "yes", 
       "sort": 30, 
-      "tags": "compiler,lang-cpp"
+      "tags": "source-to-source-compiler,lang-cpp"
     }, 
     "lib_opencl": {
       "local": "yes", 

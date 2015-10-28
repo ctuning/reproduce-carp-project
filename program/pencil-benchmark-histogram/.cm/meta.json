@@ -20,7 +20,7 @@
     "compiler_pencilcc": {
       "local": "yes", 
       "sort": 20, 
-      "tags": "compiler,pencilcc"
+      "tags": "source-to-source-compiler,pencilcc"
     }, 
     "lib_opencl": {
       "local": "yes", 
