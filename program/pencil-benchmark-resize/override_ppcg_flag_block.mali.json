@@ -1,0 +1,6 @@
+{
+  "extra_env_for_compilation" : {
+    "PPCG_FLAG_BLOCK" : "8,8"
+  }
+}
+

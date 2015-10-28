@@ -16,7 +16,6 @@ d={}
 
 print ('Converting fine-grain timers from penci-benchmark to CK format ...')
 
-# Load kernel info from slambench
 f=open('stdout.log','r')
 s=f.read()
 f.close()
