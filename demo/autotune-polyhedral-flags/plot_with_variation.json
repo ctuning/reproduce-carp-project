@@ -1,7 +1,7 @@
 {
   "experiment_module_uoa":"experiment",
 
-  "data_uoa_list":["autotune-ppcg-1-random", "autotune-ppcg-1-best"],
+  "data_uoa_list":["autotune-ppcg-1-random", "autotune-ppcg-1-best", "autotune-ppcg-1-best-mali"],
 
   "flat_keys_list":[
     "##characteristics#run#execution_time_kernel_0#center",

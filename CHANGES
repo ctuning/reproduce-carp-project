@@ -1,3 +1,5 @@
+2015.12.12 FGG: * failing autotuning pipeline if postprocessing script fails
+
 2015.10.27 - * changing 'compiler' to 'source-to-source-compiler' tag for pencilcc
 
 2015.10.22 - * adding first benchmark meta (resize)
