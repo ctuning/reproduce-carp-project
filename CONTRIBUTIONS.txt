@@ -1,0 +1,35 @@
+CK uses standard 3-clause (new) BSD license. Contributions are welcome to
+either improve existing functionality or add new functionality possibly using
+new modules.
+
+Contributors should clearly mark their contributions including date and remark.
+
+You can easily contribute to CK and all related repositories by forking them 
+on GitHub and then submitting a pull request. Alternatively, you can submit
+patches via collective-knowledge@googlegroups.com .
+
+Thank you for all your help to support this community project!
+
+=================================================================================
+Acknowledgments:
+
+N: Grigori Fursin (alias: FGG)
+E: Grigori.Fursin@cTuning.org
+H: http://fursin.net
+O: cTuning foundation, France
+C: converting CARP project artifacts to a unified CK format
+W: 
+
+N: Anton Lokhmotov
+E: anton@dividiti.com
+H: https://www.hipeac.net/~anton
+O: dividiti, UK
+C: converting CARP project artifacts to a unified CK format
+W: 
+
+N: Chandan Reddy Gopal 
+E: 
+O: ENS Paris, France
+C: evaluating CK for polyhedral autotuning (Pencil and PPCG from CARP project)
+   and providing various feedback
+W:

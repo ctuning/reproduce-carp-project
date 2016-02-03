@@ -12,7 +12,7 @@
     "benchmark_pencil": {
       "local": "yes", 
       "sort": 10, 
-      "tags": "benchmark,pencilcc"
+      "tags": "benchmark,pencil"
     }, 
     "compiler": {
       "local": "yes", 

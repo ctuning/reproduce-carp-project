@@ -1,8 +1,10 @@
-2015.12.12 FGG: * failing autotuning pipeline if postprocessing script fails
+2016.02.02 * fixing pencil benchmark meta in all programs (thanks to Chandan Reddy Gopal)
 
-2015.10.27 - * changing 'compiler' to 'source-to-source-compiler' tag for pencilcc
+2015.12.12 * failing autotuning pipeline if postprocessing script fails
 
-2015.10.22 - * adding first benchmark meta (resize)
+2015.10.27 * changing 'compiler' to 'source-to-source-compiler' tag for pencilcc
 
-2015.10.21 - * adding pencil compiler package (from GitHub and with CK registered LLVM)
-             * adding pencil benchmark package (from GitHub)
+2015.10.22 * adding first benchmark meta (resize)
+
+2015.10.21 * adding pencil compiler package (from GitHub and with CK registered LLVM)
+           * adding pencil benchmark package (from GitHub)
