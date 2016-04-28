@@ -12,16 +12,16 @@
       "tags": "compiler,lang-cpp,gcc,ndk"
     }
   }, 
+  "end_full_path": {
+    "android": "tbb44_20160128oss$#sep#$lib_release$#sep#$libtbb.so"
+  }, 
   "only_for_host_os_tags": [
     "windows", 
     "linux"
   ], 
   "only_for_target_os_tags": [
-    "android" 
+    "android"
   ], 
-  "end_full_path": {
-    "android": "tbb44_20160128oss$#sep#$lib_release$#sep#$libtbb.so" 
-  }, 
   "process_script": "process", 
   "soft_uoa": "fe71b1243e6bb329", 
   "suggested_path": "lib-tbb", 
