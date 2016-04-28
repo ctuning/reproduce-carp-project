@@ -1,0 +1,29 @@
+{
+  "customize": {
+    "extra_dir": "tbb44_20160128oss", 
+    "from_sources": "yes", 
+    "skip_add_to_bin": "yes", 
+    "version": "4.4"
+  }, 
+  "end_full_path": {
+    "linux": "tbb44_20160128oss/lib/intel64/gcc4.4./libtbb.so", 
+    "win": "tbb44_20160128oss\\lib\\intel64\\vc14\\tbb.lib"
+  }, 
+  "only_for_host_os_tags": [
+    "windows", 
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "windows", 
+    "linux"
+  ], 
+  "process_script": "process", 
+  "soft_uoa": "23949f2a32490faf", 
+  "suggested_path": "lib-boost", 
+  "tags": [
+    "lib", 
+    "boost", 
+    "v1.60", 
+    "v1"
+  ]
+}

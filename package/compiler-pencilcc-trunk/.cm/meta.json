@@ -1,8 +1,7 @@
 {
   "customize": {
     "extra_dir": "_install", 
-    "version": "998", 
-    "version_int": 998
+    "version": "trunk"
   }, 
   "deps": {
     "support_compiler": {
@@ -11,15 +10,21 @@
       "tags": "compiler,lang-c,llvm"
     }
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "4aff7e7480ae0f6d", 
   "suggested_path": "compiler-pencilcc-trunk", 
   "tags": [
     "source-to-source-compiler", 
     "pencilcc", 
-    "polyhedral",
-    "lang-c",
-    "lang-cpp",
-    "vtrunk" 
+    "polyhedral", 
+    "lang-c", 
+    "lang-cpp", 
+    "vtrunk"
   ]
 }

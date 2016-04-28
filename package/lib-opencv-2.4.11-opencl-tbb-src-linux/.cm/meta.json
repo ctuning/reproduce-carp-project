@@ -3,8 +3,7 @@
     "extra_dir": "build/install", 
     "lib_extension": "2411d", 
     "path_extension": "vc12", 
-    "version": "2.4.11", 
-    "version_int": 20411
+    "version": "2.4.11"
   }, 
   "deps": {
     "compiler": {
@@ -22,6 +21,13 @@
       "tags": "lib,tbb"
     }
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux", 
+    "android"
+  ], 
   "process_script": "process", 
   "soft_uoa": "18eb79fe079438fb", 
   "suggested_path": "lib-opencv", 

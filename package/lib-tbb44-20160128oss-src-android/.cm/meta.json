@@ -1,0 +1,35 @@
+{
+  "customize": {
+    "extra_dir": "tbb44_20160128oss", 
+    "from_sources": "yes", 
+    "skip_add_to_bin": "yes", 
+    "version": "4.4"
+  }, 
+  "deps": {
+    "compiler": {
+      "local": "yes", 
+      "skip_from_bat": "yes", 
+      "tags": "compiler,lang-cpp,gcc,ndk"
+    }
+  }, 
+  "only_for_host_os_tags": [
+    "windows", 
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "android" 
+  ], 
+  "end_full_path": {
+    "android": "tbb44_20160128oss$#sep#$lib_release$#sep#$libtbb.so" 
+  }, 
+  "process_script": "process", 
+  "soft_uoa": "fe71b1243e6bb329", 
+  "suggested_path": "lib-tbb", 
+  "tags": [
+    "lib", 
+    "tbb", 
+    "intel", 
+    "v4.4", 
+    "v4"
+  ]
+}

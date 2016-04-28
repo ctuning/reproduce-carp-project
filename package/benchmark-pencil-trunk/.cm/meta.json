@@ -1,9 +1,14 @@
 {
   "customize": {
     "extra_dir": "pencil-benchmark/pencil-benchmarks-imageproc", 
-    "version": "998", 
-    "version_int": 998
+    "version": "trunk"
   }, 
+  "only_for_host_os_tags": [
+    "linux"
+  ], 
+  "only_for_target_os_tags": [
+    "linux"
+  ], 
   "process_script": "process", 
   "soft_uoa": "433d85323a5e077d", 
   "suggested_path": "benchmark-pencil-trunk", 

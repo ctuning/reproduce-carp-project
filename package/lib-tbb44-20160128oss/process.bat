@@ -12,9 +12,9 @@ rem
 rem PACKAGE_DIR
 rem INSTALL_DIR
 
-set PACKAGE_NAME=tbb43_20150424oss
-set PACKAGE_FILE=%PACKAGE_NAME%_src.tgz
-set PACKAGE_URL=https://www.threadingbuildingblocks.org/sites/default/files/software_releases/source/%PACKAGE_FILE%
+set PACKAGE_NAME=tbb44_20160128oss_win_0
+set PACKAGE_FILE=%PACKAGE_NAME%.zip
+set PACKAGE_URL=https://www.threadingbuildingblocks.org/sites/default/files/software_releases/windows/%PACKAGE_FILE%
 
 cd %INSTALL_DIR%
 
@@ -45,25 +45,7 @@ echo.
 echo Extracting archive ...
 echo.
 
-gzip -d %PACKAGE_NAME%_src.tgz
-tar xvf %PACKAGE_NAME%_src.tar
-rm %PACKAGE_NAME%_src.tar
-
-if %errorlevel% neq 0 (
- echo.
- echo Failed extracting package archive!
- goto err
-)
-
-cd %PACKAGE_NAME%
-
-set TBB_INSTALL_DIR=%INSTALL_DIR%/build
-set TBB_LIBRARY_RELEASE=%TBB_INSTALL_DIR%/lib
-set TBB_LIBRARY_DEBUG=%TBB_INSTALL_DIR%/debug/lib
-set TBB_INCLUDE=%TBB_INSTALL_DIR%/include
-
-ndk-build target=android tbb_dir=%INSTALL_DIR%\%PACKAGE_NAME% work_dir=%INSTALL_DIR%\%PACKAGE_NAME%\build\install 
-rem CC=%CK_CC% CXX=%CK_CXX% compiler=gcc
+unzip %PACKAGE_FILE%
 
 if %errorlevel% neq 0 (
  echo.
