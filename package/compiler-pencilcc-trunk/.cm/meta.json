@@ -4,8 +4,9 @@
     "version": "trunk"
   }, 
   "deps": {
-    "support_compiler": {
+    "support-compiler": {
       "local": "yes", 
+      "name": "LLVM compiler", 
       "sort": 10, 
       "tags": "compiler,lang-c,llvm"
     }

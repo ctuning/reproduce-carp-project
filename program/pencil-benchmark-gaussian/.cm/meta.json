@@ -1,7 +1,7 @@
 {
   "backup_data_uid": "3575763a4eeba814", 
   "build_compiler_vars": {
-    "RUN_ONLY_ONE_EXPERIMENT":""
+    "RUN_ONLY_ONE_EXPERIMENT": ""
   }, 
   "compile_cmds": {
     "default": {
@@ -9,33 +9,38 @@
     }
   }, 
   "compile_deps": {
-    "benchmark_pencil": {
+    "benchmark-pencil": {
       "local": "yes", 
+      "name": "Pencil benchmark", 
       "sort": 10, 
       "tags": "benchmark,pencil"
     }, 
     "compiler": {
       "local": "yes", 
+      "name": "C++ compiler", 
       "sort": 30, 
       "tags": "compiler,lang-cpp"
     }, 
-    "compiler_pencilcc": {
+    "compiler-pencilcc": {
       "local": "yes", 
+      "name": "Pencil C compiler", 
       "sort": 20, 
       "tags": "source-to-source-compiler,pencilcc"
     }, 
-    "lib_opencl": {
+    "lib-opencl": {
       "local": "yes", 
+      "name": "OpenCL library", 
       "sort": 40, 
       "tags": "lib,opencl"
     }, 
-    "lib_opencv": {
+    "lib-opencv": {
       "extra_libs": [
         "opencv_imgproc", 
         "opencv_ocl", 
         "opencv_highgui"
       ], 
       "local": "yes", 
+      "name": "OpenCV library", 
       "sort": 50, 
       "tags": "lib,opencv"
     }

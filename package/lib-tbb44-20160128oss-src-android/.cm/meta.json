@@ -8,6 +8,7 @@
   "deps": {
     "compiler": {
       "local": "yes", 
+      "name": "Android NDK GCC", 
       "skip_from_bat": "yes", 
       "tags": "compiler,lang-cpp,gcc,ndk"
     }

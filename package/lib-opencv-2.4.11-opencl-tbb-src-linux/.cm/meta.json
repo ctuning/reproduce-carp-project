@@ -8,16 +8,19 @@
   "deps": {
     "compiler": {
       "local": "yes", 
+      "name": "C compiler", 
       "skip_from_bat": "yes", 
       "tags": "compiler,lang-c"
     }, 
     "opencl": {
       "local": "yes", 
+      "name": "OpenCL library", 
       "skip_from_bat": "yes", 
       "tags": "lib,opencl"
     }, 
     "tbb": {
       "local": "yes", 
+      "name": "TBB library", 
       "tags": "lib,tbb"
     }
   }, 
