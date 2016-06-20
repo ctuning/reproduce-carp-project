@@ -12,8 +12,6 @@
 # PACKAGE_DIR
 # INSTALL_DIR
 
-exit 0
-
 export PACKAGE_NAME=pencilcc
 
 cd ${INSTALL_DIR}
@@ -53,9 +51,9 @@ cd _build
 echo ""
 echo "Configuring ..."
 echo ""
-echo "../configure --prefix=$INSTALL_DIR/_install --with-clang-prefix=${CK_ENV_COMPILER_LLVM}"
+echo "../configure --prefix=$INSTALL_DIR/install --with-clang-prefix=${CK_ENV_COMPILER_LLVM}"
 echo ""
-../configure --prefix=$INSTALL_DIR/_install --with-clang-prefix=${CK_ENV_COMPILER_LLVM}
+../configure --prefix=$INSTALL_DIR/install --with-clang-prefix=${CK_ENV_COMPILER_LLVM}
  if [ "${?}" != "0" ] ; then
   echo "Error: Configure failed in $PWD!" 
   exit 1
