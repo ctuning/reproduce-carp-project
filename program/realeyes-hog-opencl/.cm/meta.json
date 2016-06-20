@@ -44,7 +44,7 @@
     "CK_ENV_LIB_STDCPP_INCLUDE_EXTRA"
   ], 
   "compiler_env": "CK_CXX", 
-  "compiler_flags_as_env": "$<<CK_COMPILER_FLAG_CPP11>>$", 
+  "compiler_flags_as_env": "$<<CK_COMPILER_FLAG_CPP11>>$ $<<CK_OPT_UNWIND>>$", 
   "data_name": "realeyes-hog-opencl", 
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
   "include_dirs": [
