@@ -1,8 +1,11 @@
 {
   "customize": {
-    "extra_dir": "_install", 
+    "extra_dir": "install", 
     "version": "trunk.dividiti"
   }, 
+  "end_full_path": {
+    "linux": "install/bin/ppcg"
+  },
   "deps": {
     "support-compiler": {
       "local": "yes", 

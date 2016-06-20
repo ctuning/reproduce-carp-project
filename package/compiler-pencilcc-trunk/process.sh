@@ -12,6 +12,8 @@
 # PACKAGE_DIR
 # INSTALL_DIR
 
+exit 0
+
 export PACKAGE_NAME=pencilcc
 
 cd ${INSTALL_DIR}
