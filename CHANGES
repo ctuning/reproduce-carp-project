@@ -1,3 +1,5 @@
+2016.06.20 * removing packages that can be detected automatically (OpenCV, TBB, Boost)
+
 2016.02.02 * fixing pencil benchmark meta in all programs (thanks to Chandan Reddy Gopal)
 
 2015.12.12 * failing autotuning pipeline if postprocessing script fails

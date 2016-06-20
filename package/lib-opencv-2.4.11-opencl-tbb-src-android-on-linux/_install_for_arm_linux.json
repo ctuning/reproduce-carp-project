@@ -1,6 +1,0 @@
-{
- "params":{
-   "CK_PARAM_CMAKE_CONFIG":" -DENABLE_NEON=ON -DENABLE_VFPV3=ON ",
-   "CK_PARAM_MAKE":" -j4 "
- }
-}
