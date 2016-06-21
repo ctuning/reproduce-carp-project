@@ -51,30 +51,30 @@ cd _build
 echo ""
 echo "Configuring ..."
 echo ""
-echo "../configure --prefix=$INSTALL_DIR/_install --with-clang-prefix=${CK_ENV_COMPILER_LLVM}"
+echo "../configure --prefix=${INSTALL_DIR}/install --with-clang-prefix=${CK_ENV_COMPILER_LLVM}"
 echo ""
-../configure --prefix=$INSTALL_DIR/_install --with-clang-prefix=${CK_ENV_COMPILER_LLVM}
- if [ "${?}" != "0" ] ; then
-  echo "Error: Configure failed in $PWD!" 
+../configure --prefix=${INSTALL_DIR}/install --with-clang-prefix=${CK_ENV_COMPILER_LLVM}
+if [ "${?}" != "0" ] ; then
+  echo "Error: Configure failed in $PWD!"
   exit 1
- fi
+fi
 
 # Build
 echo ""
 echo "Building ..."
 echo ""
 make
- if [ "${?}" != "0" ] ; then
-  echo "Error: Compilation failed in $PWD!" 
+if [ "${?}" != "0" ] ; then
+  echo "Error: Compilation failed in $PWD!"
   exit 1
- fi
+fi
 
 # Install
 echo ""
 echo "Installing ..."
 echo ""
 make install
- if [ "${?}" != "0" ] ; then
-  echo "Error: Installation failed in $PWD!" 
+if [ "${?}" != "0" ] ; then
+  echo "Error: Installation failed in $PWD!"
   exit 1
- fi
+fi
