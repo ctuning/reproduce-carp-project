@@ -3,10 +3,10 @@
     "version": "trunk"
   },
   "end_full_path": {
-    "android": "pencil-benchmark$#sep#$pencil-benchmarks-imageproc$#sep#$cvt_color$#sep#$cvt_color.pencil.c",
-    "linux": "pencil-benchmark/pencil-benchmarks-imageproc/cvt_color/cvt_color.pencil.c",
-    "mingw": "pencil-benchmark\\pencil-benchmarks-imageproc\\cvt_color\\cvt_color.pencil.c",
-    "win": "pencil-benchmark\\pencil-benchmarks-imageproc\\cvt_color\\cvt_color.pencil.c"
+    "android": "pencil-benchmark$#sep#$pencil-benchmarks-imageproc$#sep#$cvt_color$#sep#$cvt_color.c",
+    "linux": "pencil-benchmark/pencil-benchmarks-imageproc/cvt_color/cvt_color.c",
+    "mingw": "pencil-benchmark\\pencil-benchmarks-imageproc\\cvt_color\\cvt_color.c",
+    "win": "pencil-benchmark\\pencil-benchmarks-imageproc\\cvt_color\\cvt_color.c"
   },
   "only_for_host_os_tags": [
     "linux"
