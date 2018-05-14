@@ -47,7 +47,7 @@ Installation
 ============
 
 ```
-$ (sudo) pip install ck
+$ sudo pip install ck
 $ ck pull repo:reproduce-carp-project
 ```
 
