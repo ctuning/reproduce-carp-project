@@ -1,15 +1,16 @@
 {
-  "data_name": "reproduce-carp-project", 
-  "data_alias": "reproduce-carp-project", 
-  "data_uid": "7d60433aa9fd29fe", 
-  "data_uoa": "reproduce-carp-project", 
+  "data_alias": "reproduce-carp-project",
+  "data_name": "reproduce-carp-project",
+  "data_uid": "7d60433aa9fd29fe",
+  "data_uoa": "reproduce-carp-project",
   "dict": {
+    "desc": "Customizable CK workflows and portable CK packages for EU CARP project.",
     "repo_deps": [
       {
         "repo_uoa": "ck-autotuning"
       }
-    ], 
-    "url": "https://github.com/ctuning/reproduce-carp-project", 
-    "shared": "git"
+    ],
+    "shared": "git",
+    "url": "https://github.com/ctuning/reproduce-carp-project"
   }
 }
